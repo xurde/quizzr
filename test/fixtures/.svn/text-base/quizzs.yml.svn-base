@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+    id: 1
+    user_id: 1
+    question: "Question 1"
+    correct: "Correct"
+    false1: "false option 1"
+    false2: "false option 2"
+    false3: "false option 3"
+    created_at: <%= Time.now.to_s :db %>
+    open_until: <%= Time.now.advance( :minutes => 15 ).to_s :db %>
+    random_seed: <%= Time.now.to_f.hash.to_s %>
+
+two:
+    id: 2
+    user_id: 1
+    question: "Question 2"
+    correct: "Correct"
+    false1: "false option 1"
+    false2: "false option 2"
+    created_at: <%= Time.now.to_s :db%>
+    open_until: <%= Time.now.advance( :minutes => 15 ).to_s :db %>
+    random_seed: <%= Time.now.to_f.hash.to_s %>

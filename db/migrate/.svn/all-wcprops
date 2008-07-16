@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/xurdesvn/!svn/ver/30/quizzr/db/migrate
+END
+001_create_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/xurdesvn/!svn/ver/30/quizzr/db/migrate/001_create_users.rb
+END
+003_create_responses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/xurdesvn/!svn/ver/30/quizzr/db/migrate/003_create_responses.rb
+END
+005_create_avatars.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/xurdesvn/!svn/ver/32/quizzr/db/migrate/005_create_avatars.rb
+END
+002_create_quizzs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/xurdesvn/!svn/ver/30/quizzr/db/migrate/002_create_quizzs.rb
+END
+004_create_follows.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/xurdesvn/!svn/ver/30/quizzr/db/migrate/004_create_follows.rb
+END

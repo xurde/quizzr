@@ -1,0 +1,3 @@
+<li>
+	<%= link_to follower.follower.login, '/' + follower.follower.login %>
+</li>

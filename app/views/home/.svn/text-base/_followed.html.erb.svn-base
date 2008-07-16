@@ -1,0 +1,3 @@
+<li>
+	<%= link_to followed.followed.login, '/' + followed.followed.login %>
+</li>

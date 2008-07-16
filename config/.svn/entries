@@ -1,0 +1,94 @@
+8
+
+dir
+30
+http://svn.xurdeonrails.com/xurdesvn/quizzr/config
+http://svn.xurdeonrails.com/xurdesvn
+
+
+
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d78da51b-c416-0410-be0e-970b77c129a8
+
+routes.rb
+file
+
+
+
+
+2008-06-09T00:20:06.000000Z
+39b3c1f0325e9291f7d2906ddd727bb9
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+
+database.yml
+file
+
+
+
+
+2008-06-09T00:20:06.000000Z
+9227d5211c63b7b687bb1c2184fb0fb8
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+
+boot.rb
+file
+
+
+
+
+2008-06-09T00:20:06.000000Z
+62fe46fd028f9df081e4ec9eb85968c0
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+
+initializers
+dir
+
+environment.rb
+file
+
+
+
+
+2008-06-09T00:20:06.000000Z
+f5539a5a258aa7d566cb4ec9518aec38
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+
+environments
+dir
+
+amazon_s3.yml
+file
+
+
+
+
+2008-06-09T00:20:06.000000Z
+be037d51d0ff671229cfda84cb28f672
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+

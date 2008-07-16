@@ -1,0 +1,8 @@
+<div id="quizz-col">
+	<ul id="quizzs">
+		<%= render :partial => '/question', :collection => @quizzs %>
+	</ul>
+</div>
+<div id="info-col">
+	<p><%= avatar_for_user( @user, :thumb ) %> <%= link_to_user( @user) %> ( <%= @can_follow ? ( link_to 'remove', url_for( :action => 'unfollow', :id => @user.id )) : ( link_to 'follow', url_for( :action => 'follow', :id => @user.id )) %> )</p>
+</div>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/xurdesvn/!svn/ver/30/quizzr/app/models
+END
+avatar.rb
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/xurdesvn/!svn/ver/32/quizzr/app/models/avatar.rb
+END
+response.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/xurdesvn/!svn/ver/30/quizzr/app/models/response.rb
+END
+user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/xurdesvn/!svn/ver/32/quizzr/app/models/user.rb
+END
+follow.rb
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/xurdesvn/!svn/ver/30/quizzr/app/models/follow.rb
+END
+quizz.rb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/xurdesvn/!svn/ver/30/quizzr/app/models/quizz.rb
+END
+user_observer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/xurdesvn/!svn/ver/30/quizzr/app/models/user_observer.rb
+END
+user_mailer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/xurdesvn/!svn/ver/30/quizzr/app/models/user_mailer.rb
+END

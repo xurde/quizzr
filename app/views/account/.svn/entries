@@ -1,0 +1,52 @@
+8
+
+dir
+32
+http://svn.xurdeonrails.com/xurdesvn/quizzr/app/views/account
+http://svn.xurdeonrails.com/xurdesvn
+
+
+
+2008-06-10T07:51:11.811077Z
+32
+xurdeor
+
+
+svn:special svn:externals svn:needs-lock
+
+index.html.erb
+file
+
+
+
+
+2008-06-09T01:29:26.000000Z
+4f7ef9128b4580eb395ec5781ad5cd04
+2008-06-10T07:51:11.811077Z
+32
+xurdeor
+
+avatar.html.erb
+file
+
+
+
+
+2008-06-10T07:48:24.000000Z
+d41d8cd98f00b204e9800998ecf8427e
+2008-06-10T07:51:11.811077Z
+32
+xurdeor
+
+settings.html.erb
+file
+
+
+
+
+2008-06-10T02:03:39.000000Z
+1fea523b97b13bc17abedcb04958c7cb
+2008-06-10T07:51:11.811077Z
+32
+xurdeor
+

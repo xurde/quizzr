@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/xurdesvn/!svn/ver/30/quizzr/vendor/plugins/attachment_fu
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/xurdesvn/!svn/ver/30/quizzr/vendor/plugins/attachment_fu/Rakefile
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/xurdesvn/!svn/ver/30/quizzr/vendor/plugins/attachment_fu/init.rb
+END
+CHANGELOG
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/xurdesvn/!svn/ver/30/quizzr/vendor/plugins/attachment_fu/CHANGELOG
+END
+amazon_s3.yml.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/xurdesvn/!svn/ver/30/quizzr/vendor/plugins/attachment_fu/amazon_s3.yml.tpl
+END
+install.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/xurdesvn/!svn/ver/30/quizzr/vendor/plugins/attachment_fu/install.rb
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/xurdesvn/!svn/ver/30/quizzr/vendor/plugins/attachment_fu/README
+END

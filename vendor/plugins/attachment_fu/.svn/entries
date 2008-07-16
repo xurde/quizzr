@@ -1,0 +1,109 @@
+8
+
+dir
+30
+http://svn.xurdeonrails.com/xurdesvn/quizzr/vendor/plugins/attachment_fu
+http://svn.xurdeonrails.com/xurdesvn
+
+
+
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d78da51b-c416-0410-be0e-970b77c129a8
+
+test
+dir
+
+Rakefile
+file
+
+
+
+
+2008-06-09T00:20:07.000000Z
+68b46bbdc65a11adcda8d45f2fb01610
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+
+init.rb
+file
+
+
+
+
+2008-06-09T00:20:07.000000Z
+14196c6d501d1361969f208f3718dbc3
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+
+lib
+dir
+
+CHANGELOG
+file
+
+
+
+
+2008-06-09T00:20:07.000000Z
+dfa2436ceb1a0afa6e7e412c78642662
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+
+amazon_s3.yml.tpl
+file
+
+
+
+
+2008-06-09T00:20:07.000000Z
+be037d51d0ff671229cfda84cb28f672
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+
+install.rb
+file
+
+
+
+
+2008-06-09T00:20:07.000000Z
+afc122a879278a1bfe5df9634907d0a4
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+
+vendor
+dir
+
+README
+file
+
+
+
+
+2008-06-09T00:20:07.000000Z
+6651e00ff7825f7aa8003a8f1d1050cd
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+

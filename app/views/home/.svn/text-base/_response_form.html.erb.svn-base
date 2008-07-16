@@ -1,0 +1,3 @@
+<% form_tag url_for( :controller => 'responses', :action => 'create', :id => quizz_form.id ) do -%>
+<p><%= text_field_tag 'correct', asterisize( quizz_form.correct ) %><%= submit_tag 'Post' %></p>
+<% end -%>

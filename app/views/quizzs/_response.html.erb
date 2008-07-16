@@ -1,0 +1,5 @@
+<li id="response_<%= response.id.to_s %>" class="response <%= response.is_ok %>">
+	<p>
+		<span><%= avatar_for_user( response.user, :micro ) %> <%= link_to_user(response.user) %> answered: <strong><%= response.text %></strong></span>
+	</p> 
+</li>

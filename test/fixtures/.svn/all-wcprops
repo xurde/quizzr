@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/xurdesvn/!svn/ver/30/quizzr/test/fixtures
+END
+avatars.yml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/xurdesvn/!svn/ver/30/quizzr/test/fixtures/avatars.yml
+END
+responses.yml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/xurdesvn/!svn/ver/30/quizzr/test/fixtures/responses.yml
+END
+users.yml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/xurdesvn/!svn/ver/30/quizzr/test/fixtures/users.yml
+END
+follows.yml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/xurdesvn/!svn/ver/30/quizzr/test/fixtures/follows.yml
+END
+quizzs.yml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/xurdesvn/!svn/ver/30/quizzr/test/fixtures/quizzs.yml
+END

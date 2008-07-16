@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/xurdesvn/!svn/ver/30/quizzr/app/views/user_mailer
+END
+signup_notification.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/xurdesvn/!svn/ver/30/quizzr/app/views/user_mailer/signup_notification.html.erb
+END
+activation.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/xurdesvn/!svn/ver/30/quizzr/app/views/user_mailer/activation.html.erb
+END

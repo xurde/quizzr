@@ -1,0 +1,41 @@
+<div id="quizz-col">
+	<div id="form_quizz">
+		<% form_tag url_for( :controller => 'quizzs', :action => 'create' ) do -%>
+
+		<p><label for="question">Question</label>
+		<%= text_area_tag 'question' %></p>
+
+		<p><label for="correct">Correct Answer</label>
+		<%= text_field_tag 'correct' %></p>
+
+		<p><label for="option1">False Option 1</label>
+		<%= text_field_tag 'false1' %></p>
+		
+		<p><label for="option2">False Option 2</label>
+		<%= text_field_tag 'false2' %></p>
+		
+		<p><label for="option3">False Option 3</label>
+		<%= text_field_tag 'false3' %></p>
+
+		<p><%= submit_tag 'Post' %></p>
+		<% end -%>
+	</div>
+	<ul id="quizzlist">
+		<%= render :partial => 'quizz', :collection => @quizzs %>
+	</ul>
+</div>
+<div id="info-col">
+	<p><%= link_to_user(@me) %></p>
+	<p>
+		Quizzs: <em><%= @me.quizzs.size.to_s %></em><br/>
+		Responses: <em><%= @me.responses.size.to_s %></em>
+	</p>
+	<p>Following: <em><%= @followings.size.to_s %></em></p>
+	<ul id='following'>
+		<%= render :partial => 'followed', :collection => @followings %>
+	</ul>	
+	<p>Followers: <em><%= @followers.size.to_s %></em></p>
+	<ul id='followers'>
+		<%= render :partial => 'follower', :collection => @followers %>
+	</ul>
+</div>

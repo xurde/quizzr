@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/xurdesvn/!svn/ver/30/quizzr/config/environments
+END
+test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/xurdesvn/!svn/ver/30/quizzr/config/environments/test.rb
+END
+development.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/xurdesvn/!svn/ver/30/quizzr/config/environments/development.rb
+END
+production.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/xurdesvn/!svn/ver/30/quizzr/config/environments/production.rb
+END

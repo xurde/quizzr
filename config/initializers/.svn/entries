@@ -1,0 +1,52 @@
+8
+
+dir
+30
+http://svn.xurdeonrails.com/xurdesvn/quizzr/config/initializers
+http://svn.xurdeonrails.com/xurdesvn
+
+
+
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d78da51b-c416-0410-be0e-970b77c129a8
+
+inflections.rb
+file
+
+
+
+
+2008-06-09T00:20:06.000000Z
+46b85f9044d69b3d813d0957dae1b026
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+
+mime_types.rb
+file
+
+
+
+
+2008-06-09T00:20:06.000000Z
+53b1216a09d1bbd2863d09a5db5318f0
+2008-06-09T00:12:25.209602Z
+30
+xurdeor
+

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/xurdesvn/!svn/ver/30/quizzr/app/views/quizzs
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/xurdesvn/!svn/ver/30/quizzr/app/views/quizzs/index.html.erb
+END
+destroy.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/xurdesvn/!svn/ver/30/quizzr/app/views/quizzs/destroy.html.erb
+END
+_response.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/xurdesvn/!svn/ver/30/quizzr/app/views/quizzs/_response.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/xurdesvn/!svn/ver/31/quizzr/app/views/quizzs/show.html.erb
+END
+_quizz.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/xurdesvn/!svn/ver/30/quizzr/app/views/quizzs/_quizz.html.erb
+END
+create.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/xurdesvn/!svn/ver/30/quizzr/app/views/quizzs/create.html.erb
+END

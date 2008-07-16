@@ -1,0 +1,13 @@
+<ul id='quizzshow'>
+	<%= render :partial => 'quizz', :object => @quizz %>
+</ul>
+
+<% if !@quizz.is_open? %>
+	<ul id='quizz-responses'>
+		<%= render :partial => 'response', :collection => @quizz.responses %>
+	</ul>
+<% end %>
+
+<% if @me.nil? %>
+	<p class="message"><%= link_to 'login', login_url %> or <%= link_to 'signup', signup_url %> to response.</li>
+<% end %>

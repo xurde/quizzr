@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/xurdesvn/!svn/ver/30/quizzr/app/views/index
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/xurdesvn/!svn/ver/30/quizzr/app/views/index/index.html.erb
+END
+_user.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/xurdesvn/!svn/ver/30/quizzr/app/views/index/_user.html.erb
+END
+_quizz.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/xurdesvn/!svn/ver/30/quizzr/app/views/index/_quizz.html.erb
+END
