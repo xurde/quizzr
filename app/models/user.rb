@@ -86,6 +86,12 @@ class User < ActiveRecord::Base
     self.remember_token            = nil
     save(false)
   end
+  
+  #added by xurde
+  
+  def is_followed_by?(user)
+    self.followers.find_by_follower_id(user.id).nil?
+  end
 
   protected
     # before filter 

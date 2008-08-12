@@ -1,10 +1,13 @@
-<h1>Last registered users</h1>
+<div id="last-quizzs">  
+  <h2>Last quizzs</h2>
+  <ul class="quizz-list">
+    <%= render :partial => 'quizz', :collection => @quizzs %>
+  </ul>
+</div>
 
-<ul id="users-list">
-	<%= render :partial => 'user', :collection => @users %>
-</ul>
-
-<h1>Last sent quizzs</h1>
-<ul id="quizz-list">
-	<%= render :partial => 'quizz', :collection => @quizzs %>
-</ul>
+<div id="last-users">
+  <h2>Last users</h2>
+  <ul class="users-list">
+    <%= render :partial => 'user', :collection => @users %>
+  </ul>
+</div>

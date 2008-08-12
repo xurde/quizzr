@@ -22,17 +22,27 @@ class Quizz < ActiveRecord::Base
     self.false1.empty?
   end
   
-  def status(user)
-    if self.is_open?
-      if !self.is_responded?(user)
+  
+  def status( user = nil )
+    if user.nil?
+      if self.is_open?
         return 'open'
       else
-        return 'responded'
+        return 'closed'
       end
     else
-      return 'closed'
+      if self.is_open?
+        return 'open'
+      else
+        if self.is_responded?(user)
+          return 'responded'
+        else
+          return 'closed'
+        end  
+      end
     end
   end
+  
   
   def is_ok(user)
     resp = user.responses.find_by_quizz_id(self.id)
