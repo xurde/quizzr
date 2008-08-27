@@ -14,7 +14,11 @@
   <ul class="options">
     <% quizz.randomized_options.each do |option| %>
     <li class="option">
-      <%= link_to_if (quizz.is_open? & (!quizz.is_responded?(@me)) ), option, url_for( :controller => 'responses', :action => 'create', :id => quizz.id, :response => quizz.randomized_options.index(option) + 1 ), :method => :post %>
+      <% if quizz.is_open? & !quizz.is_responded?(@me) %>
+        <%= link_to option, url_for( :controller => 'responses', :action => 'create', :id => quizz.id, :response => quizz.randomized_options.index(option) + 1 ), :method => :post %>
+      <% else %>
+        <span><%= option %></span>
+      <% end %>
     </li>
     <% end %>
   </ul>

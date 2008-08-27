@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 5) do
+ActiveRecord::Schema.define(:version => 6) do
 
   create_table "avatars", :force => true do |t|
     t.integer "user_id"
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(:version => 5) do
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
     t.integer  "minutes_for_quizzs"
+    t.string   "twitter_username",          :limit => 20
+    t.string   "twitter_password",          :limit => 20
   end
 
 end

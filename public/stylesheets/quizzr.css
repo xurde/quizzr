@@ -142,6 +142,14 @@ li.option {
   padding: 0px;
 }
 
+li.option.correct{
+  text-decoration: underline;
+}
+
+li.option.mistaken{
+  text-decoration: line-through;
+}
+
 .quizz h3 {
   margin: 0px;
 }
@@ -158,9 +166,8 @@ p.quizz-details{
 }
 
 p.quizz-responsescount{
-  text-align: right;  
+  text-align: right;
 }
-
 
 /*responses styling*/
 

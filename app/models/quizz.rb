@@ -18,6 +18,10 @@ class Quizz < ActiveRecord::Base
     user.responses.find_by_quizz_id( self.id )
   end
   
+  def is_responded(user)
+    user.responses.find_by_quizz_id( self.id ).text if !user.responses.find_by_quizz_id( self.id ).nil?
+  end
+  
   def is_single?
     self.false1.empty?
   end
@@ -43,7 +47,6 @@ class Quizz < ActiveRecord::Base
     end
   end
   
-  
   def is_ok(user)
     resp = user.responses.find_by_quizz_id(self.id)
     if !resp.nil?
@@ -64,6 +67,7 @@ class Quizz < ActiveRecord::Base
   def is_response_ok?(response)
      ( response.to_i - self.random_seed ) == 1
   end
+  
   
   def derandomized_option(response)
     option( response.to_i - self.random_seed )
