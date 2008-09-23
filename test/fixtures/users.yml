@@ -1,12 +1,12 @@
-xurde:
+quentin:
     id: 1
-    login: xurde
-    email: jorgedf@gmail.com
+    login: quentin
+    email: quentin@example.com
     salt: 7e3041ebc2fc05a40c60028e2c4901a81035d3cd
     crypted_password: 00742970dc9e6319f8019fd54864d3ea740f04b1 # test
-    created_at: <%= 5.days.ago.to_s :db %>
+    created_at: <%= 1.days.ago.to_s :db %>
     activation_code: 8f24789ae988411ccf33ab0c30fe9106fab32e9b 
-    activated_at: <%= 5.days.ago.to_s :db %> 
+    activated_at: <%= 1.days.ago.to_s :db %>
 
 aaron:
     id: 2
@@ -16,14 +16,13 @@ aaron:
     crypted_password: 00742970dc9e6319f8019fd54864d3ea740f04b1 # test
     created_at: <%= 1.days.ago.to_s :db %>
     activation_code: 8f24789ae988411ccf33ab0c30fe9106fab32e9a
-    activated_at: <%= 1.days.ago.to_s :db %> 
 
-pepe:
+xurde:
     id: 3
-    login: pepe
-    email: pepe@example.com
+    login: xurde
+    email: jorgedf@gmail.com
     salt: 7e3041ebc2fc05a40c60028e2c4901a81035d3cd
     crypted_password: 00742970dc9e6319f8019fd54864d3ea740f04b1 # test
-    created_at: <%= 1.days.ago.to_s :db %>
+    created_at: <%= 5.days.ago.to_s :db %>
     activation_code: 8f24789ae988411ccf33ab0c30fe9106fab32e9a
-    activated_at: <%= 1.days.ago.to_s :db %> 
+    activated_at: <%= 5.days.ago.to_s :db %>

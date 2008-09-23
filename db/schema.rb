@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(:version => 6) do
     t.string   "false1",      :limit => 20
     t.string   "false2",      :limit => 20
     t.string   "false3",      :limit => 20
-    t.integer  "random_seed",                :default => 0, :null => false
+    t.integer  "random_seed",                :default => 0
   end
 
   create_table "responses", :force => true do |t|
