@@ -4,13 +4,21 @@ body {
   padding: 0;
   background-color: #f0f0f0;
   font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-  font-size: 13px;
+  font-size: 10px;
   color: #333;
 }
 
 h1 {
   font-size: 28px;
   color: #000;
+}
+
+h3 {
+  margin-bottom: 3px;
+}
+
+h5 {
+  margin-bottom: 3px;
 }
 
 a {
@@ -25,10 +33,12 @@ li {
   list-style: none;
 }
 
-
+p {
+margin-top: 5px;
+}
 
 #page {
-  width: 780px;
+  width: 880px;
   margin: auto;
 }
 
@@ -73,7 +83,7 @@ li {
 #info-col{
   width: 180px;
   float: left;
-  border: solid thin;
+  border-left: dotted thin;
   margin-left: 10px;
   padding: 0px 10px;
   padding-bottom: 15px;
@@ -96,7 +106,7 @@ li {
 }
 
 #last-users{
-  width: 150px;
+  width: 200px;
   float: left;
   padding-left: 50px;
 }

@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(:version => 6) do
     t.datetime "open_until"
     t.integer  "user_id"
     t.string   "question",    :limit => 140
-    t.string   "correct",     :limit => 20
-    t.string   "false1",      :limit => 20
-    t.string   "false2",      :limit => 20
-    t.string   "false3",      :limit => 20
+    t.string   "correct",     :limit => 50
+    t.string   "false1",      :limit => 50
+    t.string   "false2",      :limit => 50
+    t.string   "false3",      :limit => 50
     t.integer  "random_seed",                :default => 0
   end
 
