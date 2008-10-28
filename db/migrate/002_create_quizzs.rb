@@ -6,7 +6,7 @@ class CreateQuizzs < ActiveRecord::Migration
       t.column 'winner_id', :integer
       t.column 'winned_at', :datetime
       t.column 'question', :string, :limit => 140
-      t.column 'answer', :string, :limit => 50
+      t.column 'correct_answer', :string, :limit => 50
       t.column 'show_pattern', :boolean, :default => false
       t.column 'reponses_per_user_limit', :integer, :default => 1
     end

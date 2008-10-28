@@ -24,7 +24,7 @@ module ApplicationHelper
     if !user.avatar.nil?
       avatar_path = user.avatar.public_filename(size)
     else
-      avatar_path = "avatars/default-avatar#{ !size.nil? ? '-' + size.to_s : '' }.jpg"
+      avatar_path = "default-avatar#{ !size.nil? ? '-' + size.to_s : '' }.jpg"
     end
     link_to image_tag( avatar_path, :align => 'middle' ), '/' + user.login
   end
