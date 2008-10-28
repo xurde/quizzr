@@ -1,110 +1,63 @@
 class Quizz < ActiveRecord::Base
   
   belongs_to :user
-  has_many :responses
+  belongs_to :winner, :class_name => 'User', :foreign_key => 'winner_id'
+  has_many :answers
   
-  validates_presence_of :user_id, :question, :correct
+  validates_presence_of :user_id, :question, :correct_answer
   validates_associated :user
   
-  before_create :calculate_random_seed, :calculate_time_open
+  #before_create :calculate_random_seed
 
 
   def is_open?
-    self.open_until > Time.now if !self.open_until.nil?
+    self.winner.nil?
   end
   
   
   def is_responded?(user)
-    user.responses.find_by_quizz_id( self.id )
+    user.answers.find_by_quizz_id( self.id )
   end
   
   def is_responded(user)
-    user.responses.find_by_quizz_id( self.id ).text if !user.responses.find_by_quizz_id( self.id ).nil?
-  end
-  
-  def is_single?
-    self.false1.empty?
+    user.answers.find_by_quizz_id( self.id ).text if !user.answers.find_by_quizz_id( self.id ).nil?
   end
   
   
-  def status( user = nil )
-    if user.nil?
-      if self.is_open?
-        return 'open'
-      else
-        return 'closed'
-      end
+  def check_answer(user, answer)
+    if answer == self.correct_answer
+      self.winner_id = user.id
+      self.winned_at = Time.now
+      self.save
     else
-      if self.is_open?
-        return 'open'
-      else
-        if self.is_responded?(user)
-          return 'responded'
-        else
-          return 'closed'
-        end  
-      end
-    end
+      response = false
+    end  
   end
   
-  def is_ok(user)
-    resp = user.responses.find_by_quizz_id(self.id)
-    if !resp.nil?
-      if resp.ok
-        'right'
-      else
-        'wrong'
-      end
+  def is_won_by?(user)
+    self.winner == user
+  end
+  
+  def close(user)
+    self.closed_by = user.id
+    self.closed_at = Time.now
+  end
+  
+  def answered_by?(user)
+    !self.answers.find_by_user_id(user.id).nil?
+  end
+  
+  def answer_of(user)
+    answer = self.answers.find_by_user_id(user.id)
+    if !answer.nil?
+      answer
     else
-      if self.is_open?
-        ''
-      else
-        'blank'
-      end
-    end
-  end
- 
-  def is_response_ok?(response)
-     ( response.to_i - self.random_seed ) == 1
-  end
-  
-  
-  def derandomized_option(response)
-    option( response.to_i - self.random_seed )
-  end
-  
-  
-  def options
-    ans = [ self.correct ]
-    for i in 1..3
-      ans << self.send('false' + i.to_s) if !(self.send('false' + i.to_s).nil? or self.send('false' + i.to_s).empty? )
-    end
-    return ans
-  end
-  
-  
-  def randomized_options
-    self.options.shift_to_right( self.random_seed )
-  end
-  
-  
-  def option(ord)
-    if ord == 0
-      self.correct
-    else
-      self.send( 'false' + ord.to_s )
+      nil
     end
   end
   
   
   private #private methods
     
-    def calculate_time_open
-      self.open_until = self.created_at.advance( :minutes => self.user.minutes_for_quizzs || 10 )
-    end
-    
-    def calculate_random_seed
-      self.random_seed = Time.now.to_f.hash.modulo( self.options.size )
-    end
     
 end

@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   
   has_one  :avatar
   has_many :quizzs
-  has_many :responses
+  has_many :closed_quizzs, :class_name => 'Quizz', :foreign_key => 'closed_by_id'
+  has_many :answers
   has_many :followers, :class_name => 'Follow', :foreign_key => 'followed_id'
   has_many :followings, :class_name => 'Follow', :foreign_key => 'follower_id'
   

@@ -45,7 +45,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect ':user', :controller => 'users', :action => 'show'
   map.connect ':user/quizzs/:id', :controller => 'quizzs', :action => 'show'
-  map.connect '/responses/:id', :controller => 'responses', :action => 'create'  
+  map.connect '/answers/:id', :controller => 'answers', :action => 'create'  
   
   
 end

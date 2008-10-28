@@ -6,17 +6,13 @@ class QuizzsController < ApplicationController
     quizz = Quizz.new
     quizz.user = @me
     quizz.question = params[:question]
-    quizz.correct = params[:correct]
-    quizz.false1 = params[:false1] if !params[:false1].nil?
-    quizz.false2 = params[:false2] if !params[:false2].nil?
-    quizz.false3 = params[:false3] if !params[:false3].nil?
+    quizz.correct_answer = params[:correct_answer]
     if quizz.save
       flash[:notice] = "Quizz sent"
     else
       flash[:error] = "Error creating quizz"
     end
     redirect_to :controller => 'home'
-    
   end
 
   def destroy
@@ -24,12 +20,18 @@ class QuizzsController < ApplicationController
   
   
   def show
-    @quizz = Quizz.find( params[:id] )
-    if @quizz.user.login == params[:user]
-      @responses = @quizz.responses
+    @user = User.find_by_login( params[:user] )
+    #logger.info 'USER :::: ' + @user.id.to_s if !@user.nil?
+    @quizz = @user.quizzs.find( params[:id] )
+    #logger.info 'QUIZZ :::: ' + @quizz.id.to_s if !@quizz.nil?
+    if !@quizz.nil?
+      @answers = @quizz.answers.find( :all, :order => "created_at DESC" )
+      
+      #@can_answer = (@quizz.is_open?) & (@quizz.answers.find_by_user_id(@me).nil?) & (@quizz.user.id != @me.id) if !@me.nil?
+      
       render :action => 'show'
     else
-      render :error, :status => 404
+      render :error, :status => 403
     end
   end
   

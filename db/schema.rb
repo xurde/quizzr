@@ -11,6 +11,15 @@
 
 ActiveRecord::Schema.define(:version => 6) do
 
+  create_table "answers", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "quizz_id"
+    t.string   "text",       :limit => 50
+    t.boolean  "ok"
+  end
+
   create_table "avatars", :force => true do |t|
     t.integer "user_id"
     t.integer "parent_id"
@@ -31,24 +40,13 @@ ActiveRecord::Schema.define(:version => 6) do
   create_table "quizzs", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "open_until"
     t.integer  "user_id"
-    t.string   "question",    :limit => 140
-    t.string   "correct",     :limit => 50
-    t.string   "false1",      :limit => 50
-    t.string   "false2",      :limit => 50
-    t.string   "false3",      :limit => 50
-    t.integer  "random_seed",                :default => 0
-  end
-
-  create_table "responses", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-    t.integer  "quizz_id"
-    t.integer  "option"
-    t.string   "text",       :limit => 20
-    t.boolean  "ok"
+    t.integer  "winner_id"
+    t.datetime "winned_at"
+    t.string   "question",                :limit => 140
+    t.string   "correct_answer",          :limit => 50
+    t.boolean  "show_pattern",                           :default => false
+    t.integer  "reponses_per_user_limit",                :default => 1
   end
 
   create_table "users", :force => true do |t|

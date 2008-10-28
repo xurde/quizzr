@@ -2,7 +2,7 @@
   <p><%= avatar_for_user( user_info, 'thumb' ) %> <%= link_to_user(user_info) %> <%= user_info.is_followed_by?(@me) ? link_to( '(follow)', url_for( :controller => 'users', :action => 'follow', :id => user_info.id )) : link_to( '(unfollow)', url_for( :controller => 'users', :action => 'unfollow', :id => user_info.id )) if (!@me.nil?) & (@me != user_info) %></p>
   <p>
     Quizzs: <em><%= user_info.quizzs.size.to_s %></em><br/>
-    Responses: <em><%= user_info.responses.size.to_s %></em>
+    Answers: <em><%= user_info.answers.size.to_s %></em>
   </p>
   <br />
   <p>Following <em>(<%= user_info.followings.size.to_s %>)</em></p>

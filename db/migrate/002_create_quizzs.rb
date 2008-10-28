@@ -2,14 +2,13 @@ class CreateQuizzs < ActiveRecord::Migration
   def self.up
     create_table 'quizzs' do |t|
       t.timestamps
-      t.column 'open_until', :datetime
       t.column 'user_id', :integer
+      t.column 'winner_id', :integer
+      t.column 'winned_at', :datetime
       t.column 'question', :string, :limit => 140
-      t.column 'correct', :string, :limit => 50
-      t.column 'false1', :string, :limit => 50
-      t.column 'false2', :string, :limit => 50
-      t.column 'false3', :string, :limit => 50
-      t.column 'random_seed', :integer, :default => 0
+      t.column 'answer', :string, :limit => 50
+      t.column 'show_pattern', :boolean, :default => false
+      t.column 'reponses_per_user_limit', :integer, :default => 1
     end
   end
 

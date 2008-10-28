@@ -11,10 +11,12 @@ class ApplicationController < ActionController::Base
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery # :secret => 'e714b982005547c28dd73d0c8d27127d'
     
+    
   private
   
     def fetch_user
       @me = User.find( session[:user_id] ) if !session[:user_id].nil?
-    end
+    end    
+    
   
 end

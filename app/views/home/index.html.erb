@@ -2,16 +2,10 @@
   <div id="form_quizz">
     <% form_tag url_for( :controller => 'quizzs', :action => 'create' ) do -%>
       <p><label for="question">Question</label>
-      <%= text_area_tag 'question', 'quizz it here!', :size => '55x1' %></p>
+      <%= text_area_tag 'question', 'quizz it here!', :size => '55x2' %></p>
       <p><label for="correct">Correct Answer</label>
-      <%= text_field_tag 'correct' %></p>
-      <p><label for="option1">False Option 1</label>
-      <%= text_field_tag 'false1' %></p>
-      <p><label for="option2">False Option 2</label>
-      <%= text_field_tag 'false2' %></p>
-      <p><label for="option3">False Option 3</label>
-      <%= text_field_tag 'false3' %></p>
-      <p><%= submit_tag 'Post' %></p>
+      <%= text_field_tag 'correct_answer' %></p>
+      <p><%= submit_tag 'Quizz' %></p>
     <% end -%>
   </div>
   <ul id="quizzlist">

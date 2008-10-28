@@ -1,25 +1,6 @@
-<li id="quizz_<%= quizz.id.to_s %>" class="quizz"> 
-  <p class="quizz-details">
-    <% if quizz.is_open? %>
-      <%= distance_of_time_in_words_to_now(quizz.open_until) %> to close
-    <% else %>
-      <%= time_ago_in_words(quizz.created_at) %> ago
-    <% end %>
-  </p>
-  <h3><%= avatar_for_user( quizz.user, :thumb ) %><em> <%= link_to quizz.user.login, '/' + quizz.user.login %></em> quizzed:</h3>
+<li id="quizz_<%= quizz.id.to_s %>" class="quizz <%= class_if(quizz.is_open?, 'open', 'closed') %>">
+  <p class="quizz-details"><%= time_ago_in_words(quizz.created_at) %> ago</p>
+  <h3><%= avatar_for_user( quizz.user, :thumb ) %><em> <%= link_to_user(quizz.user) %></em> quizzed:</h3>
   <p class="question"><%= link_to_quizz(quizz) %></p>
-  <% if quizz.is_single? %>
-    <%= render :partial => 'response_form', :object => quizz %>
-  <% else %>
-  <ul class="options">
-    <% quizz.randomized_options.each do |option| %>
-    <li class="option">
-      <%= option %>
-    </li>
-    <% end %>
-  </ul>
-  <% end %>
-  <% if !quizz.is_open? %>
-    <p class="quizz-responsescount">Responses: <%= link_to_quizz(quizz, 'responses') %></p>
-  <% end %>
+  <div class="answers-count">has <%= link_to_answers(quizz) %></div>
 </li>
