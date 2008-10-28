@@ -1,0 +1,4 @@
+<li>
+	<h5><%= link_to_quizz(quizz) %></h5>
+	<p class="quizzlist-details"><%= time_ago_in_words(quizz.created_at) %> ago <span>(<%= quizz.answers.size.to_s %> answers)</span></p>
+</li>

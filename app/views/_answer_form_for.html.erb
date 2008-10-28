@@ -1,0 +1,6 @@
+<% form_tag url_for( :controller => 'answers', :action => 'create', :id => answer_form_for.id ) do -%>
+	<% if answer_form_for.show_pattern %>
+		<p class="answer-pattern"><%= asterisize( answer_form_for.correct_answer ) %></p>
+	<% end %>
+	<p><%= text_field_tag 'answer', '' %> <%= submit_tag 'Answer' %></p>
+<% end -%>
