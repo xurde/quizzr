@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/views/home/_quizz.html.erb</string>
+	<string>app/helpers/application_helper.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -63,6 +63,36 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>app/helpers/application_helper.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>27</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>4</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>27</integer>
+				<key>line</key>
+				<integer>6</integer>
+			</dict>
+		</dict>
 		<key>app/models/quizz.rb</key>
 		<dict>
 			<key>caret</key>
@@ -84,7 +114,7 @@
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>20</integer>
+				<integer>8</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -157,6 +187,7 @@
 		<string>app/controllers/home_controller.rb</string>
 		<string>app/views/quizzs/show.html.erb</string>
 		<string>app/views/home/_quizz.html.erb</string>
+		<string>app/helpers/application_helper.rb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>

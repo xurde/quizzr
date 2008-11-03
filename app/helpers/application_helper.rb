@@ -30,6 +30,17 @@ module ApplicationHelper
   end
   
   
+  def link_to_follow(user)
+    if (!@me.nil?) & (@me != @user)
+      if user.is_followed_by?(@me)
+        link_to( '(follow)', url_for( :controller => 'users', :action => 'follow', :id => @user.id ))
+      else
+        link_to( '(unfollow)', url_for( :controller => 'users', :action => 'unfollow', :id => @user.id ))
+      end
+    end
+  end
+  
+  
   def link_to_quizz(quizz, text = 'question')
     link_to quizz.question, url_for(:controller => 'quizzs', :action => 'show', :user => quizz.user.login, :id => quizz.id)
   end
@@ -44,7 +55,7 @@ module ApplicationHelper
     	  if quizz.answered_by?(@me)
     			content_tag( :p, "You alredy answered #{content_tag(:strong, quizz.answer_of(@me).text)}" )
     		else
-    			render :partial => '/answer_form_for', :object => quizz
+	        render :partial => '/answer_form_for', :object => quizz if !quizz.user == @me
     		end
     	else
     	  content_tag( :p, "#{link_to_user(quizz.winner)} won this quizz answering #{content_tag(:strong, quizz.correct_answer)}" )

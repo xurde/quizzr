@@ -1,16 +1,19 @@
 <div id="info-col">
-  <p><%= avatar_for_user( user_info, 'thumb' ) %> <%= link_to_user(user_info) %> <%= user_info.is_followed_by?(@me) ? link_to( '(follow)', url_for( :controller => 'users', :action => 'follow', :id => user_info.id )) : link_to( '(unfollow)', url_for( :controller => 'users', :action => 'unfollow', :id => user_info.id )) if (!@me.nil?) & (@me != user_info) %></p>
+  <p><%= avatar_for_user( @user, 'thumb' ) %> <%= link_to_user(@user) %> <%= link_to_follow(@user) %></p>
   <p>
-    Quizzs: <em><%= user_info.quizzs.size.to_s %></em><br/>
-    Answers: <em><%= user_info.answers.size.to_s %></em>
+    Quizzs: <em><%= @quizzs.size.to_s %></em>
+	<br/>
+    Answers: <em><%= @answers.size.to_s %></em>
+	<br/>
   </p>
   <br />
-  <p>Following <em>(<%= user_info.followings.size.to_s %>)</em></p>
+  
+  <p><%= link_to @followings.size.to_s + ' followings', url_for( :controller => 'users', :user => @user.login, :action => 'followings' ) %></p>
   <div id='following-list' class="avatar-list">
-    <%= render :partial => '/followed', :collection => user_info.followings %>
+    <%= render :partial => '/followed', :collection => @followings %>
   </div>  
-  <p>Followers <em>(<%= user_info.followers.size.to_s %>)</em></p>
+  <p><%= link_to @followers.size.to_s + ' followers', url_for(:controller => 'users', :user => @user.login, :action => 'followers' ) %></p>
   <div id='followers-list' class="avatar-list">
-    <%= render :partial => '/follower', :collection => user_info.followers %>
+    <%= render :partial => '/follower', :collection => @followers %>
   </div>
 </div>

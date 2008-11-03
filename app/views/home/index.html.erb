@@ -9,7 +9,7 @@
     <% end -%>
   </div>
   <ul id="quizzlist">
-    <%= render :partial => 'quizz', :collection => @quizzs %>
+    <%= render :partial => 'quizz', :collection => @quizzs_for_me %>
   </ul>
 </div>
 <%= render :partial => '/user_info', :object => @me %>

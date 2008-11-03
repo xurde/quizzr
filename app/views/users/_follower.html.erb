@@ -1,1 +1,6 @@
-<%= avatar_for_user( follower.follower, :micro ) %>
+<li class="user follower">
+	<p>
+		<%= avatar_for_user(follower.follower, :thumb )%>
+		<%= link_to_user(follower.follower) %>
+	</p>
+</li>

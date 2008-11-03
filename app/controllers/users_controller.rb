@@ -36,9 +36,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by_login(params[:user])
     if !@user.nil?
-      @quizzs = @user.quizzs.find(:all, :order => 'created_at DESC' )
-      @can_follow = !@me.followings.find_by_followed_id(@user.id).nil?
-      logger.info 'USERS: ' << @user.id.to_s << ' - ' << @me.id.to_s
+      get_user_info(@user)
+      # @can_follow = !@me.followings.find_by_followed_id(@user.id).nil?
     end
   end
   
@@ -60,5 +59,26 @@ class UsersController < ApplicationController
     flash[:notice] = 'You are not following ' + user.login + ' anymore' if @me.followings.find_by_followed_id( user.id ).destroy
     redirect_to '/' + user.login
   end
+  
+  def followers
+    @user = User.find_by_login(params[:user])
+    if !@user.nil?
+      @followers = @user.followers
+      render
+    else
+      render :text => 'User not valid.', :status => 404
+    end
+  end
+  
+  def followings
+    @user = User.find_by_login(params[:user])
+    if !@user.nil?
+      @followings = @user.followings
+      render
+    else
+      render :text => 'User not valid.', :status => 404
+    end
+  end
+  
 
 end

@@ -1,0 +1,7 @@
+<li class="user following">
+	<p>
+		<%= avatar_for_user(following.followed, :thumb )%>
+		<%= link_to_user(following.followed) %> - 
+		<%= link_to( '(unfollow)', url_for( :controller => 'users', :action => 'unfollow', :id => following.followed.id )) %>
+	</p>
+</li>
