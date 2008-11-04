@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
       # logger.info 'QUIZZS == ' + @quizzs.size.to_s
       @answers = user.answers.find(:all, :order => 'created_at DESC' )
       # logger.info 'ANSWERS == ' + @answers.size.to_s
-      @won = user.answers.find(:all, :conditions => ["ok = 1"] )
+      @won = user.answers.find(:all, :conditions => ["ok = true"] )
       # logger.info 'WON == ' + @won.size.to_s
       @followings = user.followings
       @followers = user.followers

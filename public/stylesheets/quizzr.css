@@ -76,7 +76,7 @@ margin-top: 5px;
   text-decoration: none;
 }
 
-#quizz-col{  
+#main-col{  
   width: 560px;
   float: left;
 }
@@ -88,7 +88,7 @@ margin-top: 5px;
 
 #info-col{
   width: 180px;
-  float: left;
+  float: right;
   border-left: solid thin;
   margin-left: 10px;
   padding: 0px 10px;

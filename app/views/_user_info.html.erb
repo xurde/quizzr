@@ -1,10 +1,11 @@
 <div id="info-col">
   <p><%= avatar_for_user( @user, 'thumb' ) %> <%= link_to_user(@user) %> <%= link_to_follow(@user) %></p>
   <p>
-    Quizzs: <em><%= @quizzs.size.to_s %></em>
+    Quizzs: <strong><%= @quizzs.size.to_s %></strong>
 	<br/>
-    Answers: <em><%= @answers.size.to_s %></em>
+    Answers: <strong><%= @answers.size.to_s %></strong>
 	<br/>
+	Won: <strong><%= @won.size.to_s %></strong> <%= @answers.size > 0 ? "(#{(@won.size*100) / @answers.size}%)" : nil %>
   </p>
   <br />
   

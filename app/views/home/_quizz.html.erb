@@ -1,7 +1,7 @@
 <li id="quizz_<%= quizz.id.to_s %>" class="quizz <%= class_if(quizz.is_open?, 'open', 'closed' ) %> <%= class_if(quizz.is_won_by?(@me), 'right', 'wrong') if quizz.answered_by?(@me) %> )">
-  <p class="quizz-details"><%= time_ago_in_words(quizz.created_at) %> ago</p>
-  <h3><%= avatar_for_user( quizz.user, :thumb ) %><em> <%= link_to_user(quizz.user) %></em> quizzed:</h3>
-  <p class="question"><%= link_to_quizz(quizz) %></p>
+  <p class="quizz-details">quizzed <%= link_to_quizz_time(quizz) %></p>
+  <h3><%= avatar_for_user( quizz.user, :thumb ) %><em> <%= link_to_user(quizz.user) %></em></h3>
+  <p class="question"><%= quizz.question %></p>
   <%= response_action_for_quizz(quizz) %>
   <div class="answers-count">has <%= link_to_answers(quizz) %></div>
 

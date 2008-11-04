@@ -41,8 +41,12 @@ module ApplicationHelper
   end
   
   
-  def link_to_quizz(quizz, text = 'question')
+  def link_to_quizz(quizz)
     link_to quizz.question, url_for(:controller => 'quizzs', :action => 'show', :user => quizz.user.login, :id => quizz.id)
+  end
+  
+  def link_to_quizz_time(quizz)
+    link_to time_ago_in_words(quizz.created_at) + ' ago', url_for(:controller => 'quizzs', :action => 'show', :user => quizz.user.login, :id => quizz.id)
   end
   
   def link_to_answers(quizz)
@@ -55,7 +59,7 @@ module ApplicationHelper
     	  if quizz.answered_by?(@me)
     			content_tag( :p, "You alredy answered #{content_tag(:strong, quizz.answer_of(@me).text)}" )
     		else
-	        render :partial => '/answer_form_for', :object => quizz if !quizz.user == @me
+	        render :partial => '/answer_form_for', :object => quizz if quizz.user != @me
     		end
     	else
     	  content_tag( :p, "#{link_to_user(quizz.winner)} won this quizz answering #{content_tag(:strong, quizz.correct_answer)}" )
@@ -70,9 +74,9 @@ module ApplicationHelper
   
   def class_if(condition, class_if, class_else = nil)
     if condition
-      response = class_if
+      class_if
     else
-      response = class_else
+      class_else
     end
   end
   

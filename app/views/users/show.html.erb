@@ -1,6 +1,10 @@
-<div id="quizz-col">
+<div id="main-col">
   <ul id="quizzs">
-    <%= render :partial => 'quizz', :collection => @quizzs %>
+	<% if !@quizzs.empty? %>
+    	<%= render :partial => 'quizz', :collection => @quizzs %>
+	<% else %>
+		<p id="no-quizzs" class="main-message">This user has no quizz yet</p>
+	<% end %>
   </ul>
 </div>
 <%= render :partial => '/user_info', :object => @user %>
