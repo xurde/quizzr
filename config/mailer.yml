@@ -1,0 +1,7 @@
+---
+  :address: smtp.gmail.com
+  :port: 587
+  :user_name: admin@quizzr.net
+  :password: sebadoh
+  :authentication: :plain
+  
