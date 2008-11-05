@@ -25,7 +25,7 @@ class QuizzsController < ApplicationController
     @quizz = @user.quizzs.find( params[:id] )
     #logger.info 'QUIZZ :::: ' + @quizz.id.to_s if !@quizz.nil?
     if !@quizz.nil?
-      @answers = @quizz.answers.find( :all, :order => "created_at DESC" )
+      @answers = @quizz.answers.paginate( :all, :per_page => 20, :page => params[:page], :order => "created_at DESC" )
       
       #@can_answer = (@quizz.is_open?) & (@quizz.answers.find_by_user_id(@me).nil?) & (@quizz.user.id != @me.id) if !@me.nil?
       

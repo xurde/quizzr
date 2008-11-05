@@ -5,3 +5,4 @@
 	<h5><%= @answers.size %> answers</h5>
 	<%= render :partial => 'answer', :collection => @answers %>
 </ul>
+<div id="home-pagination" class="pagination"><%= will_paginate(@answers) %></div>

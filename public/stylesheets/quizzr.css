@@ -103,6 +103,11 @@ margin-top: 5px;
   border: solid thin black;
 }
 
+.pagination{
+  margin: 20px;
+  text-align:center;
+}
+
 
 /* Public index page */
 
