@@ -8,6 +8,12 @@
       <p><%= submit_tag 'Quizz' %></p>
     <% end -%>
   </div>
+  <ul id="quizzs-tab">
+	<li><%= link_to 'For You', url_for( :filter => nil ) %></li>
+	<li><%= link_to 'By You', url_for( :filter => 'your' ) %></li>
+	<li><%= link_to 'Won', url_for( :filter => 'won' ) %></li>
+	<li><%= link_to 'Failed', url_for( :filter => 'failed' ) %></li>
+  </ul>
   <ul id="quizzlist">
     <%= render :partial => 'quizz', :collection => @quizzs_for_me %>
   </ul>

@@ -56,4 +56,10 @@ Rails::Initializer.run do |config|
 
   # Make Active Record use UTC-base instead of local time
   # config.active_record.default_timezone = :utc
+  
+  
+  #My app config constants
+  QUIZZS_PER_PAGE = 10
+  ANSWERS_PER_PAGE = 20
+  
 end

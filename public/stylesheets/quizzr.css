@@ -86,6 +86,16 @@ margin-top: 5px;
   padding: 0px 10px;
 }
 
+#quizzs-tab{
+	margin: 15px 0;
+}
+
+
+#quizzs-tab li{
+  display: inline;
+  margin: 0 50px;
+}
+
 #info-col{
   width: 180px;
   float: right;
@@ -102,6 +112,7 @@ margin-top: 5px;
 #info-col br{
   border: solid thin black;
 }
+
 
 .pagination{
   margin: 20px;
