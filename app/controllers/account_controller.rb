@@ -16,13 +16,15 @@ class AccountController < ApplicationController
   
   def update_twitter_profile
     user = User.find(@me)
-    if !params[:user][:twitter_username].nil? & !params[:user][:twitter_password].nil?
+    
+    begin 
+      Twitter::Base.new( params[:user][:twitter_username], params[:user][:twitter_password] ).verify_credentials
       user.twitter_username = params[:user][:twitter_username]
       user.twitter_password = params[:user][:twitter_password]
-      flash[:notice] = 'Twitter account was updated' if user.save
+      flash[:notice] = 'Twitter account was verified and saved correctly' if user.save
       redirect_to :action => 'settings'
-    else
-      flash[:error] = "Twitter username and password can't be blank"
+    rescue
+      flash[:error] = "Twitter username and/or pass invalid"
       redirect_to :action => 'settings'
     end
   end

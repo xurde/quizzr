@@ -7,7 +7,7 @@ class Quizz < ActiveRecord::Base
   validates_presence_of :user_id, :question, :correct_answer
   validates_associated :user
   
-  #before_create :calculate_random_seed
+  after_create :post_to_twitter
 
 
   def is_open?
@@ -59,5 +59,12 @@ class Quizz < ActiveRecord::Base
   
   private #private methods
     
+    def post_to_twitter
+      if !self.user.twitter_username.nil?
+        #twitter = Twitter::Base.new(self.user.twitter_username, self.user.twitter_password)
+        twitter = Twitter::Base.new('quizzr', 'sebadoh')
+        twitter.post(self.user.login + ' quizzed: ' + self.question + " - http://localhost:3000/#{self.user.login}/quizzs/#{self.id.to_s}")
+      end
+    end
     
 end
