@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     # uncomment at your own risk
     # reset_session
     @user = User.new(params[:user])
-    @user.save
+    @user.save if verify_recaptcha(@user)
     if @user.errors.empty?
       self.current_user = @user
       redirect_back_or_default('/home')

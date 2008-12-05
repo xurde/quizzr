@@ -12,5 +12,8 @@
 <p><label for="password_confirmation">Confirm Password</label><br/>
 <%= f.password_field :password_confirmation %></p>
 
+<p><label for="captcha_validation">Human Validation</label><br/>
+<%= recaptcha_tags( :display => { :theme => 'white' }) %></p>
+<br />
 <p><%= submit_tag 'Sign up' %></p>
 <% end -%>
