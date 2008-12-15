@@ -49,23 +49,23 @@ module ApplicationHelper
     link_to time_ago_in_words(quizz.created_at) + ' ago', url_for(:controller => 'quizzs', :action => 'show', :user => quizz.user.login, :id => quizz.id)
   end
   
-  def link_to_answers(quizz)
+  def link_to_quizz_answers(quizz)
     link_to quizz.answers.size.to_s + ' answers', url_for(:controller => 'quizzs', :action => 'show', :user => quizz.user.login, :id => quizz.id)
   end
 
   def response_action_for_quizz(quizz)
     if !@me.nil?
       if quizz.is_open?
-    	  if quizz.answered_by?(@me)
-    			content_tag( :p, "You alredy answered #{content_tag(:strong, quizz.answer_of(@me).text)}" )
-    		else
-	        render :partial => '/answer_form_for', :object => quizz if quizz.user != @me
-    		end
-    	else
-    	  content_tag( :p, "#{link_to_user(quizz.winner)} won this quizz answering #{content_tag(:strong, quizz.correct_answer)}" )
-    	end
+        if quizz.answered_by?(@me)
+          content_tag( :p, "You alredy answered #{content_tag(:strong, quizz.answer_of(@me).text)}" )
+        else
+          render :partial => '/answer_form_for', :object => quizz if quizz.user != @me
+        end
+      else
+        content_tag( :p, "#{link_to_user(quizz.winner)} won this quizz answering #{content_tag(:strong, quizz.correct_answer)}" )
+      end
     else
-      content_tag( :p, "#{link_to 'login', login_url} or #{link_to 'signup', signup_url} to answer.", :class => 'message' )	
+      content_tag( :p, "#{link_to 'login', login_url} or #{link_to 'signup', signup_url} to answer.", :class => 'message' )  
     end
   end
 

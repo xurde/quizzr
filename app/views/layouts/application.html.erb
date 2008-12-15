@@ -1,38 +1,38 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
-	"http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+  "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-	<meta http-equiv="Cache-Control" content="max-age=200" />
-	<title>quizzr :: the social quiz</title>	
-	<link rel="author" href="http://xurde.info" />
-	<link type="text/css" media="screen" href="/stylesheets/quizzr.css" rel="stylesheet" />
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Cache-Control" content="max-age=200" />
+  <title>quizzr :: the social quiz</title>  
+  <link rel="author" href="http://xurde.info" />
+  <link type="text/css" media="screen" href="/stylesheets/quizzr.css" rel="stylesheet" />
 </head>
 <body>
-	<div id="page">
-	    <div id="header" >
-	        <h1><a href="/"><img src="/images/quizzr-logo.png"/></a></h1>
-			<ul id="menu">
-				<% if !@me.nil? %>
-					<li>logged as: <%= @me.login %> | <%= link_to 'logout', logout_url %></li>
-				<% else %>
-					<li><%= link_to 'login', login_url %> or <%= link_to 'signup', signup_url %></li>
-				<% end %>
-				<li><a href="/home">Home</a></li>
-				<li><%= link_to 'Settings', url_for( :controller => 'account', :action => 'settings' ) %></li>
-				<li><a href="/help">Help</a></li>
-			</ul>
-	    </div>
-		<div id="flash">
-			<%= flash_messages(flash) %>
-		</div>
-	    <div id="content">
-			<%= @content_for_layout %>
-	    </div>
-		<div id="footer" >
-			<p>quizzr (2008) - <a href="/about">about</a></p>
-		</div>
-	</div>
+  <div id="page">
+      <div id="header" >
+          <h1><a href="/"><img src="/images/quizzrlogo.png"/></a></h1>
+      <ul id="menu">
+        <% if !@me.nil? %>
+          <li>logged as: <%= @me.login %> | <%= link_to 'logout', logout_url %></li>
+        <% else %>
+          <li><%= link_to 'login', login_url %> or <%= link_to 'signup', signup_url %></li>
+        <% end %>
+        <li><a href="/home">Home</a></li>
+        <li><%= link_to 'Settings', url_for( :controller => 'account', :action => 'settings' ) %></li>
+        <li><a href="/help">Help</a></li>
+      </ul>
+      </div>
+    <div id="flash">
+      <%= flash_messages(flash) %>
+    </div>
+      <div id="content">
+      <%= @content_for_layout %>
+      </div>
+    <div id="footer" >
+      <p>quizzr (2008) - <a href="/about">about</a></p>
+    </div>
+  </div>
 </body>
 </html>

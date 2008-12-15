@@ -5,7 +5,7 @@
 # ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.1.1' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.1.0' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -58,8 +58,8 @@ Rails::Initializer.run do |config|
   # config.active_record.default_timezone = :utc
   
   #Enviroment Constants
-  ENV['RECAPTCHA_PUBLIC_KEY'] = '6LeVLgQAAAAAABi8rIdoLIW-ia0rb8XWSSZJjF9F'
-  ENV['RECAPTCHA_PRIVATE_KEY'] = '6LeVLgQAAAAAAP3N8M8GuPbGmy-zSn5E-jgd1XZl'
+  ENV['RECAPTCHA_PUBLIC_KEY'] = '6LcnMgQAAAAAAPM4JP8uOpprGYggz25dNEE-A6FE'
+  ENV['RECAPTCHA_PRIVATE_KEY'] = '6LcnMgQAAAAAAELy7VF1xBDgiC5ACzrk4Ag9wIWh '
   
   #My app config constants
   QUIZZS_PER_PAGE = 10

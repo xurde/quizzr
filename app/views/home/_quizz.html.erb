@@ -3,6 +3,6 @@
   <h3><%= avatar_for_user( quizz.user, :thumb ) %><em> <%= link_to_user(quizz.user) %></em></h3>
   <p class="question"><%= quizz.question %></p>
   <%= response_action_for_quizz(quizz) %>
-  <div class="answers-count">has <%= link_to_answers(quizz) %></div>
+  <div class="answers-count">has <%= link_to_quizz_answers(quizz) %></div>
 
 </li>
