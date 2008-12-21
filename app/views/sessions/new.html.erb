@@ -10,3 +10,5 @@
 
 <p><%= submit_tag 'Log in' %></p>
 <% end -%>
+
+<%= link_to 'Forgot your password?', url_for( :controller => 'account', :action => 'password_recover' ) %>
