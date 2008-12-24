@@ -13,7 +13,7 @@ class AnswersController < ApplicationController
         if @answer_ok
           flash[:notice] = "You're right"
         else
-          flash[:notice] = "You're wrong. Blody asshole!!!"
+          flash[:notice] = "That's wrong. You dumb!!!"
         end
         redirect_to :controller => 'quizzs', :action => 'show', :user => quizz.user.login, :id => quizz.id
     end

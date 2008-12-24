@@ -32,6 +32,20 @@ class UsersController < ApplicationController
     redirect_back_or_default('/home')
   end
   
+  def password_recover
+    
+  end
+  
+  def password_sending
+    user = User.find_by_email(params[:email])
+    if !user.nil?
+      
+    else
+      flash[:error] = "No user found with that email. Sorry."
+      redirect_to :action => 'password_recover'
+    end  
+  end
+  
   
   def show
     @user = User.find_by_login(params[:user])

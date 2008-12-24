@@ -1,14 +1,17 @@
-<% form_tag session_path do -%>
-<p><label for="login">Login</label><br/>
-<%= text_field_tag 'login' %></p>
+<div id="main-col">
+	<h1>Login to your Quizzr account</h1>
+	<% form_tag session_path do -%>
+	<p><label for="login">Login</label><br/>
+	<%= text_field_tag 'login' %></p>
 
-<p><label for="password">Password</label><br/>
-<%= password_field_tag 'password' %></p>
+	<p><label for="password">Password</label><br/>
+	<%= password_field_tag 'password' %></p>
 
-<p><label for="remember_me">Remember me:</label>
-<%= check_box_tag 'remember_me' %></p>
+	<p><label for="remember_me">Remember me:</label>
+	<%= check_box_tag 'remember_me' %></p>
 
-<p><%= submit_tag 'Log in' %></p>
-<% end -%>
+	<p><%= submit_tag 'Log in' %></p>
+	<% end -%>
 
-<%= link_to 'Forgot your password?', url_for( :controller => 'account', :action => 'password_recover' ) %>
+	<%= link_to 'Forgot your password?', password_recover_path %>
+</div>

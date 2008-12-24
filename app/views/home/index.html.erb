@@ -2,13 +2,14 @@
   <div id="form_quizz">
     <% form_tag url_for( :controller => 'quizzs', :action => 'create' ) do -%>
       <p><label for="question">Question</label>
-      <%= text_area_tag 'question', 'quizz it here!', :size => '55x2' %></p>
+      <%= text_area_tag 'question', 'quizz it here!', :size => '45x2' %></p>
       <p><label for="correct">Correct Answer</label>
       <%= text_field_tag 'correct_answer' %></p>
-      <p><%= submit_tag 'Quizz' %></p>
+	  <p><label for="submit">Quizz it!</label><%= image_submit_tag('button-quizz.png')%></p>
     <% end -%>
   </div>
   <ul id="quizzs-tab">
+	<li>Show Quizzs:</li>
 	<li><%= link_to 'For You', url_for( :filter => nil ) %></li>
 	<li><%= link_to 'By You', url_for( :filter => 'your' ) %></li>
 	<li><%= link_to 'Won', url_for( :filter => 'won' ) %></li>

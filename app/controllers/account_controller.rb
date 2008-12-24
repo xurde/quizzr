@@ -1,20 +1,10 @@
 class AccountController < ApplicationController
 
+  before_filter :login_required
+
   def index
   end
-  
-  def password_recover   
-  end
-  
-  def password_sending
-    user = User.find_by_email(params[:email])
-    if !user.nil?
-      
-    else
-      flash[:error] = "No user found with that email. Sorry."
-      redirect_to :action => 'password_recover'
-    end  
-  end
+
 
   def settings
     @user = User.find(@me)

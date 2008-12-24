@@ -1,8 +1,10 @@
-<ul id='quizzshow'>
-	<%= render :partial => 'quizz', :object => @quizz %>
-</ul>
-<ul id='quizz-answers'>
-	<h5><%= @answers.size %> answers</h5>
-	<%= render :partial => 'answer', :collection => @answers %>
-</ul>
-<div id="quizz-pagination" class="pagination"><%= will_paginate(@answers) %></div>
+<div id="main-col">
+	<ul id='quizzshow'>
+		<%= render :partial => 'quizz', :object => @quizz %>
+	</ul>
+	<ul id='quizz-answers'>
+		<h5><%= @answers.size %> answers</h5>
+		<%= render :partial => 'answer', :collection => @answers %>
+	</ul>
+	<div id="quizz-pagination" class="pagination"><%= will_paginate(@answers) %></div>
+</div>

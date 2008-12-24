@@ -25,9 +25,12 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end
   
-  map.signup '/users/signup', :controller => 'users', :action => 'new'
-  map.login  '/users/login', :controller => 'sessions', :action => 'new'
-  map.logout '/users/logout', :controller => 'sessions', :action => 'destroy'  
+
+  map.signup '/signup', :controller => 'users', :action => 'new'
+  map.password_recover '/pasword_recover', :controller => 'users', :action => 'password_recover'
+  map.login  '/login', :controller => 'sessions', :action => 'new'
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+  
   
   map.resources :users
   map.resource :session
@@ -48,6 +51,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':user/:action', :controller => 'users'
 
   map.connect '/answers/:id', :controller => 'answers', :action => 'create'  
-  
-  
+
+
 end

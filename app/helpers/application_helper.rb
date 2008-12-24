@@ -26,7 +26,7 @@ module ApplicationHelper
     else
       avatar_path = "default-avatar#{ !size.nil? ? '-' + size.to_s : '' }.jpg"
     end
-    link_to image_tag( avatar_path, :align => 'middle' ), '/' + user.login
+    link_to image_tag( avatar_path, :class => "avatar #{size}" ), '/' + user.login
   end
   
   
@@ -57,15 +57,15 @@ module ApplicationHelper
     if !@me.nil?
       if quizz.is_open?
         if quizz.answered_by?(@me)
-          content_tag( :p, "You alredy answered #{content_tag(:strong, quizz.answer_of(@me).text)}" )
+          content_tag( :p, "You already answered #{content_tag(:strong, quizz.answer_of(@me).text)}" )
         else
           render :partial => '/answer_form_for', :object => quizz if quizz.user != @me
         end
       else
-        content_tag( :p, "#{link_to_user(quizz.winner)} won this quizz answering #{content_tag(:strong, quizz.correct_answer)}" )
+        content_tag( :p, "#{avatar_for_user(quizz.winner, :micro)}#{link_to_user(quizz.winner)} won this quizz answering #{content_tag(:strong, quizz.correct_answer)}", :class => 'answer' )
       end
     else
-      content_tag( :p, "#{link_to 'login', login_url} or #{link_to 'signup', signup_url} to answer.", :class => 'message' )  
+      content_tag( :p, "#{link_to 'login', login_url} or #{link_to 'signup', signup_url} to answer.", :class => 'message' )
     end
   end
 
