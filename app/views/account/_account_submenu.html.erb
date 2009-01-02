@@ -1,0 +1,6 @@
+<h1>Your Account</h1>
+<ul id="account_menu">
+    <li class="<%= params[:action] == 'profile' ? 'active' : nil %>"><%= link_to 'Profile', url_for( :action => 'profile' ) %></li>
+    <li class="<%= params[:action] == 'avatar' ? 'active' : nil %>"><%= link_to 'Avatar', url_for( :action => 'avatar' ) %></li>
+    <li class="<%= params[:action] == 'apps' ? 'active' : nil %>"><%= link_to 'Applications', url_for( :action => 'apps' ) %></li>
+</ul>

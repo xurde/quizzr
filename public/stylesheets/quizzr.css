@@ -1,3 +1,5 @@
+/* Generic Elements Markup */
+
 body {
 	background-color: #111;
 	color: #888;
@@ -8,8 +10,13 @@ body {
 }
 
 h1 {
-	color: #000000;
+	color: white;
 	font-size: 28px;
+}
+
+h2 img
+{
+	vertical-align: middle;
 }
 
 h3 {
@@ -45,6 +52,31 @@ p {
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
+
+
+form {	
+	padding: 10px;
+}
+
+form label {
+	font-size: 1.4em;
+}
+
+textarea{
+	font-size: 1.3em;
+}
+
+input{	
+	font-size: 1.3em;
+}
+
+select{
+	font-size: 1.3em;
+}
+
+
+/* ++++++ Layout Markup ++++++ */
+
 
 #page {
 	margin: auto;
@@ -128,26 +160,30 @@ p {
 	margin-top: 10px;
 }
 
-#form_quizz {
-	background: #272727;
+#quizz_box{
 	border: 2px solid #999;
-	padding: 10px;
+	background-color: #272727;
 }
 
-#form_quizz label {
-	width: 8em;
+#quizz_box label{
 	text-align: right;
-	float: left;
-	font-size: 1.2em;
+	float: left;	
+	width: 6em;
 	margin-right: 1em;
 }
 
-#quizzs-tab {
+#quizz_submit input{
+	margin-left: 116px;
+}
+
+
+
+#quizzs_tab {
 	margin: 15px 0;
 	font-size: 1.2em;
 }
 
-#quizzs-tab li {
+#quizzs_tab li {
 	display: inline;
 	margin: 0 15px;
 }
@@ -290,6 +326,62 @@ p.question {
 	font-size: 1.8em;
 	text-transform: none;
 	margin-left: 80px;
+}
+
+/*Account Zone*/
+
+#account_menu {
+	margin-left: 15px;
+}
+
+#account_menu li{
+	margin-right: 2px;
+	padding: 10px;
+	display: inline;
+	background-color: #151515;
+	border: 2px solid #999;
+}
+
+#account_menu li.active{
+	background-color: #272727;
+	padding: 12px;
+	border: 2px solid #999;
+	border-bottom: none;
+}
+
+#account_menu a{
+	text-decoration: none;
+	font-size: 16px;
+}
+
+
+#account_edit label{
+	width: 6em;
+	float: left;
+	margin-right: 1em;
+	text-align: right;
+}
+
+#account_edit.avatar label{
+	width: 10em;
+	text-align: left;
+	margin-bottom: 5px;
+}
+
+#account_menu li:hover{
+	background-color: #272727;
+}
+
+#account_edit{
+	margin-top: 9px;
+	padding: 20px;
+	background-color: #272727;
+	border: 2px solid #999;	
+}
+
+.form-submit input{
+	margin-top: 10px;
+	margin-left: 118px;
 }
 
 

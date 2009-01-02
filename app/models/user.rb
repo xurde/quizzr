@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   
   has_one  :avatar
   has_many :quizzs
-  has_many :won_quizzs, :class_name => 'Quizz', :foreign_key => 'winner_id'
   has_many :answers
+  has_many :won_quizzs, :class_name => 'Quizz', :foreign_key => 'winner_id'
   has_many :followers, :class_name => 'Follow', :foreign_key => 'followed_id'
   has_many :followings, :class_name => 'Follow', :foreign_key => 'follower_id'
   
@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   before_create :make_activation_code 
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :password, :password_confirmation
+  attr_accessible :login, :email, :password, :password_confirmation, :name, :email, :website, :gender, :birthdate, :country, :city
 
   # Activates the user in the database.
   def activate
@@ -93,7 +93,7 @@ class User < ActiveRecord::Base
   def is_followed_by?(user)
     self.followers.find_by_follower_id(user.id).nil?
   end
-
+  
   protected
     # before filter 
     def encrypt_password

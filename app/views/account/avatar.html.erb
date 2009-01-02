@@ -1,0 +1,17 @@
+<div id="main-col">
+	<%= render :partial => 'account_submenu' %>
+	<div id="account_edit" class="avatar">
+		<%= error_messages_for :avatar %>
+		<% form_for(:avatar, :url => url_for( :action => 'update_avatar' ),
+		                      :html => { :multipart => true }) do |f| -%>
+		  <%= avatar_for_user( @me ) %>
+		  <p>
+		    <label for="avatar">Upload avatar</label>
+		    <%= f.file_field :uploaded_data %>
+		  </p>
+		  <p>
+		    <p><%= image_submit_tag('button-upload.png')%></p>
+		  </p>
+		<% end -%>
+	</div>
+</div>

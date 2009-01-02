@@ -1,0 +1,18 @@
+<div id="main-col">
+	<%= render :partial => 'account_submenu' %>
+	<%= error_messages_for :user %>
+	<div id="account_edit">
+		<% form_for( :user, :url => url_for( :action => 'update_twitter_profile' )) do |f| -%>
+		<h2><%= image_tag 'twitter_64x64.png', :alt => 'twitter-icon' %> Twitter</h2>
+		  <p>
+		    <label for="twitter_account">Username</label>
+		    <%= f.text_field :twitter_username  %>
+		  </p>
+		  <p>
+		    <label for="twitter_password">Password</label>
+		    <%= f.password_field :twitter_password %>
+		  </p>
+		  <p class="form-submit"><%= image_submit_tag('button-update.png')%></p>
+		<% end -%>
+	</div>
+</div>

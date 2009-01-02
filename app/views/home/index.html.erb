@@ -1,21 +1,22 @@
 <div id="main-col">
-  <div id="form_quizz">
-    <% form_tag url_for( :controller => 'quizzs', :action => 'create' ) do -%>
+  <div id="quizz_box">
+    <% form_tag url_for( :controller => 'quizzs', :action => 'create' ), :id => 'form_quiz' do -%>
       <p><label for="question">Question</label>
-      <%= text_area_tag 'question', 'quizz it here!', :size => '45x2' %></p>
-      <p><label for="correct">Correct Answer</label>
+	  <textarea name="question" id="styled" cols="45" rows="2" onfocus="this.value='';">Quizz it here!</textarea>
+	  </p>
+      <p><label for="correct">Answer</label>
       <%= text_field_tag 'correct_answer' %></p>
-	  <p><label for="submit">Quizz it!</label><%= image_submit_tag('button-quizz.png')%></p>
+	  <p id='quizz_submit'><%= image_submit_tag('button-quizz.png')%></p>
     <% end -%>
   </div>
-  <ul id="quizzs-tab">
+  <ul id="quizzs_tab">
 	<li>Show Quizzs:</li>
 	<li><%= link_to 'For You', url_for( :filter => nil ) %></li>
 	<li><%= link_to 'By You', url_for( :filter => 'your' ) %></li>
 	<li><%= link_to 'Won', url_for( :filter => 'won' ) %></li>
 	<li><%= link_to 'Failed', url_for( :filter => 'failed' ) %></li>
   </ul>
-  <ul id="quizzlist">
+  <ul id="quizzs_list">
     <%= render :partial => 'quizz', :collection => @quizzs_for_me %>
   </ul>
   <div id="home-pagination" class="pagination"><%= will_paginate(@quizzs_for_me) %></div>

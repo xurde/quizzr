@@ -2,7 +2,7 @@
 <% if !@me.nil? %>
 	<li>logged as: <strong><%= @me.login %></strong> | <%= link_to 'logout', logout_path %></li>
 	<li><a href="/home">Home</a></li>
-    <li><%= link_to 'Settings', url_for( :controller => 'account', :action => 'settings' ) %></li>
+    <li><%= link_to 'Account', url_for( :controller => 'account', :action => 'profile' ) %></li>
 <% else %>
 	<li><%= link_to 'login', login_path %> or <%= link_to 'signup', signup_path %></li>
 <% end %>
