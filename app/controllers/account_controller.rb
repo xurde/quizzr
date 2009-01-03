@@ -15,7 +15,7 @@ class AccountController < ApplicationController
   end
   
   def apps
-    @user = User.find(@me)
+    
   end
 
   def update_profile
