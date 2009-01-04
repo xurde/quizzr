@@ -7,6 +7,11 @@ set :user, 'xurdeor'
 set :domain, 'xurdeonrails.com'
 set :application, 'quizzr'
 
+# roles
+role :app, "quizzr.net" 
+role :web, "quizzr.net" 
+role :db,  "quizzr.net", :primary => true 
+
 # the rest should be good
 set :repository,  "#{user}@#{domain}:git/#{application}.git" 
 set :deploy_to, "/home/#{user}/quizzr.net" 
