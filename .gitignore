@@ -5,3 +5,4 @@ data.dump
 db/data.yml
 config/database.yml
 public/images/avatars
+.DS_Store
