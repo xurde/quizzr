@@ -1,8 +1,7 @@
-<div id="info-col">
-  <p><%= avatar_for_user( @user, 'medium' ) %>
-	 <h3><%= link_to_user(@user) %></h3>
-	 <%= link_to_follow(@user) %>
-  </p>
+<div id="info_col">
+  <p><%= avatar_for_user( @user, 'medium', false ) %></p>
+  <h3><p><%= @user.name || @user.login %></p></h3>
+  <p><%= link_to_follow_or_remove(@user) %></p>
   <p>
     Quizzs: <strong><%= @quizzs.size.to_s %></strong>
 	<br/>
@@ -11,7 +10,6 @@
 	Won: <strong><%= @won.size.to_s %></strong> <%= @answers.size > 0 ? "(#{(@won.size*100) / @answers.size}%)" : nil %>
   </p>
   <br />
-  
   <p><%= link_to @followings.size.to_s + ' followings', url_for( :controller => 'users', :user => @user.login, :action => 'followings' ) %></p>
   <div id='following-list' class="avatar-list">
     <%= render :partial => '/followed', :collection => @followings %>

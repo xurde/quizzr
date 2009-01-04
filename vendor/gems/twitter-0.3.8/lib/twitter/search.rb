@@ -1,4 +1,4 @@
-gem 'httparty'
+#gem 'httparty'
 require 'httparty'
 
 module Twitter

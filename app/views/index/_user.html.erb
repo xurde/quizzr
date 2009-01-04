@@ -1,4 +1,4 @@
 <li id="user_<%= user.id.to_s %>" class="user">
-  <h5><%= avatar_for_user( user, :thumb ) %><em> <%= link_to_user(user)  %></em></h5>
+  <h3><%= avatar_for_user( user, :thumb ) %> <%= link_to_user(user)  %></h3>
   <p><%= distance_of_time_in_words_to_now( user.created_at ) %> ago</p>
 </li>

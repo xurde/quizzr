@@ -41,6 +41,17 @@ class UsersController < ApplicationController
     end
   end
   
+  def show_answers 
+    @user = User.find_by_login(params[:user])
+    if !@user.nil?
+      #for user_info
+      get_user_info(@user)
+      @can_follow = !@me.followings.find_by_followed_id(@user.id).nil?
+      
+      
+    end
+  end
+  
   
   def follow
     if @me.followers.find_by_followed_id(params[:id]).nil?
@@ -54,7 +65,7 @@ class UsersController < ApplicationController
   end
   
   
-  def unfollow
+  def remove #unfollow
     user = User.find(params[:id])
     flash[:notice] = 'You are not following ' + user.login + ' anymore' if @me.followings.find_by_followed_id( user.id ).destroy
     redirect_to '/' + user.login

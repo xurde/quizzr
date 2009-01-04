@@ -1,4 +1,3 @@
-
 require_options = ["httparty"]
 if require_lib = require_options.find { |path|  File.directory?(File.join(File.dirname(__FILE__), 'lib', path)) }
   require File.join(File.dirname(__FILE__), 'lib', require_lib)

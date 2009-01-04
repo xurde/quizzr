@@ -40,17 +40,19 @@ ActionController::Routing::Routes.draw do |map|
 
   # See how all your routes lay out with "rake routes"
 
-  # Install the default routes as the lowest priority.  
+  # Install the default routes as the lowest priority.
   
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 
   map.connect ':user', :controller => 'users', :action => 'show'
-  map.connect ':user/quizzs/:id', :controller => 'quizzs', :action => 'show'
+  map.connect ':user/quizzs', :controller => 'users', :action => 'show'
+  map.connect ':user/answers', :controller => 'users', :action => 'show_answers'
+  map.connect ':user/quizz/:id', :controller => 'quizzs', :action => 'show'
   map.connect ':user/:action', :controller => 'users'
 
-  map.connect '/answers/:id', :controller => 'answers', :action => 'create'  
+  map.connect '/answer/:id', :controller => 'answers', :action => 'create'  
 
 
 end

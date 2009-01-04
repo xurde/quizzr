@@ -1,6 +1,10 @@
-<li id="quizz_<%= quizz.id.to_s %>" class="quizz <%= quizz.is_open? ? 'open' : 'closed' %>">
-  <p class="quizz-details">quizzed <%= link_to_quizz_time(quizz) %></p>
-  <h3><%= avatar_for_user( quizz.user, :thumb ) %><em> <%= link_to_user(quizz.user) %></em></h3>
-  <p class="question"><%= quizz.question %></p>
-  <%= response_action_for_quizz(quizz) %>
+<li id="quizz_<%= quizz.id.to_s %>" class="quizz <%= class_if(quizz.is_open?, 'open', 'closed' ) %> <%= class_if( quizz.is_won_by?(@me) , 'right', 'wrong') if ( !@me.nil? && quizz.answered_by?(@me) ) %>">
+  <%= avatar_for_user( quizz.user, :thumb ) %>
+  <p class="quizz-details"><%= link_to_quizz_time(quizz) %></p>
+  <div class="quizz-main in-home">
+	<h3><%= link_to_user(quizz.user) %></h3>
+  	<p class="question"><%= quizz.question %></p>
+  	<%= response_action_for_quizz(quizz) %>
+  	<div class="answers-count">has <%= link_to_quizz_answers(quizz) %></div>
+  </div>
 </li>

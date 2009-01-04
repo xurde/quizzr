@@ -2,7 +2,7 @@
 
 body {
 	background-color: #111;
-	color: #888;
+	color: #CCC;
 	font-family: "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Geneva, sans-serif;
 	font-size: 62.5%;
 	margin: 0 0 25px;
@@ -14,27 +14,38 @@ h1 {
 	font-size: 28px;
 }
 
-h2 img
-{
+h2 img{
 	vertical-align: middle;
 }
 
 h3 {
-	margin-bottom: 3px;
+	margin: 0px;	
 }
 
 h5 {
-	font-size: 14px;
-	margin-bottom: 10px;
+	margin: 0px;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	margin-bottom: 10px;	
 }
+
 
 a {
 	color: #FC0;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 img {
-	width: ;
-	border: medium none;
+	border: none;	
+}
+
+img.avatar{
+	vertical-align: middle;
 }
 
 ul {
@@ -93,36 +104,51 @@ select{
 	font-size: 1.4em;
 }
 
-#header ul {
+ul#top_menu {
 	list-style-type: none;
-	margin: 20px 0;
+	margin: 12px 0;
 	padding: 0;
 }
 
-#header li {
+#top_menu li {
 	display: inline;
 	margin: 0 5px;
-	text-transform: lowercase;
+	padding: 5px;
+}
+
+#top_menu li a:hover {
+	background-color: #FC0;
+	color: black;
+	text-decoration: none;
+}
+
+
+#top_menu a#logout{
+	font-size: 0.8em;
+}
+
+#top_menu a#logout:hover{
+	background-color: #111;
+	color: #FC0;
+	text-decoration: underline;	
 }
 
 #logo {
 	float: right;
 	position: relative;
-	top: -10px;
+	top: -30px;
 	overflow: hidden;
+	margin-bottom: 0px;
 }
 
 #footer {
 	clear: both;
 	padding-top: 20px;
+	font-size: 1.2em;
 	text-align: center;
 }
 
-#footer a:hover, #header li a:hover {
-	background-color: #0033CC;
-	color: white;
-	text-decoration: none;
-}
+
 
 #flashes {
 	width: 530px;
@@ -160,6 +186,38 @@ select{
 	margin-top: 10px;
 }
 
+
+/* User Info Column */
+
+
+#info_col {
+	float: right;
+	padding: 0 10px 15px 0;
+	width: 220px;
+	margin-top: -30px;
+}
+
+#info_col p {
+	margin: 10px 5px;
+}
+
+#info_col br {
+	border: thin solid black;
+}
+
+
+/* Views */
+
+/* Common Styling */
+
+.tabulation li{
+	display: inline;
+	font-size: 1.3em;
+	padding: 5px;
+	margin-left: 5px;
+}
+
+
 #quizz_box{
 	border: 2px solid #999;
 	background-color: #272727;
@@ -176,8 +234,6 @@ select{
 	margin-left: 116px;
 }
 
-
-
 #quizzs_tab {
 	margin: 15px 0;
 	font-size: 1.2em;
@@ -186,21 +242,6 @@ select{
 #quizzs_tab li {
 	display: inline;
 	margin: 0 15px;
-}
-
-#info-col {
-	float: right;
-	padding: 0 10px 15px 0;
-	width: 220px;
-	margin-top: -10px;
-}
-
-#info-col p {
-	margin: 10px 5px;
-}
-
-#info-col br {
-	border: thin solid black;
 }
 
 .pagination {
@@ -228,24 +269,42 @@ select{
 	padding: 8px;
 }
 
-.avatar.micro{
-	background: #ddd;
-	padding: 3px;
+.avatar.medium{	
+	padding: 8px;
+}
+
+.avatar.thumb{	
+	padding: 4px;
 }
 
 
+.avatar.micro{	
+	padding: 2px;
+}
+
+
+.quizz .avatar.thumb {
+	float: left;	
+}
+
+
+
+.answer strong{
+	color: #FFF;
+}
 
 li.quizz {
 	margin: 5px;
 	padding: 10px;
+	border: thin solid #AAA;
 }
 
 li.quizz.open {
-	background: #3a3a3a;	
+	background: #6B6B6B;	
 }
 
 li.quizz.closed {
-	background: #000;
+	background: #111;
 }
 
 li.quizz.blank {
@@ -253,38 +312,25 @@ li.quizz.blank {
 }
 
 li.quizz.right {
-	background: #344821 url(../images/correct.png) no-repeat right bottom;
+	background: #344821; url(../images/correct.png) no-repeat right bottom;
 }
 
 li.quizz.wrong {
-	background: #993333 url(../images/wrong.png) no-repeat right bottom;
+	background: #993333; url(../images/wrong.png) no-repeat right bottom;
+	/*background: #993333*/
 }
 
 .quizz h3 {
-	margin: 0;
 	font-size: 1.4em;
 }
 
-.quizz h3 em {
-	margin-left: 20px;
-	font-weight: normal;
-	font-style: normal;
-
+div.quizz-main.in-home{
+	margin-left: 70px;
 }
+
 
 .quizz p {
-	margin: 0 0 5px 80px;
-}
-
-.quizz .answerbox, .answers-count {
-	margin-left: 80px;
-
-}
-
-.quizz img {
-	background: #ddd;
-	padding: 8px;
-	float: left;
+	margin: 0 0 5px 0px;
 }
 
 p.quizz-details {
@@ -293,20 +339,29 @@ p.quizz-details {
 	text-align: right;
 }
 
-p.answer img{
+h5.answer{
+	margin-top: 10px;
+	margin-bottom: 0px;
+	reset: left;
+}
+
+h5.answer img{
 	margin-right: 5px;
+	vertical-align: middle;
 }
 
 div.answers-count {
-	text-align: left;
+	text-align: right;
+	
 }
+
 
 div.answers-count a {
-	color: #ddd;
+	
 }
 
-#answers-list h3 {
-	margin: 20px 0;
+#answers_list {
+	margin: 20px 20px;
 }
 
 li.answers {
@@ -323,10 +378,10 @@ li.answer.wrong {
 
 p.question {
 	color: #fff;
-	font-size: 1.8em;
-	text-transform: none;
-	margin-left: 80px;
+	font-size: 1.6em;
+	text-transform: none;	
 }
+
 
 /*Account Zone*/
 

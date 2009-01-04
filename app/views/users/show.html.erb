@@ -1,4 +1,5 @@
 <div id="main-col">
+  <%= render :partial => 'tabs_for_user' %>	
   <ul id="quizzs">
 	<% if !@quizzs.empty? %>
     	<%= render :partial => 'quizz', :collection => @quizzs %>

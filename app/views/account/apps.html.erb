@@ -12,7 +12,12 @@
 		    <label for="twitter_password">Password</label>
 		    <%= f.password_field :twitter_password %>
 		  </p>
-		  <p class="form-submit"><%= image_submit_tag('button-update.png')%></p>
+		  <p class="form-submit">
+			<%= image_submit_tag('button-connect.png') %>
+			<% if !@user.twitter_username.nil? %>
+				<%= link_to image_tag('button-disconnect.png' ), url_for( :action => 'reset_twitter_profile' ), :method => :delete %>
+			<% end %>
+		  </p>
 		<% end -%>
 	</div>
 </div>
