@@ -24,7 +24,7 @@ module ApplicationHelper
     if !user.avatar.nil?
       avatar_path = user.avatar.public_filename(size)
     else
-      avatar_path = "default-avatar#{ !size.nil? ? '-' + size.to_s : '' }.jpg"
+      avatar_path = "default-avatar#{ !size.nil? ? '-' + size.to_s : '' }.png"
     end
       image = image_tag( avatar_path, :class => "avatar #{size}" )
     if linked
