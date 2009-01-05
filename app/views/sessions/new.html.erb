@@ -1,17 +1,16 @@
 <div id="main-col">
 	<h1>Login to your Quizzr account</h1>
-	<% form_tag session_path do -%>
-	<p><label for="login">Login</label><br/>
+	<% form_tag session_path, :id => 'login', :class => 'main-form' do -%>
+	<p><label for="login">Username</label>
 	<%= text_field_tag 'login' %></p>
 
-	<p><label for="password">Password</label><br/>
+	<p><label for="password">Password</label>
 	<%= password_field_tag 'password' %></p>
 
-	<p><label for="remember_me">Remember me:</label>
+	<p><label for="remember_me">Remind me</label>
 	<%= check_box_tag 'remember_me' %></p>
 
-	<p><%= submit_tag 'Log in' %></p>
+	<p class="form-submit"><%= image_submit_tag('button-signin.png') %></p>
+	<p id="forgot_password"><%= link_to 'Forgot your password?', password_recover_path %></p>
 	<% end -%>
-
-	<%= link_to 'Forgot your password?', password_recover_path %>
 </div>

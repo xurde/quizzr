@@ -410,12 +410,12 @@ p.question {
 }
 
 
-#account_edit label{
-	width: 6em;
-	float: left;
-	margin-right: 1em;
-	text-align: right;
+#account_menu li:hover{
+	background-color: #272727;
 }
+
+
+/* Forms Styling */
 
 #account_edit.avatar label{
 	width: 10em;
@@ -423,15 +423,25 @@ p.question {
 	margin-bottom: 5px;
 }
 
-#account_menu li:hover{
-	background-color: #272727;
-}
-
-#account_edit{
+.main-form{
 	margin-top: 9px;
 	padding: 20px;
 	background-color: #272727;
 	border: 2px solid #999;	
+}
+
+.main-form label{
+	width: 6em;
+	float: left;
+	margin-right: 1em;
+	text-align: right;
+}
+
+.main-form label.not-indented{
+	margin-right: 10px;
+	text-align: left;	
+	margin-bottom: 5px;
+	width: 100%;
 }
 
 .form-submit input{
@@ -439,6 +449,11 @@ p.question {
 	margin-left: 118px;
 }
 
+#forgot_password{
+	margin-top: -20px;
+	text-align: right;
+	float: right;	
+}
 
 /*Index Public Page*/
 

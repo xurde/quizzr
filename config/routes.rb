@@ -27,7 +27,7 @@ ActionController::Routing::Routes.draw do |map|
   
 
   map.signup '/signup', :controller => 'users', :action => 'new'
-  map.password_recover '/pasword_recover', :controller => 'users', :action => 'password_recover'
+  map.password_recover '/pasword_recover', :controller => 'account', :action => 'password_recover'
   map.login  '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   
