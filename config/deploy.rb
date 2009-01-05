@@ -8,9 +8,9 @@ set :domain, 'xurdeonrails.com'
 set :application, 'quizzr'
 
 # roles
-role :app, "quizzr.net" 
-role :web, "quizzr.net" 
-role :db,  "quizzr.net", :primary => true 
+role :app, "xurdeonrails.com" 
+role :web, "xurdeonrails.com" 
+role :db,  "xurdeonrails.com", :primary => true 
 
 # the rest should be good
 set :repository,  "#{user}@#{domain}:git/#{application}.git" 

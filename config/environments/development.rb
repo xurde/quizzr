@@ -16,3 +16,7 @@ config.action_view.cache_template_extensions         = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+# RECPATCHA KEYS FOR quizzr.heroku.com
+ENV['RECAPTCHA_PUBLIC_KEY'] = '6LcnMgQAAAAAAPM4JP8uOpprGYggz25dNEE-A6FE'
+ENV['RECAPTCHA_PRIVATE_KEY'] = '6LcnMgQAAAAAAELy7VF1xBDgiC5ACzrk4Ag9wIWh'
