@@ -1,10 +1,10 @@
 <div id="main-col">
   <%= render :partial => 'tabs_for_user' %>	
   <ul id="quizzs">
-	<% if !@quizzs.empty? %>
+	<% if !@quizzs.nil? %>
     	<%= render :partial => 'quizz', :collection => @quizzs %>
 	<% else %>
-		<p id="no-quizzs" class="main-message">This user has no quizz yet</p>
+		<h2 id="no-quizzs" class="main-message">This user has no quizz yet</h2>
 	<% end %>
   </ul>
 </div>

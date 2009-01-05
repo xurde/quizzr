@@ -1,6 +1,6 @@
 <ul id="top_menu">
 <% if !@me.nil? %>
-	<li>logged as: <%= avatar_for_user(@me, :micro, false ) %> <%= link_to_user(@me, false) %> | <%= link_to 'Logout', logout_path, :id => 'logout' %></li>
+	<li>Logged as: <%= avatar_for_user(@me, :micro, false ) %> <%= link_to_user(@me, false) %> | <%= link_to 'Logout', logout_path, :id => 'logout' %></li>
 	<li><a href="/home">Home</a></li>
     <li><%= link_to 'Account', url_for( :controller => 'account', :action => 'profile' ) %></li>
 <% else %>

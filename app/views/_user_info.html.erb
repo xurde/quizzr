@@ -3,19 +3,19 @@
   <h3><p><%= @user.name || @user.login %></p></h3>
   <p><%= link_to_follow_or_remove(@user) %></p>
   <p>
-    Quizzs: <strong><%= @quizzs.size.to_s %></strong>
+    Quizzs: <strong><%= @user[:quizzs].to_s %></strong>
 	<br/>
-    Answers: <strong><%= @answers.size.to_s %></strong>
+    Answers: <strong><%= @user[:answers].to_s %></strong>
 	<br/>
-	Won: <strong><%= @won.size.to_s %></strong> <%= @answers.size > 0 ? "(#{(@won.size*100) / @answers.size}%)" : nil %>
+	Won: <strong><%= @user[:won].to_s %></strong> (<%= @user[:ratio] || '-' %>%)
   </p>
   <br />
-  <p><%= link_to @followings.size.to_s + ' followings', url_for( :controller => 'users', :user => @user.login, :action => 'followings' ) %></p>
+  <p><%= link_to @user[:followings].size.to_s + ' followings', url_for( :controller => 'users', :user => @user.login, :action => 'followings' ) %></p>
   <div id='following-list' class="avatar-list">
-    <%= render :partial => '/followed', :collection => @followings %>
+    <%= render :partial => '/followed', :collection => @user[:followings] %>
   </div>  
-  <p><%= link_to @followers.size.to_s + ' followers', url_for(:controller => 'users', :user => @user.login, :action => 'followers' ) %></p>
+  <p><%= link_to @user[:followers].size.to_s + ' followers', url_for(:controller => 'users', :user => @user.login, :action => 'followers' ) %></p>
   <div id='followers-list' class="avatar-list">
-    <%= render :partial => '/follower', :collection => @followers %>
+    <%= render :partial => '/follower', :collection => @user[:followers] %>
   </div>
 </div>

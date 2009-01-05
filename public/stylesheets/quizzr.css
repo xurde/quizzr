@@ -182,6 +182,7 @@ ul#top_menu {
 #main-col {
 	float: left;
 	width: 530px;
+	min-height: 200px;
 	padding: 0 1em;
 	margin-top: 10px;
 }
@@ -249,16 +250,6 @@ ul#top_menu {
 	text-align: center;
 }
 
-#last-quizzs {
-	float: left;
-	width: 460px;
-}
-
-#last-users {
-	float: left;
-	padding-left: 50px;
-	width: 200px;
-}
 
 .avatar-list img {
 	margin: 2px;
@@ -460,6 +451,7 @@ p.question {
 #last-quizzs{
 	float: left;
 	width: 530px;
+	min-height: 200px;
 	padding: 0 1em;
 	margin-top: 10px;
 }
@@ -467,8 +459,8 @@ p.question {
 #last-users{
 	float: right;
 	padding: 0 10px 15px 0;
-	width: 220px;
-	margin-top: -10px;
+	width: 210px;
+	margin-top: -30px;
 
 }
 

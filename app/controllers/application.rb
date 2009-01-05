@@ -12,14 +12,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # :secret => 'e714b982005547c28dd73d0c8d27127d'
     
   def get_user_info(user)
-      @quizzs = user.quizzs.find(:all, :order => 'created_at DESC' )
+      @user[:quizzs] = quizzs = user.quizzs.count
       # logger.info 'QUIZZS == ' + @quizzs.size.to_s
-      @answers = user.answers.find(:all, :order => 'created_at DESC' )
+      @user[:answers] = answers = user.answers.count
       # logger.info 'ANSWERS == ' + @answers.size.to_s
-      @won = user.answers.find(:all, :conditions => ["ok = true"] )
+      @user[:won] = won =  user.answers.count( :conditions => ["ok = true"] )
       # logger.info 'WON == ' + @won.size.to_s
-      @followings = user.followings
-      @followers = user.followers
+      @user[:ratio] = (won.to_i * 100) / answers.to_i if !answers.zero?
+      @user[:followings] = user.followings
+      @user[:followers] = user.followers
   end
     
   private
