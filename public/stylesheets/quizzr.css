@@ -153,6 +153,7 @@ ul#top_menu {
 #flashes {
 	width: 530px;
 	padding: 0 1em;
+	margin-top: 10px;
 }
 
 .flash {
@@ -162,19 +163,19 @@ ul#top_menu {
 }
 
 .flash.notice {
-	border-color: #008000;
+	border-color: #BBB;
 	background-color: #344821;
 	color: #fff;
 }
 
 .flash.error {
-	border-color: #a50000;
+	border-color: #BBB;
 	background-color: #993333;
 	color: #fff;
 }
 
 .flash.warning {
-	border-color: #fc0;
+	border-color: #BBB;
 	background-color: #ff9900;
 	color: #fff;
 }
@@ -206,6 +207,25 @@ ul#top_menu {
 	border: thin solid black;
 }
 
+
+#user_stats {
+	margin-left: 10px;
+	width: 130px;	
+	font-size: 1.3em;
+	color: #FFF;
+}
+
+#user_stats li{
+	text-align: right;
+}
+
+#user_stats span.stat{
+	float: left;
+}
+
+#user_stats span.value{
+	text-align: right;	
+}
 
 /* Views */
 
@@ -250,9 +270,14 @@ ul#top_menu {
 	text-align: center;
 }
 
+.avatar-list{
+	padding: 0px;
+	margin: 0px;
+	width: 198px;
+}
 
 .avatar-list img {
-	margin: 2px;
+	margin: 1px;
 }
 
 .avatar {
@@ -273,12 +298,9 @@ ul#top_menu {
 	padding: 2px;
 }
 
-
 .quizz .avatar.thumb {
 	float: left;	
 }
-
-
 
 .answer strong{
 	color: #FFF;

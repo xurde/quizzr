@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     @user = User.find_by_login(params[:user])
     if !@user.nil?
       get_user_info(@user)
-      # @can_follow = !@me.followings.find_by_followed_id(@user.id).nil?
+      @quizzs = @user.quizzs.paginate(:all, :page => 1, :per_page => 10, :order => 'created_at DESC' )
     end
   end
   

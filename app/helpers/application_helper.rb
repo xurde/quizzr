@@ -11,6 +11,15 @@ module ApplicationHelper
      string.tr('a-z','*')
   end
   
+  def gender_for_user(gender)
+    case gender
+    when 'M'
+      ', Male'
+    when 'F'
+      ', Female'
+    end
+  end
+  
   def link_to_user(user, personalize = true)
     if (personalize && user == @me)
       link_to 'You', '/' + user.login, :class => 'username'
@@ -32,8 +41,7 @@ module ApplicationHelper
     else
       image
     end
-  end
-  
+  end  
   
   def link_to_follow_or_remove(user)
     if (!@me.nil?) & (@me != @user)
@@ -72,7 +80,7 @@ module ApplicationHelper
           content_tag(:h5, "#{avatar_for_user(quizz.winner, :micro)} #{link_to_user(quizz.winner)} won this quizz answering #{content_tag(:strong, "'#{quizz.correct_answer}'" + "#{( quizz.is_won_by?(@me) ? image_tag('icon-correct.png') : '' )}" ) }", :class => 'answer')
       end
     else
-      content_tag( :p, "#{link_to 'login', login_url} or #{link_to 'signup', signup_url} to answer.", :class => 'message' )
+      content_tag( :p, "#{link_to 'login', login_url} or #{link_to 'signup', signup_url} to answer this quizz.", :class => 'message' )
     end
   end
   

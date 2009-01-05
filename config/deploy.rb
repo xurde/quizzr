@@ -4,13 +4,13 @@ default_run_options[:pty] = true
 
 # be sure to change these
 set :user, 'xurdeor'
-set :domain, 'xurdeonrails.com'
+set :domain, 'quizzr.net'
 set :application, 'quizzr'
 
 # roles
-role :app, "xurdeonrails.com" 
-role :web, "xurdeonrails.com" 
-role :db,  "xurdeonrails.com", :primary => true 
+role :app, "quizzr.net" 
+role :web, "quizzr.net" 
+role :db,  "quizzr.net", :primary => true 
 
 # the rest should be good
 set :repository,  "#{user}@#{domain}:git/#{application}.git" 
@@ -24,7 +24,13 @@ set :use_sudo, false
 server domain, :app, :web
 
 namespace :deploy do
+  
+  task :after_update_code, :roles => :app do
+    run "ln -nfs /home/#{user}/#{domain}/shared/system/avatars #{release_path}/public/images/avatars"
+  end
+  
   task :restart do
     run "touch #{current_path}/tmp/restart.txt"
   end
+  
 end
