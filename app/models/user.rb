@@ -19,8 +19,8 @@ class User < ActiveRecord::Base
   validates_length_of       :login,    :within => 3..40
   validates_length_of       :email,    :within => 3..100
   validates_uniqueness_of   :login, :email, :case_sensitive => false
-  before_save :encrypt_password
-  before_create :make_activation_code 
+  before_save :encrypt_password, :normalize_login
+  before_create :make_activation_code
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :password, :password_confirmation, :name, :email, :website, :gender, :birthdate, :country, :city
@@ -34,8 +34,8 @@ class User < ActiveRecord::Base
   end
 
   def active?
-    # the existence of an activation code means they have not activated yet
-    activation_code.nil?
+    # the existence of an activation date means the account is active.
+    !activated_at.nil?
   end
 
   # Returns true if the user has just been activated.
@@ -107,8 +107,10 @@ class User < ActiveRecord::Base
     end
     
     def make_activation_code
-
       self.activation_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
     end
     
+    def normalize_login
+      self.login.downcase!
+    end
 end

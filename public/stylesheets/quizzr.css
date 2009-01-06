@@ -157,27 +157,22 @@ ul#top_menu {
 }
 
 .flash {
-	border: solid medium;
+	border: solid medium white;
+	color: #fff;
 	font-size: 1.4em;
 	padding: 5px;
 }
 
 .flash.notice {
-	border-color: #BBB;
 	background-color: #344821;
-	color: #fff;
 }
 
 .flash.error {
-	border-color: #BBB;
 	background-color: #993333;
-	color: #fff;
 }
 
 .flash.warning {
-	border-color: #BBB;
 	background-color: #ff9900;
-	color: #fff;
 }
 
 #main-col {

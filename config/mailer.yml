@@ -1,7 +1,7 @@
 ---
-  :address: smtp.gmail.com
-  :port: 587
-  :user_name: admin@quizzr.net
-  :password: sebadoh
-  :authentication: :plain
-  
+  :address: mail.quizzr.net
+  :port: 25
+  :domain: quizzr.net
+  :user_name: no-reply@quizzr.net
+  :password: divinopastor30
+  :authentication: :login

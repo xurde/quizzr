@@ -1,6 +1,6 @@
 class AccountController < ApplicationController
 
-  before_filter :login_required, :except => [ :password_recover, :password_sending ]
+  before_filter :login_required, :except => [ :password_recover, :password_forgotten, :password_reset, :password_reset_change ]
   
   def index
     redirect_to :action => 'profile'
@@ -74,17 +74,47 @@ class AccountController < ApplicationController
   end
   
   
+  # Forgotten password methods
+    
   def password_recover
   end
   
-  def password_sending
+  def password_forgotten
     user = User.find_by_email(params[:email])
     if !user.nil?
-      
+      user.activation_code = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{user.login}--")
+      UserMailer.deliver_forgotten_password(user)
+      flash[:notice] = "A password reset link was sent to your mail."
+      redirect_to login_path
     else
       flash[:error] = "No user found with that email. Sorry."
       redirect_to :action => 'password_recover'
-    end  
+    end
+  end
+  
+  
+  def password_reset
+    user = User.find_by_email(:first, params[:email])
+    if !user.nil? && user.activation_code == params[:token]
+      @email = user.email
+      @token = user.activation_code
+    else
+      flash[:error] = "Your email and token are invalid. You'll need to restart the process."
+      redirect_to :action => 'password_recover'
+    end
+    
+  end
+  
+  def password_reset_change
+    user = User.find_by_email(:first, params[:email])
+    if !user.nil? && user.activation_code == params[:token]
+      #guardar nueva pass
+    else
+      flash[:error] = "Your email and token are invalid. You'll need to restart the process."
+      redirect_to :action => 'password_recover'
+    end
+  
+    
   end
   
 end

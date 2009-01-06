@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/controllers/application.rb</string>
+	<string>app/views/_user_info.html.erb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -21,14 +21,14 @@
 	<integer>293</integer>
 	<key>metaData</key>
 	<dict>
-		<key>app/controllers/application.rb</key>
+		<key>app/controllers/index_controller.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>17</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>14</integer>
+				<integer>8</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -54,63 +54,7 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>6</integer>
-				<key>line</key>
-				<integer>50</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>11</integer>
-		</dict>
-		<key>app/helpers/application_helper.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>8</integer>
-				<key>line</key>
-				<integer>81</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>39</integer>
-		</dict>
-		<key>app/models/quizz.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>24</integer>
-				<key>line</key>
-				<integer>21</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>1</integer>
-		</dict>
-		<key>app/views/index/_user.html.erb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>71</integer>
-				<key>line</key>
-				<integer>2</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>app/views/layouts/application.html.erb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>6</integer>
+				<integer>33</integer>
 				<key>line</key>
 				<integer>11</integer>
 			</dict>
@@ -119,14 +63,56 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>app/views/users/_tabs_for_user.html.erb</key>
+		<key>app/helpers/application_helper.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>130</integer>
+				<integer>9</integer>
 				<key>line</key>
-				<integer>2</integer>
+				<integer>18</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/_user_info.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>104</integer>
+				<key>line</key>
+				<integer>4</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/index/index.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>59</integer>
+				<key>line</key>
+				<integer>9</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/layouts/_top_menu.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>10</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -138,37 +124,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>41</integer>
+				<integer>5</integer>
 				<key>line</key>
-				<integer>1</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>config/environment.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>26</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>config/routes.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>80</integer>
-				<key>line</key>
-				<integer>50</integer>
+				<integer>6</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -192,16 +150,13 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>config/environment.rb</string>
-		<string>config/routes.rb</string>
-		<string>app/models/quizz.rb</string>
-		<string>app/controllers/users_controller.rb</string>
-		<string>app/controllers/application.rb</string>
-		<string>app/views/index/_user.html.erb</string>
 		<string>app/helpers/application_helper.rb</string>
-		<string>app/views/layouts/application.html.erb</string>
+		<string>app/views/_user_info.html.erb</string>
+		<string>app/controllers/index_controller.rb</string>
+		<string>app/views/index/index.html.erb</string>
+		<string>app/controllers/users_controller.rb</string>
 		<string>app/views/users/show.html.erb</string>
-		<string>app/views/users/_tabs_for_user.html.erb</string>
+		<string>app/views/layouts/_top_menu.html.erb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
