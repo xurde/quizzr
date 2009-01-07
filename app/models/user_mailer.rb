@@ -15,7 +15,6 @@ class UserMailer < ActionMailer::Base
     setup_email(user)
     @subject    += 'Forgotten password'
     @body[:url] = "http://quizzr.net/password_reset?email=#{user.email}&token=#{user.activation_code}"
-    logger.info "MAILER >> Sending a mail to #{user.email} with subject: #{@subject} | MAILER CONFIG >> #{ActionMailer::Base.smtp_settings.inspect}"
   end
   
   def reset_password(user)
