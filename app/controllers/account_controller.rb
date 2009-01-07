@@ -9,6 +9,10 @@ class AccountController < ApplicationController
   def profile
     @user = User.find(@me)
   end
+
+  def password
+    @user = User.find(@me)
+  end  
   
   def avatar
     @user = User.find(@me)
@@ -23,10 +27,19 @@ class AccountController < ApplicationController
     if user.update_attributes( params[:user] )
       flash[:notice] = 'Profile was successfully updated'
     else
-      flash[:notice] = 'Unable to update your profile'
+      flash[:error] = 'Unable to update your profile'
     end
     redirect_to :action => 'profile'
-    
+  end
+  
+  def update_password
+    user = @me
+    if user.update_attributes( params[:user] )
+      flash[:notice] = 'Password was successfully updated'
+    else
+      flash[:error] = 'Unable to update your password'
+    end
+    redirect_to :action => 'password'
   end
 
 
@@ -35,7 +48,7 @@ class AccountController < ApplicationController
     if avatar.update_attributes( params[:avatar] )
       flash[:notice] = 'Avatar was successfully updated'
     else
-      flash[:notice] = 'Unable to update your avatar'
+      flash[:error] = 'Unable to update your avatar'
     end
     redirect_to :action => 'avatar'
     
@@ -83,6 +96,7 @@ class AccountController < ApplicationController
     user = User.find_by_email(params[:email])
     if !user.nil?
       user.activation_code = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{user.login}--")
+      user.save
       UserMailer.deliver_forgotten_password(user)
       flash[:notice] = "A password reset link was sent to your mail."
       redirect_to login_path
@@ -94,7 +108,7 @@ class AccountController < ApplicationController
   
   
   def password_reset
-    user = User.find_by_email(:first, params[:email])
+    user = User.find_by_email(params[:email])
     if !user.nil? && user.activation_code == params[:token]
       @email = user.email
       @token = user.activation_code
@@ -106,9 +120,17 @@ class AccountController < ApplicationController
   end
   
   def password_reset_change
-    user = User.find_by_email(:first, params[:email])
+    user = User.find_by_email(params[:email])
     if !user.nil? && user.activation_code == params[:token]
-      #guardar nueva pass
+      if params[:password] == params[:password_confirmation]
+        #guardar nueva pass
+        user.update_attribute( :password, params[:password] )
+        user.activate
+        redirect_to login_path
+      else
+        flash[:error] = "Password and confirmation do not match."
+        redirect_to :back
+      end
     else
       flash[:error] = "Your email and token are invalid. You'll need to restart the process."
       redirect_to :action => 'password_recover'

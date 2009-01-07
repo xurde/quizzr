@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
 
+  before_filter :login_required, :only => [ :follow, :remove ]
+
   def new
     # render new.rhtml
   end
@@ -24,12 +26,17 @@ class UsersController < ApplicationController
   end
 
   def activate
-    self.current_user = params[:activation_code].blank? ? :false : User.find_by_activation_code(params[:activation_code])
-    if logged_in? && !current_user.active?
-      current_user.activate
-      flash[:notice] = "Signup complete!"
+    user = User.find_by_activation_code(params[:activation_code])
+    if !user.nil?
+      logger.info "CURRENT USER >> #{current_user.inspect}"
+      user.activate
+      flash[:notice] = "Account activated!"
     end
-    redirect_back_or_default('/home')
+    if @me.nil?
+      redirect_to login_path
+    else
+      redirect_to :controller => 'home'
+    end
   end
   
   
