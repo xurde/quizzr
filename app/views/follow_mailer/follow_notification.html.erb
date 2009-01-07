@@ -1,8 +1,8 @@
-Hi <%= @follow.followed.name || @follow.followed.login %>,
+Hi <%= !@follow.followed.name.empty? ? @follow.followed.name : @follow.followed.login %>,
 
-<%= @follow.follower.name || @follow.follower.login %> has started following your quizzs.
+<%= !@follow.follower.name.empty? ? @follow.follower.name : @follow.follower.login %> has started following your quizzs.
 
-Take a look his Quizzr and maybe you want to do so.
+Take a look at <%= @follow.follower.gender == 'F' ? 'her' : 'him' %> Quizzr and maybe you want to do so.
 
 <%= @url %>
 
