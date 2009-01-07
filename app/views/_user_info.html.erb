@@ -10,11 +10,12 @@
 	<li><span class="stat">Won:</span><strong>(<%= @user[:ratio] || '-' %>%) <%= @user[:won].to_s %></strong></li>
   </ul>
   <br />
-  <p><%= link_to @user[:followings].size.to_s + ' followings', url_for( :controller => 'users', :user => @user.login, :action => 'followings' ) %></p>
+  <h3><%= link_to @user[:followings].size.to_s + ' followings', url_for( :controller => 'users', :user => @user.login, :action => 'followings' ) %></h3>
   <div id='following-list' class="avatar-list">
     <%= render :partial => '/followed', :collection => @user[:followings] %>
-  </div>  
-  <p><%= link_to @user[:followers].size.to_s + ' followers', url_for(:controller => 'users', :user => @user.login, :action => 'followers' ) %></p>
+  </div>
+  <br />
+  <h3><%= link_to @user[:followers].size.to_s + ' followers', url_for(:controller => 'users', :user => @user.login, :action => 'followers' ) %></h3>
   <div id='followers-list' class="avatar-list">
     <%= render :partial => '/follower', :collection => @user[:followers] %>
   </div>

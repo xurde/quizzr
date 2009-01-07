@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def activate
     user = User.find_by_activation_code(params[:activation_code])
     if !user.nil?
-      logger.info "CURRENT USER >> #{current_user.inspect}"
+      logger.info "CURRENT USER >> #{user.inspect}"
       user.activate
       flash[:notice] = "Account activated!"
     end
