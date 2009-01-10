@@ -464,6 +464,10 @@ p.question {
 	float: right;	
 }
 
+#notices_edit label{
+	width: 10em;	
+}
+
 /*Index Public Page*/
 
 #last-quizzs{

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 7) do
+ActiveRecord::Schema.define(:version => 8) do
 
   create_table "answers", :force => true do |t|
     t.datetime "created_at"
@@ -52,24 +52,29 @@ ActiveRecord::Schema.define(:version => 7) do
   create_table "users", :force => true do |t|
     t.string   "login"
     t.string   "email"
-    t.string   "crypted_password",          :limit => 40
-    t.string   "salt",                      :limit => 40
+    t.string   "crypted_password",                :limit => 40
+    t.string   "salt",                            :limit => 40
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_token"
     t.datetime "remember_token_expires_at"
-    t.string   "activation_code",           :limit => 40
+    t.string   "activation_code",                 :limit => 40
     t.datetime "activated_at"
-    t.integer  "minutes_for_quizzs",        :limit => 11
-    t.string   "twitter_username",          :limit => 20
-    t.string   "twitter_password",          :limit => 20
-    t.string   "name",                      :limit => 30
-    t.string   "website",                   :limit => 128
-    t.string   "gender",                    :limit => 1
+    t.integer  "minutes_for_quizzs",              :limit => 11
+    t.string   "twitter_username",                :limit => 20
+    t.string   "twitter_password",                :limit => 20
+    t.string   "name",                            :limit => 30
+    t.string   "website",                         :limit => 128
+    t.string   "gender",                          :limit => 1
     t.datetime "birthdate"
-    t.string   "country",                   :limit => 40
-    t.string   "city",                      :limit => 40
-    t.integer  "timezone",                  :limit => 11
+    t.string   "country",                         :limit => 40
+    t.string   "city",                            :limit => 40
+    t.integer  "timezone",                        :limit => 11
+    t.boolean  "notices_by_email",                               :default => true
+    t.boolean  "notice_when_new_follower",                       :default => true
+    t.boolean  "notice_when_favorited_quizz",                    :default => true
+    t.boolean  "notice_when_your_quizz_solved",                  :default => true
+    t.boolean  "notice_when_others_quizz_solved",                :default => false
   end
 
 end

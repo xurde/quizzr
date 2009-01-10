@@ -12,7 +12,11 @@ class AccountController < ApplicationController
 
   def password
     @user = User.find(@me)
-  end  
+  end
+  
+  def notices
+    @user = User.find(@me)
+  end
   
   def avatar
     @user = User.find(@me)
