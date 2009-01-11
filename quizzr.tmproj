@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/views/_user_info.html.erb</string>
+	<string>app/models/user.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -49,20 +49,6 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>app/controllers/users_controller.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>33</integer>
-				<key>line</key>
-				<integer>11</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>app/helpers/application_helper.rb</key>
 		<dict>
 			<key>caret</key>
@@ -71,6 +57,48 @@
 				<integer>9</integer>
 				<key>line</key>
 				<integer>18</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/models/follow_observer.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/models/user.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>14</integer>
+				<key>line</key>
+				<integer>42</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>35</integer>
+		</dict>
+		<key>app/models/user_observer.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>22</integer>
+				<key>line</key>
+				<integer>7</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -119,6 +147,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>app/views/user_mailer/signup_notification.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>13</integer>
+				<key>line</key>
+				<integer>7</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>app/views/users/show.html.erb</key>
 		<dict>
 			<key>caret</key>
@@ -132,6 +174,20 @@
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
+		</dict>
+		<key>config/environment.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>49</integer>
+				<key>line</key>
+				<integer>56</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>44</integer>
 		</dict>
 		<key>db/migrate/005_create_avatars.rb</key>
 		<dict>
@@ -150,17 +206,17 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>app/helpers/application_helper.rb</string>
 		<string>app/views/_user_info.html.erb</string>
+		<string>app/views/user_mailer/signup_notification.html.erb</string>
+		<string>app/models/user_observer.rb</string>
+		<string>config/environment.rb</string>
+		<string>app/models/user.rb</string>
 		<string>app/controllers/index_controller.rb</string>
-		<string>app/views/index/index.html.erb</string>
-		<string>app/controllers/users_controller.rb</string>
-		<string>app/views/users/show.html.erb</string>
-		<string>app/views/layouts/_top_menu.html.erb</string>
+		<string>app/models/follow_observer.rb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{317, 93}, {1411, 1085}}</string>
+	<string>{{296, 81}, {974, 697}}</string>
 </dict>
 </plist>

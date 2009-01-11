@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(:version => 8) do
     t.datetime "remember_token_expires_at"
     t.string   "activation_code",                 :limit => 40
     t.datetime "activated_at"
-    t.integer  "minutes_for_quizzs",              :limit => 11
     t.string   "twitter_username",                :limit => 20
     t.string   "twitter_password",                :limit => 20
     t.string   "name",                            :limit => 30
