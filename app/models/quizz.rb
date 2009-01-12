@@ -24,14 +24,12 @@ class Quizz < ActiveRecord::Base
   end
   
   
-  def check_answer(user, answer)
-    if answer == self.correct_answer
+  def response(user, answer)
+    if answer.downcase == self.correct_answer.downcase
       self.winner_id = user.id
       self.winned_at = Time.now
-      self.save
-    else
-      response = false
-    end  
+      @solved = true if self.save
+    end
   end
   
   def is_won_by?(user)

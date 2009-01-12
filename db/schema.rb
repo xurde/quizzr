@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 8) do
     t.datetime "remember_token_expires_at"
     t.string   "activation_code",                 :limit => 40
     t.datetime "activated_at"
+    t.integer  "minutes_for_quizzs",              :limit => 11
     t.string   "twitter_username",                :limit => 20
     t.string   "twitter_password",                :limit => 20
     t.string   "name",                            :limit => 30
@@ -69,11 +70,11 @@ ActiveRecord::Schema.define(:version => 8) do
     t.string   "country",                         :limit => 40
     t.string   "city",                            :limit => 40
     t.integer  "timezone",                        :limit => 11
-    t.boolean  "notices_by_email",                               :default => true
+    t.string   "notices_by_email",                :limit => 1,   :default => "A"
     t.boolean  "notice_when_new_follower",                       :default => true
     t.boolean  "notice_when_favorited_quizz",                    :default => true
     t.boolean  "notice_when_your_quizz_solved",                  :default => true
-    t.boolean  "notice_when_others_quizz_solved",                :default => false
+    t.boolean  "notice_when_played_quizz_solved",                :default => false
   end
 
 end

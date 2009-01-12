@@ -1,6 +1,6 @@
-Hi <%= !@follow.followed.name.empty? ? @follow.followed.name : @follow.followed.login %>,
+Hi <%= !@follow.followed.name.nil? ? @follow.followed.name : @follow.followed.login %>,
 
-<%= !@follow.follower.name.empty? ? @follow.follower.name : @follow.follower.login %> has started following your quizzs.
+<%= !@follow.follower.name.nil? ? @follow.follower.name : @follow.follower.login %> has started following your quizzs.
 
 Take a look at <%= @follow.follower.gender == 'F' ? 'her' : 'him' %> Quizzr and maybe you want to do so.
 

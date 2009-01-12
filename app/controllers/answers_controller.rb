@@ -8,12 +8,12 @@ class AnswersController < ApplicationController
         answer.quizz = quizz
         answer.user = @me
         answer.text = params[:answer]
-        answer.ok = @answer_ok = quizz.check_answer(@me, params[:answer])
+        answer.ok = @answer_ok = quizz.response(@me, params[:answer])
         answer.save
         if @answer_ok
-          flash[:notice] = "You're right"
+          flash[:notice] = "That was exact"
         else
-          flash[:notice] = "That's wrong. You dumb!!!"
+          flash[:notice] = "That's not right"
         end
         redirect_to :controller => 'quizzs', :action => 'show', :user => quizz.user.login, :id => quizz.id
     end

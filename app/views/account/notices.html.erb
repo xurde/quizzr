@@ -4,23 +4,19 @@
 		<% form_for(:user, :url => url_for( :action => 'update_notices' ), :html => {:id => 'notices_edit', :class => 'main-form tabbed-form'} ) do |f| -%>
 		  <p>
 		    <label for="notices_by_email">Notices by email</label>
-		    <%= f.select :notices_by_email, [['No, thanks', '0' ], ['Yes, please', '1' ]] %></p>
+		    <%= f.select :notices_by_email, [['Yes, please', 'A' ], ['No, thanks', 'I' ]] %>
 		  </p>
 		  <p>
 		    <label for="notice_when_new_follower">New follower</label>
-		    <%= f.check_box :notice_when_new_follower %>
-		  </p>
-		  <p>
-		    <label for="notice_when_favorited_quizz">Favorited quizz</label>
-		    <%= f.check_box :notice_when_favorited_quizz %>
+			<%= f.check_box :notice_when_new_follower %>
 		  </p>
 		  <p>
 		    <label for="notice_when_your_quizz_solved">Your quizz solved</label>
 		    <%= f.check_box :notice_when_your_quizz_solved %>
 		  </p>
 		  <p>
-		    <label for="notice_when_others_quizz_solved">Played quizz solved</label>
-		    <%= f.check_box :notice_when_others_quizz_solved %>
+		    <label for="notice_when_played_quizz_solved">Played quizz solved</label>
+		    <%= f.check_box :notice_when_played_quizz_solved %>	
 		  </p>
 		  <p class="form-submit"><%= image_submit_tag('button-update.png')%></p>
 		<% end -%>
