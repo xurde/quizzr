@@ -24,7 +24,8 @@ Rails::Initializer.run do |config|
   # in vendor/plugins are loaded in alphabetical order.
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
-
+  config.plugins = [ :all ]
+  
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
@@ -60,7 +61,7 @@ Rails::Initializer.run do |config|
   config.active_record.default_timezone = :utc
 
   #Enviroment Constants
-  
+
   #Applications constants
   
   COUNTRIES = ["Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola",
@@ -107,3 +108,6 @@ Rails::Initializer.run do |config|
   ANSWERS_PER_PAGE = 20
     
 end
+
+#Exceptions notifications config
+ExceptionNotifier.exception_recipients = %w(jorgedf@gmail.com)
