@@ -14,6 +14,9 @@ class Quizz < ActiveRecord::Base
     self.winner.nil?
   end
   
+  def solved?
+    @solved
+  end
   
   def is_responded?(user)
     user.answers.find_by_quizz_id( self.id )
@@ -28,7 +31,7 @@ class Quizz < ActiveRecord::Base
     if answer.downcase == self.correct_answer.downcase
       self.winner_id = user.id
       self.winned_at = Time.now
-      @solved = true if self.save
+      @solved = self.save
     end
   end
   

@@ -4,7 +4,6 @@ class QuizzMailer < ActionMailer::Base
       setup_email(quizz.user)
       @subject    += 'You quizz was solved'
       @body[:quizz_url]  = "http://quizzr.net/#{quizz.user.login}/quizzs/#{quizz.id.to_s}"
-      @body[:winner_url]  = "http://quizzr.net/#{quizz.winner.login}"
     end
 
     protected
@@ -14,7 +13,7 @@ class QuizzMailer < ActionMailer::Base
         @reply_to    = "\"Quizzr.net\" <no-reply@quizzr.net>"
         @subject     = "[Quizzr] "
         @sent_on     = Time.now
-        @body[:user] = user
+        @body[:user, :winner] = user, winner
       end
   
 

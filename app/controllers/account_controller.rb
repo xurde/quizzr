@@ -29,9 +29,9 @@ class AccountController < ApplicationController
   def update_profile
     user = @me
     if user.update_attributes( params[:user] )
-      flash[:notice] = 'Profile was successfully updated'
+      flash[:notice] = 'Your profile was updated.'
     else
-      flash[:error] = 'Unable to update your profile'
+      flash[:error] = 'Unable to update your profile.'
     end
     redirect_to :action => 'profile'
   end
@@ -39,9 +39,9 @@ class AccountController < ApplicationController
   def update_password
     user = @me
     if user.update_attributes( params[:user] )
-      flash[:notice] = 'Password was successfully updated'
+      flash[:notice] = 'Password was successfully updated.'
     else
-      flash[:error] = 'Unable to update your password'
+      flash[:error] = 'Unable to update your password.'
     end
     redirect_to :action => 'password'
   end
@@ -50,12 +50,22 @@ class AccountController < ApplicationController
   def update_avatar
     avatar = @me.avatar || Avatar.new( :user => @me )
     if avatar.update_attributes( params[:avatar] )
-      flash[:notice] = 'Avatar was successfully updated'
+      flash[:notice] = 'Avatar was successfully updated.'
     else
-      flash[:error] = 'Unable to update your avatar'
+      flash[:error] = 'Unable to update your avatar.'
     end
     redirect_to :action => 'avatar'
     
+  end
+  
+  def update_notices
+    user = @me
+    if user.update_attributes( params[:user] )
+      flash[:notice] = 'Notices were updated.'
+    else
+      flash[:error] = 'Unable to update your notices config.'
+    end
+    redirect_to :action => 'notices'
   end
   
   def update_twitter_profile
@@ -63,16 +73,16 @@ class AccountController < ApplicationController
       begin
         twitter = Twitter::Base.new( params[:user][:twitter_username], params[:user][:twitter_password] )
       rescue
-        flash[:error] = "Error while trying to connect to Twitter"
+        flash[:error] = "Error while trying to connect to Twitter."
       end
       if !twitter.nil?
         begin
           twitter.verify_credentials
           user.twitter_username = params[:user][:twitter_username]
           user.twitter_password = params[:user][:twitter_password]
-          flash[:notice] = 'Twitter account was verified and connected correctly' if user.save
+          flash[:notice] = 'Twitter account was verified and connected correctly.' if user.save
         rescue
-          flash[:error] = "Twitter username and/or pass invalid"
+          flash[:error] = "Twitter username and/or pass invalid."
         end
       end
       redirect_to :action => 'apps'
@@ -83,9 +93,9 @@ class AccountController < ApplicationController
       if !user.nil?
         user.twitter_username = nil
         user.twitter_password = nil
-        flash[:notice] = 'Your twitter account was disconnected' if user.save
+        flash[:notice] = 'Your twitter account was disconnected.' if user.save
       else
-        flash[:error] = "Error disconnecting your Twitter account"
+        flash[:error] = "Error disconnecting your Twitter account."
       end
       redirect_to :action => 'apps'
   end
@@ -129,7 +139,7 @@ class AccountController < ApplicationController
       if params[:password] == params[:password_confirmation]
         #guardar nueva pass
         user.update_attribute( :password, params[:password] )
-        user.activate
+        user.update_attribute( :activation_code, '' )
         redirect_to login_path
       else
         flash[:error] = "Password and confirmation do not match."
