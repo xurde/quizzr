@@ -2,9 +2,9 @@
   <%= render :partial => 'tabs_for_user' %>	
   <ul id="quizzs">
 	<% if !@quizzs.nil? %>
-    	<%= render :partial => 'quizz', :collection => @quizzs %>
+    	<%= render :partial => 'quizz_answered_by', :collection => @quizzs, :as => :quizz %>
 	<% else %>
-		<h2 id="no-quizzs" class="main-message">This user has no quizz yet</h2>
+		<h2 id="no-answer" class="main-message">This user has answered no quizz yet</h2>
 	<% end %>
   </ul>
   <div id="home_pagination" class="pagination"><%= will_paginate(@quizzs) %></div>

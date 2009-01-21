@@ -74,7 +74,7 @@ form label {
 }
 
 textarea{
-	font-size: 1.3em;
+	font-size: 12px;
 }
 
 input{	
@@ -223,7 +223,14 @@ ul#top_menu {
 	text-align: right;	
 }
 
-/* Views */
+/***** App Views ******/
+
+
+/* User Views */
+
+#tabs_user{
+	margin-bottom: 15px;
+}
 
 /* Common Styling */
 
@@ -333,7 +340,7 @@ li.quizz.wrong {
 	font-size: 1.4em;
 }
 
-div.quizz-main.in-home{
+div.quizz-main{
 	margin-left: 70px;
 }
 
@@ -468,7 +475,13 @@ p.question {
 	width: 10em;	
 }
 
-/*Index Public Page*/
+.image-submit{
+	vertical-align: bottom;
+}
+
+
+
+/******* Index Public Page ********/
 
 #last-quizzs{
 	float: left;

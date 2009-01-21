@@ -53,17 +53,20 @@ module ApplicationHelper
     end
   end
   
+  def url_for_quizz(quizz)
+    url_for(:controller => 'quizzs', :action => 'show', :user => quizz.user.login, :id => quizz.id)
+  end
   
   def link_to_quizz(quizz)
-    link_to quizz.question, url_for(:controller => 'quizzs', :action => 'show', :user => quizz.user.login, :id => quizz.id)
+    link_to quizz.question, url_for_quizz(quizz)
   end
   
   def link_to_quizz_time(quizz)
-    link_to time_ago_in_words(quizz.created_at) + ' ago', url_for(:controller => 'quizzs', :action => 'show', :user => quizz.user.login, :id => quizz.id)
+    link_to time_ago_in_words(quizz.created_at) + ' ago', url_for_quizz(quizz)
   end
   
   def link_to_quizz_answers(quizz)
-    link_to quizz.answers.size.to_s + ' answers', url_for(:controller => 'quizzs', :action => 'show', :user => quizz.user.login, :id => quizz.id)
+    link_to quizz.answers.size.to_s + ' answers', url_for_quizz(quizz)
   end
   
   # Rather Particular Cases Helpers
@@ -84,14 +87,16 @@ module ApplicationHelper
     end
   end
   
+  def answer_by_user_for_quizz(quizz, user)
+    content_tag(:h5, "<strong>#{user.login}</strong> answered #{content_tag(:strong, "'#{quizz.responded_for(user)}'" + "#{ quizz.is_won_by?(user) ? image_tag('icon-correct.png') : image_tag('icon-wrong.png') }" )} ", :class => 'answer') 
+  end
   
   def winner_for_quizz(quizz)
     if !quizz.is_open?
         content_tag(:h5, "#{avatar_for_user(quizz.winner, :micro)} #{link_to_user(quizz.winner)} won this quizz answering #{content_tag(:strong, "'#{quizz.correct_answer}'" ) }", :class => 'answer')
     else
     end
-  end
-
+  end 
 
   # General purpose helpers
   

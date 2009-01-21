@@ -2,5 +2,5 @@
 	<% if answer_form_for.show_pattern %>
 		<p class="answer-pattern"><%= asterisize( answer_form_for.correct_answer ) %></p>
 	<% end %>
-	<p><%= text_field_tag 'answer', '' %> <%= submit_tag 'Answer' %></p>
+	<p><%= text_field_tag 'answer', '' %> <%= image_submit_tag 'button-small-answer.png', :class => 'image-submit' %></p>
 <% end -%>

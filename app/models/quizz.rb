@@ -22,7 +22,7 @@ class Quizz < ActiveRecord::Base
     user.answers.find_by_quizz_id( self.id )
   end
   
-  def is_responded(user)
+  def responded_for(user)
     user.answers.find_by_quizz_id( self.id ).text if !user.answers.find_by_quizz_id( self.id ).nil?
   end
   

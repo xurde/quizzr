@@ -43,11 +43,11 @@ class UsersController < ApplicationController
   end
   
   
-  def show
+  def show #(quizzs)
     @user = User.find_by_login(params[:user])
     if !@user.nil?
       get_user_info(@user)
-      @quizzs = @user.quizzs.paginate(:all, :page => 1, :per_page => 10, :order => 'created_at DESC' )
+      @quizzs = @user.quizzs.paginate(:all, :page => params[:page], :per_page => QUIZZS_PER_PAGE, :order => 'created_at DESC' )
     end
   end
   
@@ -56,8 +56,9 @@ class UsersController < ApplicationController
     if !@user.nil?
       #for user_info
       get_user_info(@user)
-      @can_follow = !@me.followings.find_by_followed_id(@user.id).nil?
-      
+      #@can_follow = !@me.followings.find_by_followed_id(@user.id).nil?
+      @quizzs = Quizz.paginate_by_sql( "SELECT quizzs.* FROM quizzs LEFT OUTER JOIN answers ON quizzs.id = answers.quizz_id WHERE answers.user_id = #{ @user.id } ORDER BY quizzs.created_at DESC", 
+                                            :page => params[:page], :per_page => QUIZZS_PER_PAGE )
       
     end
   end
