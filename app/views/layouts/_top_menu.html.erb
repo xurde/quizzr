@@ -1,11 +1,15 @@
-<ul id="top_menu">
-<% if !@me.nil? %>
-	<li>Logged as: <%= avatar_for_user(@me, :micro, false ) %> <%= link_to_user(@me, false) %> | <%= link_to 'Logout', logout_path, :id => 'logout' %></li>
-	<li><a href="/home">Home</a></li>
-    <li><%= link_to 'Account', url_for( :controller => 'account', :action => 'profile' ) %></li>
-<% else %>
-	<li><%= link_to 'Login', login_path %> or <%= link_to 'Signup', signup_path %></li>
-<% end %>
-	<li><a href="http://help.quizzr.net/">Help</a></li>
-	<li><a href="http://blog.quizzr.net/">Blog</a></li>	
-</ul>
+<div id="top_menu">
+	<ul id='user_menu'>
+	<% if !@me.nil? %>
+		<li id="user_status">Logged as: <%= avatar_for_user(@me, :micro, false ) %> <%= link_to_user(@me, false) %> | <%= link_to 'Logout', logout_path, :class => 'action' %></li>
+	<% else %>
+		<li><%= link_to 'Login', login_path %> or <%= link_to 'Signup', signup_path %></li>
+	<% end %>
+	</ul>
+	<ul id='main_menu'>
+		<li><a href="/home">Home</a></li>
+		<li><%= link_to 'Account', url_for( :controller => 'account', :action => 'profile' ) %></li>
+		<li><a href="http://help.quizzr.net/">Help</a></li>
+		<li><a href="http://blog.quizzr.net/">Blog</a></li>
+	</ul>
+</div>

@@ -48,6 +48,8 @@ class UsersController < ApplicationController
     if !@user.nil?
       get_user_info(@user)
       @quizzs = @user.quizzs.paginate(:all, :page => params[:page], :per_page => QUIZZS_PER_PAGE, :order => 'created_at DESC' )
+    else
+      flash[:error] = 'That user'
     end
   end
   

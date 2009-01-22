@@ -104,10 +104,11 @@ select{
 	font-size: 1.4em;
 }
 
-ul#top_menu {
-	list-style-type: none;
+#top_menu {
 	margin: 12px 0;
 	padding: 0;
+	height: 26px;
+	width: 550px;
 }
 
 #top_menu li {
@@ -123,7 +124,7 @@ ul#top_menu {
 }
 
 
-#top_menu a#logout{
+#top_menu a.action{
 	font-size: 0.8em;
 }
 
@@ -131,6 +132,23 @@ ul#top_menu {
 	background-color: #111;
 	color: #FC0;
 	text-decoration: underline;	
+}
+
+#user_menu{
+	margin-top: 5px;
+	float: left;
+	width: 245px;
+}
+
+#user_menu img{
+	margin-top: -5px;
+}
+
+#main_menu{
+	float: right;
+	width: 260px;
+	margin-top: 5px;
+	font-size: 1.1em;
 }
 
 #logo {
@@ -180,7 +198,7 @@ ul#top_menu {
 	width: 530px;
 	min-height: 200px;
 	padding: 0 1em;
-	margin-top: 10px;
+	margin-top: 6px;
 }
 
 
@@ -224,6 +242,18 @@ ul#top_menu {
 }
 
 /***** App Views ******/
+
+/* Followings/Followers lists */
+
+.ff-list li{
+	float:left;
+	width: 150px;
+	text-align: center;
+	border: 2px solid #999;
+	background-color: #272727;
+	margin: 5px;
+	padding-bottom: 5px;
+}
 
 
 /* User Views */
@@ -271,6 +301,12 @@ ul#top_menu {
 .pagination {
 	margin: 20px;
 	text-align: center;
+	font-size: 1.2em;
+}
+
+.pagination span.current{
+	font-weight: bold;
+	color: #FFF;
 }
 
 .avatar-list{

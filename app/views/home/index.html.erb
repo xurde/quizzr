@@ -19,6 +19,6 @@
   <ul id="quizzs_list">
     <%= render :partial => 'quizz', :collection => @quizzs_for_me %>
   </ul>
-  <div id="home_pagination" class="pagination"><%= will_paginate(@quizzs_for_me) %></div>
+  <%= will_paginate(@quizzs_for_me) %>
 </div>
 <%= render :partial => '/user_info', :object => @me %>

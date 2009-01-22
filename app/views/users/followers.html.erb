@@ -1,7 +1,6 @@
 <div id="main-col">
-  <h1><%= @followers.size.to_s %> quizzers are following you</h1>
-  <h2><%= @followers.size.to_s %> followers for <%= link_to_user(@user) %></h2>
-  <ul id="followers-list" class="users-list">
+  <h2><%= link_to_user(@user) %> is following <strong><%= @followers.size.to_s %></strong> quizzers</h2>
+  <ul id="followers-list" class="ff-list">
     <%= render :partial => 'follower', :collection => @followers %>
   </ul>
 </div>
