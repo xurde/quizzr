@@ -32,6 +32,8 @@ class Quizz < ActiveRecord::Base
       self.winner_id = user.id
       self.winned_at = Time.now
       @solved = self.save
+    else
+      false
     end
   end
   
