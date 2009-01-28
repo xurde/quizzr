@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.google.com/schemas/sitemap/0.84 http://www.google.com/schemas/sitemap/0.84/sitemap.xsd">
+	<url>
+		<loc>http://quizzr.net/</loc>
+		<lastmod>2009-01-27</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://quizzr.net/login</loc>
+		<lastmod>2009-01-27</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://quizzr.net/signup</loc>
+		<lastmod>2009-01-27</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://quizzr.net/xurde</loc>
+		<lastmod>2009-01-27</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://quizzr.net/xurde/answers</loc>
+		<lastmod>2009-01-27</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://quizzr.net/xurde/quizz/42</loc>
+		<lastmod>2009-01-27</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://quizzr.net/xurde/followings</loc>
+		<lastmod>2009-01-27</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://quizzr.net/xurde/followers</loc>
+		<lastmod>2009-01-27</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>0.5</priority>
+	</url>
+</urlset>
