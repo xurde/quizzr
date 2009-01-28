@@ -32,6 +32,8 @@ class Quizz < ActiveRecord::Base
       self.winner_id = user.id
       self.winned_at = Time.now
       @solved = self.save
+    else
+      false
     end
   end
   
@@ -64,7 +66,7 @@ class Quizz < ActiveRecord::Base
       if !self.user.twitter_username.nil?
         twitter = Twitter::Base.new(self.user.twitter_username, self.user.twitter_password)
         twitter = Twitter::Base.new('quizzr', 'sebadoh')
-        twitter.post(self.user.login + ' quizzed: ' + self.question + " - http://quizzr.net/#{self.user.login}/quizzs/#{self.id.to_s}")
+        twitter.post(self.user.login + ' quizzed: ' + self.question + " - http://quizzr.net/#{self.user.login}/quizz/#{self.id.to_s}")
       end
     end
     

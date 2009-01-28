@@ -8,4 +8,6 @@ class Follow < ActiveRecord::Base
   belongs_to :followed, :class_name => 'User', :foreign_key => 'followed_id'
   validates_uniqueness_of   :follower, :followed, :case_sensitive => false
   
+  validates_uniqueness_of :follower_id, :scope => [ :followed_id ]
+  
 end

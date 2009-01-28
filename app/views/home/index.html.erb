@@ -2,7 +2,7 @@
   <div id="quizz_box">
     <% form_tag url_for( :controller => 'quizzs', :action => 'create' ), :id => 'form_quiz' do -%>
       <p><label for="question">Question</label>
-	  <textarea name="question" id="styled" cols="45" rows="2" onfocus="this.value='';">Quizz it here</textarea>
+	  <textarea name="question" id="styled" class="emptyme" cols="45" rows="2">Quizz it here</textarea>
 	  </p>
       <p><label for="correct">Answer</label>
       <%= text_field_tag 'correct_answer' %></p>
