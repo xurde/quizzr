@@ -50,7 +50,8 @@ class UsersController < ApplicationController
       @quizzs = @user.quizzs.paginate(:all, :page => params[:page], :per_page => QUIZZS_PER_PAGE, :order => 'created_at DESC' )
       #Headers::TITLE << "User :: #{@user.login}"
     else
-      flash[:error] = 'That user'
+      #flash[:error] = 'That user does not exist'
+      render_errorpage
     end
   end
   
@@ -91,7 +92,7 @@ class UsersController < ApplicationController
       @followers = @user.followers
       render
     else
-      render :text => 'User not valid.', :status => 404
+      render_errorpage
     end
   end
   
@@ -101,9 +102,12 @@ class UsersController < ApplicationController
       @followings = @user.followings
       render
     else
-      render :text => 'User not valid.', :status => 404
+      render_errorpage
     end
   end
   
+#  def method_missing(method)
+#      render_errorpage
+#  end
 
 end

@@ -7,8 +7,9 @@ module ApplicationHelper
     return resp
   end  
   
+  
   def asterisize(string)
-     string.tr('a-zA-Z','*').tr('áéíóúÁÉÍÓÚüÜñÑçÇ','*').tr('0-9', '#')     
+    string.to_ascii_unicode.tr('a-zA-Z','*').tr('0-9', '#')
   end
   
   def gender_for_user(gender)

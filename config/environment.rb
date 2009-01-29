@@ -62,7 +62,10 @@ Rails::Initializer.run do |config|
 
   #Enviroment Constants
 
-  #Applications constants
+  #Application config constants
+  
+  QUIZZS_PER_PAGE = 10
+  ANSWERS_PER_PAGE = 20
   
   COUNTRIES = ["Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola",
           "Anguilla", "Antarctica", "Antigua And Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria",
@@ -102,12 +105,19 @@ Rails::Initializer.run do |config|
           "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela",
           "Viet Nam", "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara",
           "Yemen", "Zambia", "Zimbabwe"]
-  
-  #My app config constants
-  QUIZZS_PER_PAGE = 10
-  ANSWERS_PER_PAGE = 20
     
 end
 
 #Exceptions notifications config
 ExceptionNotifier.exception_recipients = %w(jorgedf@gmail.com)
+
+#Ruby Extensions
+
+require 'unicode'
+class String
+  
+  def to_ascii_unicode
+    Unicode.normalize_KD(self).unpack('U*').select{ |cp| cp < 127 }.pack('U*')
+  end
+  
+end

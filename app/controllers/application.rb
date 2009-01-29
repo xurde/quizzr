@@ -24,11 +24,15 @@ class ApplicationController < ActionController::Base
       @user[:followings] = user.followings
       @user[:followers] = user.followers
   end
+  
+  def render_errorpage
+    render :file => 'public/404.html', :status => 404 #Hacer página especial para user not found
+  end
     
   private
   
     def fetch_user
-      @me = User.find( session[:user_id] ) if !session[:user_id].nil?      
+      @me = User.find( session[:user_id] ) if !session[:user_id].nil?
     end    
     
   

@@ -27,8 +27,8 @@ class Quizz < ActiveRecord::Base
   end
   
   
-  def response(user, answer)
-    if answer.downcase == self.correct_answer.downcase
+  def response(user, answer) #Validates answers
+    if answer.downcase.to_ascii_unicode == self.correct_answer.downcase.to_ascii_unicode #Compares downcased and ascii strings
       self.winner_id = user.id
       self.winned_at = Time.now
       @solved = self.save
