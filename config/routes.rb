@@ -34,7 +34,6 @@ ActionController::Routing::Routes.draw do |map|
   map.password_reset '/password_reset', :controller => 'account', :action => 'password_reset'
   
   
-  
   map.resources :users
   map.resource :session
 
@@ -44,19 +43,19 @@ ActionController::Routing::Routes.draw do |map|
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.
+
+  map.connect '/home', :controller => 'home', :page => 1
+  map.connect '/account/:action', :controller => 'account'
+  map.connect '/quizzs/:action', :controller => 'quizzs'
+  map.connect '/answer/:id', :controller => 'answers', :action => 'create'
   
-
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
-
-  map.connect ':user', :controller => 'users', :action => 'show'
-  #map.connect ':user/:page', :controller => 'users', :action => 'show'
-  map.connect ':user/answers', :controller => 'users', :action => 'show_answers'
-  #map.connect ':user/answers/:page', :controller => 'users', :action => 'show_answers'
+  map.connect ':user', :controller => 'users', :action => 'show', :page => 1
   map.connect ':user/quizz/:id', :controller => 'quizzs', :action => 'show'
+  map.connect ':user/answers', :controller => 'users', :action => 'show_answers', :page => 1
   map.connect ':user/:action', :controller => 'users'
 
-  map.connect '/answer/:id', :controller => 'answers', :action => 'create'
-
+  #default rails routes
+  map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'
 
 end
