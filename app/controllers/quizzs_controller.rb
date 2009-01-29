@@ -12,7 +12,7 @@ class QuizzsController < ApplicationController
     else
       flash[:error] = "Error creating quizz"
     end
-    redirect_to :controller => 'home'
+    redirect_to :controller => 'home', :filter => 'your'
   end
 
   def destroy
