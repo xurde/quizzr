@@ -1,4 +1,4 @@
-<div id="info_col">
+<div id="info_col" class="sidebar">
   <p><%= avatar_for_user( @user, 'medium', false ) %></p>
   <h3><p><%= @user.name || @user.login %></p></h3>
   <p><%= (Time.now.year - @user.birthdate.year).to_s if @user.birthdate %><%= gender_for_user(@user.gender) if @user.gender %><%= ', ' + @user.city if (!@user.city.nil? && !@user.city.empty?) %><%= ', ' + @user.country if (!@user.city.nil? && !@user.country.empty?) %></p>

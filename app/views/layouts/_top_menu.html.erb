@@ -7,8 +7,10 @@
 	<% end %>
 	</ul>
 	<ul id='main_menu'>
+	<% if !@me.nil? %>
 		<li><a href="/home">Home</a></li>
 		<li><%= link_to 'Account', url_for( :controller => 'account', :action => 'profile' ) %></li>
+	<% end %>
 		<li><a href="http://help.quizzr.net/">Help</a></li>
 		<li><a href="http://blog.quizzr.net/">Blog</a></li>
 	</ul>

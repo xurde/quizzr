@@ -7,7 +7,7 @@ class Quizz < ActiveRecord::Base
   validates_presence_of :user_id, :question, :correct_answer
   validates_associated :user
   
-  after_create :post_to_twitter
+  #after_create :post_to_user_twitter
 
 
   def is_open?
@@ -62,11 +62,18 @@ class Quizz < ActiveRecord::Base
   
   private #private methods
     
-    def post_to_twitter
+    def post_to_user_twitter
       if !self.user.twitter_username.nil?
-        twitter = Twitter::Base.new(self.user.twitter_username, self.user.twitter_password)
-        twitter = Twitter::Base.new('quizzr', 'sebadoh')
-        twitter.post(self.user.login + ' quizzed: ' + self.question + " - http://quizzr.net/#{self.user.login}/quizz/#{self.id.to_s}")
+        twitter = Twitter::Base.new(self.user.twitter_username, self.user.twitter_password)  
+        twitter.post( question_crop(self.question, 100) + " ♣ http://quizzr.net/#{self.user.login}/quizz/#{self.id.to_s}")
+      end
+    end
+    
+    def question_crop(question, limit)
+      if question.size > limit
+        question[0,(limit - 4)] << '...'
+      else
+        question
       end
     end
     

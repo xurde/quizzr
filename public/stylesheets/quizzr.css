@@ -1,3 +1,60 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
 /* Generic Elements Markup */
 
 body {
@@ -7,11 +64,13 @@ body {
 	font-size: 62.5%;
 	margin: 0 0 25px;
 	padding: 0;
+	cursor: default;
 }
 
 h1 {
 	color: white;
 	font-size: 28px;
+	margin: 5px 0 15px 0;
 }
 
 h2 img{
@@ -108,7 +167,7 @@ select{
 	margin: 12px 0;
 	padding: 0;
 	height: 26px;
-	width: 550px;
+	width: 580px;
 }
 
 #top_menu li {
@@ -137,7 +196,7 @@ select{
 #user_menu{
 	margin-top: 5px;
 	float: left;
-	width: 245px;
+	width: 285px;
 }
 
 #user_menu img{
@@ -149,14 +208,21 @@ select{
 	width: 260px;
 	margin-top: 5px;
 	font-size: 1.1em;
+	text-align: right;
 }
 
 #logo {
 	float: right;
+	position:relative;
+	top:160px;
+	left:0;
+	margin-top:-200px;
+	/*
 	position: relative;
-	top: 10px;
+	top: -30px;
 	overflow: hidden;
 	margin-bottom: 0px;
+	*/
 }
 
 #footer {
@@ -201,19 +267,21 @@ select{
 	margin-top: 6px;
 }
 
+.sidebar{
+	float: right;
+	padding: 0 10px 15px 0;
+	width: 220px;
+	position:relative;
+	top:180px;
+}
+
+
 
 /* User Info Column */
 
 
-#info_col {
-	float: right;
-	padding: 0 10px 15px 0;
-	width: 220px;
-	margin-top: -10px;
-}
-
 #info_col p {
-	margin: 10px 5px;
+	margin: 10px 20px;
 }
 
 #info_col br {
@@ -221,9 +289,8 @@ select{
 	height 2px;
 }
 
-
 #user_stats {
-	margin-left: 10px;
+	margin-left: 20px;
 	width: 130px;	
 	font-size: 1.3em;
 	color: #FFF;
@@ -374,6 +441,7 @@ li.quizz.wrong {
 
 .quizz h3 {
 	font-size: 1.4em;
+	width: 300px;
 }
 
 div.quizz-main{
@@ -431,7 +499,9 @@ li.answer.wrong {
 p.question {
 	color: #fff;
 	font-size: 1.6em;
-	text-transform: none;	
+	text-transform: none;
+	margin-top: 5px;
+	max-width: 350px;
 }
 
 
@@ -476,7 +546,7 @@ p.question {
 }
 
 .main-form{
-	margin-top: 9px;
+	margin-top: 11px;
 	padding: 20px;
 	background-color: #272727;
 	border: 2px solid #999;	
@@ -527,13 +597,6 @@ p.question {
 	margin-top: 10px;
 }
 
-#last-users{
-	float: right;
-	padding: 0 10px 15px 0;
-	width: 210px;
-	margin-top: -30px;
-
-}
 
 
 
