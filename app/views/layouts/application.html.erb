@@ -10,6 +10,13 @@
 	<link rel="stylesheet" href="/stylesheets/quizzr.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<%= javascript_include_tag :defaults %>
 </head>
+<!--[if IE]>
+<style>
+#page {
+	margin-top: -30px;
+}
+</style>
+<![endif]-->
 <body>
     <div id="header" >        
 		<%= render :partial => 'layouts/top_menu' %>
@@ -26,7 +33,7 @@
 		</div>
   	</div>
 	<div id="footer" >
-  		<p>Quizzr.net (2009) - A <a href="http://webcamole.com/">Webcamole</a> Project</p>
+  		<p>Quizzr.net (2009) - A <a href="http://webcamole.com/">Webcamole</a> Project - Read our <a href="http://blog.quizzr.net/">Blog</a> - See the <a href="http://help.quizzr.net/">Help</a></p>
 	</div>
 	<!-- Google Analytics Tracker -->
 	<script type="text/javascript">

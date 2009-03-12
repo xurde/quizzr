@@ -5,7 +5,6 @@
 $(document).ready(function() {
 	$(".emptyme").bind("focus", function() {
 		$(this).val("");
-		//$(this).removeClass("emptyme")
 		$(this).unbind("focus")
 	})
 });
