@@ -3,7 +3,7 @@
 	<% if !@me.nil? %>
 		<li id="user_status">Logged as: <%= avatar_for_user(@me, :micro, false ) %> <%= link_to_user(@me, false) %> | <%= link_to 'Logout', logout_path, :class => 'action' %></li>
 	<% else %>
-		<li><%= link_to 'Login', login_path %> or <%= link_to 'Signup', signup_path %></li>
+		<li><%= link_to 'Login', login_path %> or <%= link_to 'Register', signup_path %></li>
 	<% end %>
 	</ul>
 	<% if !@me.nil? %>

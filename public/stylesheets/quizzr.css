@@ -144,6 +144,11 @@ select{
 	font-size: 1.3em;
 }
 
+#captcha_container{
+	font-size: 1.4em;;
+	margin-top: 20px;
+	margin-left: 100px;
+}
 
 /* ++++++ Layout Markup ++++++ */
 
@@ -151,6 +156,7 @@ select{
 #page {
 	margin: auto;
 	width: 800px;
+	min-height: 600px;
 	background: #444;
 	border-top: 5px solid #bbb;
 	border-bottom: 5px solid #bbb;

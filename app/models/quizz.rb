@@ -64,7 +64,7 @@ class Quizz < ActiveRecord::Base
     
     def post_to_user_twitter
       if !self.user.twitter_username.nil?
-        twitter = Twitter::Base.new(self.user.twitter_username, self.user.twitter_password)  
+        twitter = Twitter::Base.new(self.user.twitter_username, self.user.twitter_password)
         twitter.post( question_crop(self.question, 100) + " ♣ http://quizzr.net/#{self.user.login}/quizz/#{self.id.to_s}")
       end
     end
