@@ -7,7 +7,7 @@ class Quizz < ActiveRecord::Base
   validates_presence_of :user_id, :question, :correct_answer
   validates_associated :user
   
-  #after_create :post_to_user_twitter
+  after_create :post_to_user_twitter
 
 
   def is_open?
@@ -64,8 +64,10 @@ class Quizz < ActiveRecord::Base
     
     def post_to_user_twitter
       if !self.user.twitter_username.nil?
+        logger.info("DEBUG >>> begin quizzing for #{self.user.login}")
         twitter = Twitter::Base.new(self.user.twitter_username, self.user.twitter_password)
         twitter.post( question_crop(self.question, 100) + " ♣ http://quizzr.net/#{self.user.login}/quizz/#{self.id.to_s}")
+        logger.info("DEBUG >>> #{self.user.login} quizzed #{self.question}")
       end
     end
     
