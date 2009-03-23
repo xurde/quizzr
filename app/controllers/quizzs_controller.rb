@@ -35,6 +35,4 @@ class QuizzsController < ApplicationController
     end
   end
   
-  
-  
 end

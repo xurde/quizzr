@@ -156,7 +156,7 @@ select{
 #page {
 	margin: auto;
 	width: 800px;
-	min-height: 600px;
+	min-height: 800px;
 	background: #444;
 	border-top: 5px solid #bbb;
 	border-bottom: 5px solid #bbb;
@@ -268,7 +268,7 @@ select{
 #main-col {
 	float: left;
 	width: 530px;
-	min-height: 200px;
+	min-height: 600px;
 	padding: 0 1em;
 	margin-top: 6px;
 }

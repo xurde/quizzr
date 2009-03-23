@@ -71,7 +71,7 @@ class AccountController < ApplicationController
   def update_twitter_profile
       user = User.find(@me)
       begin
-        twitter = Twitter::Base.new( params[:user][:twitter_username], params[:user][:twitter_password] )
+        twitter = Twitter::Base.new( params[:user][:twitter_username], params[:twitter_password] )
       rescue
         flash[:error] = "Error while trying to connect to Twitter."
       end
@@ -79,7 +79,7 @@ class AccountController < ApplicationController
         begin
           twitter.verify_credentials
           user.twitter_username = params[:user][:twitter_username]
-          user.twitter_password = params[:user][:twitter_password]
+          user.twitter_password = params[:twitter_password]
           flash[:notice] = 'Twitter account was verified and connected correctly.' if user.save
         rescue
           flash[:error] = "Twitter username and/or pass invalid."
