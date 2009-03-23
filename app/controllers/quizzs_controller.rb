@@ -5,8 +5,8 @@ class QuizzsController < ApplicationController
   def create
     quizz = Quizz.new
     quizz.user = @me
-    quizz.question = params[:question]
-    quizz.correct_answer = params[:correct_answer]
+    quizz.question = params[:question].strip
+    quizz.correct_answer = params[:correct_answer].strip
     if quizz.save
       flash[:notice] = "Quizz sent"
     else
