@@ -43,7 +43,7 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
 
   map.root :controller => "index"
-  map.connect '/home', :controller => 'home', :page => 1
+  map.connect '/home', :controller => 'home'
   map.connect '/account/:action', :controller => 'account'
   map.connect '/quizzs/:action', :controller => 'quizzs'
   map.connect '/answer/:id', :controller => 'answers', :action => 'create'
