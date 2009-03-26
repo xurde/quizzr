@@ -17,8 +17,8 @@
 	<li><%= link_to 'By You', url_for( :filter => 'your' ) %></li>
   </ul>
   <ul id="quizzs_list">
-    <%= render :partial => 'quizz', :collection => @quizzs_for_me %>
+    <%= render :partial => 'quizz', :collection => @quizzs %>
   </ul>
-  <%= will_paginate(@quizzs_for_me) %>
+  <%= will_paginate(@quizzs) %>
 </div>
 <%= render :partial => '/user_info', :object => @me %>
