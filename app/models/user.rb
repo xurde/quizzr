@@ -16,9 +16,11 @@ class User < ActiveRecord::Base
   validates_presence_of     :password_confirmation,      :if => :password_required?
   validates_length_of       :password, :within => 4..40, :if => :password_required?
   validates_confirmation_of :password,                   :if => :password_required?
-  validates_length_of       :login,    :within => 3..40
-  validates_length_of       :email,    :within => 3..100
+  validates_length_of       :login,    :within => 3..20, :message => "Username must be between 3 and 20 chars of length"
+  validates_length_of       :email,    :within => 8..100, :message => "Email must be between 8 and 20 chars of length"
   validates_uniqueness_of   :login, :email, :case_sensitive => false
+  validates_format_of       :login, :with => /^[a-zA-Z][a-z0-9A-Z_]{2,19}$/, :on => :create, :message => "Username must begin with a letter and use only standard characters, numbers and '_'" #empieza por un char seguido de 2 a 19 caracteres, números o '_'
+  
   before_save :encrypt_password, :normalize_login
   before_create :make_activation_code
   # prevents a user from submitting a crafted form that bypasses activation
