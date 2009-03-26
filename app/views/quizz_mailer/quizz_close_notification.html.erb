@@ -1,6 +1,6 @@
-<%= !@user.name.nil? ? @user.name : @user.login %>, your quizz was solved by:
+Hi <%= !@user.name.nil? ? @user.name : @user.login %>, your quizz was solved by:
 
-<%= !@winner.name.nil? ? @winner.name : @winner.login %> ( <%= "http://quizzr.net/#{@winner.login}" )
+<%= !@winner.name.nil? ? @winner.name : @winner.login %> ( <%= "http://quizzr.net/#{@winner.login}" %>)
 
 	Check the quizz here:
 	<%= @quizz_url %>

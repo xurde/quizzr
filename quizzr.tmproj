@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>db/migrate/001_create_users.rb</string>
+	<string>public/stylesheets/quizzr.css</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -163,6 +163,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>public/stylesheets/quizzr.css</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
@@ -174,6 +188,7 @@
 		<string>app/views/layouts/application.html.erb</string>
 		<string>app/views/users/new.html.erb</string>
 		<string>db/migrate/001_create_users.rb</string>
+		<string>public/stylesheets/quizzr.css</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
