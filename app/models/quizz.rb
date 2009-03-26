@@ -1,7 +1,7 @@
 class Quizz < ActiveRecord::Base
   
   belongs_to :user
-  belongs_to :winner, :class_name => 'User', :foreign_key => 'winner_id'
+  belongs_to :winner, :class_name => 'User'
   has_many :answers
   
   validates_presence_of :user_id, :question, :correct_answer
@@ -9,15 +9,14 @@ class Quizz < ActiveRecord::Base
   
   after_create :post_to_user_twitter
 
-
   def is_open?
-    self.winner.nil?
+    self.closed_at.nil?
   end
   
-  def solved?
-    @solved
+  def is_winned?
+    !self.winner_id.nil?
   end
-  
+    
   def is_responded?(user)
     user.answers.find_by_quizz_id( self.id )
   end
@@ -27,14 +26,14 @@ class Quizz < ActiveRecord::Base
   end
   
   
-  def response(user, answer) #Validates answers
-    if answer.downcase.to_ascii_unicode == self.correct_answer.downcase.to_ascii_unicode #Compares downcased and ascii strings
+  def validate_response(answer) #Validates answers
+    answer.downcase.to_ascii_unicode == self.correct_answer.downcase.to_ascii_unicode #Compares downcased and ascii strings
+  end
+
+  def win(user) #Validates answers
       self.winner_id = user.id
-      self.winned_at = Time.now
-      @solved = self.save
-    else
-      false
-    end
+      self.closed_at = Time.now
+      self.save
   end
   
   def is_won_by?(user)

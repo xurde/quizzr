@@ -4,7 +4,7 @@ class CreateQuizzs < ActiveRecord::Migration
       t.timestamps
       t.column 'user_id', :integer
       t.column 'winner_id', :integer
-      t.column 'winned_at', :datetime
+      t.column 'closed_at', :datetime
       t.column 'question', :string, :limit => 140
       t.column 'correct_answer', :string, :limit => 50
       t.column 'show_pattern', :boolean, :default => false

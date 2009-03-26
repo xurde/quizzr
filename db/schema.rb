@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 8) do
     t.datetime "updated_at"
     t.integer  "user_id",                 :limit => 11
     t.integer  "winner_id",               :limit => 11
-    t.datetime "winned_at"
+    t.datetime "closed_at"
     t.string   "question",                :limit => 140
     t.string   "correct_answer",          :limit => 50
     t.boolean  "show_pattern",                           :default => false
