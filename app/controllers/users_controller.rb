@@ -19,8 +19,6 @@ class UsersController < ApplicationController
     if @user.errors.empty?
       self.current_user = @user
       logger.info "DEBUG ==> sending mail registration mail"
-      #UserObserver Override
-      #UserMailer.deliver_signup_notification(@user)
       redirect_back_or_default('/home')
       flash[:notice] = "Thanks for signing up!"
     else

@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   validates_format_of       :login, :with => /^[a-zA-Z][a-z0-9A-Z_]{2,19}$/, :on => :create, :message => "Username must begin with a letter and use only standard characters, numbers and '_'" #empieza por un char seguido de 2 a 19 caracteres, números o '_'
   
   before_save :encrypt_password, :normalize_login
-  before_create :make_activation_code
+  before_create :activate_user
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :password, :password_confirmation, :activation_code, :name, :email, :website, :gender, :birthdate, :country, :city, :notices_by_email, :notice_when_new_follower, :notice_when_your_quizz_solved, :notice_when_played_quizz_solved
@@ -111,8 +111,8 @@ class User < ActiveRecord::Base
       crypted_password.blank? || !password.blank?
     end
     
-    def make_activation_code
-      self.activation_code = Digest::SHA1.hexdigest( Time.now.to_s.split(//).sort_by {rand}.join )
+    def activate_user
+      self.activated_at = Time.now.utc
     end
     
     def normalize_login
