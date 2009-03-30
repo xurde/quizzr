@@ -11,7 +11,7 @@
 		<li><%= link_to 'Home', url_for(:controller => 'home') %></li>
 		<li><%= link_to 'Profile', url_for(:controller => 'users', :user => @me.login ) %></li>
 		<li><%= link_to 'Public', url_for(:controller => 'index') %></li>
-		<li><%= link_to 'Account', url_for(:controller => 'account', :action => 'profile') %></li>
+		<li><%= link_to 'Settings', url_for(:controller => 'account', :action => 'profile') %></li>
 	</ul>
 	<% end %>
 </div>

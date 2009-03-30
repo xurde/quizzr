@@ -202,7 +202,7 @@ select{
 #user_menu{
 	margin-top: 5px;
 	float: left;
-	width: 285px;
+	width: 270px;
 }
 
 #user_menu img{
@@ -212,7 +212,8 @@ select{
 #main_menu{
 	float: right;
 	width: 280px;
-	margin-top: 5px;
+	margin-top: 8px;
+	margin-right: 30px;
 	font-size: 1.1em;
 	text-align: right;
 }
