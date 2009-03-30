@@ -1,5 +1,7 @@
 class FollowMailer < ActionMailer::Base
   
+  helper :mailers
+  
   def follow_notification(follow)
     setup_email(follow)
     @subject    += "#{!follow.follower.name.nil? ? follow.follower.name : follow.follower.login} is now following your quizzs"

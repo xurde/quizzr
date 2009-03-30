@@ -1,8 +1,8 @@
-Hi <%= !@follow.followed.name.nil? ? @follow.followed.name : @follow.followed.login %>,
+Hi <%= user_name_or_login(@follow.followed) %>,
 
-<%= !@follow.follower.name.nil? ? @follow.follower.name : @follow.follower.login %> has started following your quizzs.
+<%= user_name_or_login(@follow.follower) %> has started following your quizzs.
 
-Check out his Quizzr, maybe you'd like to follow him/her back.
+Check out his Quizzr, maybe you'd like to follow him back.
 
 <%= @url %>
 
