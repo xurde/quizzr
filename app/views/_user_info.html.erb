@@ -1,8 +1,8 @@
 <div id="info_col" class="sidebar">
   <p><%= avatar_for_user( @user, 'medium', false ) %></p>
   <h3><p><%= @user.name || @user.login %></p></h3>
-  <p><%= (Time.now.year - @user.birthdate.year).to_s if @user.birthdate %><%= gender_for_user(@user.gender) if @user.gender %><%= ', ' + @user.city if (!@user.city.nil? && !@user.city.empty?) %><%= ', ' + @user.country if (!@user.city.nil? && !@user.country.empty?) %></p>
-  <%= content_tag :p, link_to( @user.website, @user.website, :popup => true), :class => 'website'  if (!@user.website.nil? && !@user.website.empty?) %>
+  <p><%= (Time.now.year - @user.birthdate.year - 1).to_s if @user.birthdate %><%= gender_for_user(@user.gender) if @user.gender %><%= ', ' + @user.city if (!@user.city.nil? && !@user.city.empty?) %><%= ', ' + @user.country if (!@user.city.nil? && !@user.country.empty?) %></p>
+  <%= content_tag :p, link_to( @user.website, external_url(@user.website), :popup => true), :class => 'website'  if (!@user.website.nil? && !@user.website.empty?) %>
   <p><%= link_to_follow_or_remove(@user) %></p>
   <ul id="user_stats">
     <li><span class="stat">Quizzs:</span><span class="value"><strong><%= @user[:quizzs].to_s %></strong></span></li>

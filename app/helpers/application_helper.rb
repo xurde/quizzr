@@ -70,6 +70,7 @@ module ApplicationHelper
     link_to quizz.answers.size.to_s + ' answers', url_for_quizz(quizz)
   end
   
+  
   # Rather Particular Cases Helpers
 
   def response_action_for_quizz(quizz)
@@ -97,7 +98,13 @@ module ApplicationHelper
         content_tag(:h5, "#{avatar_for_user(quizz.winner, :micro)} #{link_to_user(quizz.winner)} won this quizz answering #{content_tag(:strong, "'#{quizz.correct_answer}'" ) }", :class => 'answer')
     else
     end
-  end 
+  end
+  
+  def question_for_quizz(quizz)
+    quizz.question
+  end
+  
+  
 
   # General purpose helpers
   
@@ -107,6 +114,10 @@ module ApplicationHelper
     else
       class_else
     end
+  end
+  
+  def external_url(url)
+    url.downcase.lstrip[0..6] == 'http://' ? url : 'http://' + url
   end
   
 end
