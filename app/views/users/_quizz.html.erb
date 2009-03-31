@@ -1,6 +1,6 @@
 <li id="quizz_<%= quizz.id.to_s %>" class="quizz <%= class_if(quizz.is_open?, 'open', 'closed') %>">
   <p class="quizz-details"><%= link_to_quizz_time(quizz) %></p> 
-  <p class="question"><%= quizz.question %></p>
+  <p class="question"><%= quizz_parser(quizz.question) %></p>
   <%= winner_for_quizz(quizz) %>
   <div class="answers-count">has <%= link_to_quizz_answers(quizz) %></div>
 </li>

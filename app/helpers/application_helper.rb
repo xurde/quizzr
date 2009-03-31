@@ -100,10 +100,11 @@ module ApplicationHelper
     end
   end
   
-  def question_for_quizz(quizz)
-    quizz.question
+  def quizz_parser(text, parse = { :logins => true, :urls => true })
+    text.sub!(/(http:\/\/\S*)/){ |url| link_to url, url, :popup => true } if parse[:urls]
+    text.sub!(/@([a-zA-Z][a-z0-9A-Z_]{2,19})/){ |login| link_to login, "/#{login.delete('@')}" } if parse[:logins]
+    return text
   end
-  
   
 
   # General purpose helpers

@@ -3,7 +3,7 @@
   <p class="quizz-details"><%= link_to_quizz_time(quizz) %></p>
   <div class="quizz-main in-home">
 	<h3><%= link_to_user(quizz.user) %></h3>
-  	<p class="question"><%= quizz.question %></p>
+  	<p class="question"><%= quizz_parser(quizz.question) %></p>
   	<%= response_action_for_quizz(quizz) %>
   	<div class="answers-count">has <%= link_to_quizz_answers(quizz) %></div>
   </div>
