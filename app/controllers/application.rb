@@ -37,3 +37,13 @@ class ApplicationController < ActionController::Base
     
   
 end
+
+
+class String
+  
+  def to_ascii_unicode
+    converter = Iconv.new('ASCII//IGNORE//TRANSLIT', 'UTF-8')
+    converter.iconv(self).unpack('U*').select{ |cp| cp < 127 }.pack('U*')
+  end
+  
+end

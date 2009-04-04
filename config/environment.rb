@@ -113,11 +113,4 @@ ExceptionNotifier.exception_recipients = %w(jorgedf@gmail.com)
 
 #Ruby Extensions
 
-require 'unicode'
-class String
-  
-  def to_ascii_unicode
-    Unicode.normalize_KD(self).unpack('U*').select{ |cp| cp < 127 }.pack('U*')
-  end
-  
-end
+

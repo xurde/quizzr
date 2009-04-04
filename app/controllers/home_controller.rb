@@ -12,7 +12,7 @@ class HomeController < ApplicationController
     
     case params[:filter]
     when nil
-      @quizzs = Quizz.paginate_by_sql( "SELECT quizzs.* FROM quizzs LEFT OUTER JOIN follows ON quizzs.user_id = follows.followed_id WHERE follows.follower_id = #{@user.id} ORDER BY quizzs.created_at DESC",
+      @quizzs = Quizz.paginate_by_sql( "SELECT DISTINCT quizzs.* FROM quizzs LEFT OUTER JOIN follows ON (quizzs.user_id = follows.followed_id OR quizzs.user_id = 3) WHERE follows.follower_id = #{@user.id} ORDER BY quizzs.created_at DESC",
                                             :page => params[:page], :per_page => QUIZZS_PER_PAGE )
     when 'your'
       @quizzs = @user.quizzs.paginate( :page => params[:page], :per_page => QUIZZS_PER_PAGE, :order => 'quizzs.created_at DESC' )

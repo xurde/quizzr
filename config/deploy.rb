@@ -31,9 +31,7 @@ namespace :deploy do
   
   desc "Fix file permissions"
   task :fix_file_permissions, :roles => [ :app, :db, :web ] do 
-          sudo "chmod -R g+rw #{current_path}/tmp"
-          sudo "chmod -R g+rw #{current_path}/log"
-          sudo "chmod -R g+rw #{current_path}/public/system"
+          sudo "chmod -R g+rw #{current_path}/public/"
   end
   
   desc "Restarting Webserver"
