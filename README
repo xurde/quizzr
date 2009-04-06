@@ -1,4 +1,4 @@
-== Welcome to Quizz
+== Welcome to Quizzr
 
 Rails is a web-application and persistence framework that includes everything
 needed to create database-backed web-applications according to the
@@ -201,3 +201,13 @@ test
 vendor
   External libraries that the application depends on. Also includes the plugins subdirectory.
   This directory is in the load path.
+  
+  
+SQL Samples:
+
+Most quizzrs users ranking for a period:
+SELECT users.login, count(*) AS num_quizzs FROM users INNER JOIN quizzs ON users.id = quizzs.user_id WHERE quizzs.created_at >'2009-03-29' AND quizzs.created_at <'2009-04-06' GROUP BY users.id ORDER BY num_quizzs DESC LIMIT 10
+
+Most answered quizzs ranking for a period:
+SELECT users.login, quizzs.id, quizzs.question, count(*) AS num_answers FROM users INNER JOIN quizzs ON users.id = quizzs.user_id JOIN answers ON answers.quizz_id = quizzs.id WHERE quizzs.created_at >'2009-03-29' AND quizzs.created_at <'2009-04-06' GROUP BY users.id, quizzs.id ORDER BY num_answers DESC LIMIT 10
+

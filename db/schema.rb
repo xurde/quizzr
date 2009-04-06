@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 8) do
+ActiveRecord::Schema.define(:version => 9) do
 
   create_table "answers", :force => true do |t|
     t.datetime "created_at"
@@ -74,6 +74,9 @@ ActiveRecord::Schema.define(:version => 8) do
     t.boolean  "notice_when_favorited_quizz",                    :default => true
     t.boolean  "notice_when_your_quizz_solved",                  :default => true
     t.boolean  "notice_when_played_quizz_solved",                :default => false
+    t.boolean  "daily_newsletter",                               :default => false
+    t.boolean  "weekly_newsletter",                              :default => true
+    t.boolean  "monthly_newsletter",                             :default => true
   end
 
 end

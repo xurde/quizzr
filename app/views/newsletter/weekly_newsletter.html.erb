@@ -1,0 +1,33 @@
+<style>
+body{
+  background-color: #111;
+  color: #CCC;
+  font-family: 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Geneva, sans-serif;
+  padding: 10px;
+  }
+</style>
+<body>
+<p>Hi <%= user_name_or_login(@user) %>,</p>
+
+<p>This is our <%= @period %> activity report for you.</p>
+
+<ol>
+  <h2>Most Quizzer Users</h2>
+  <%= render :partial => 'user', :collection => @most_quizzer_users %>
+  <h4>You: <%= @your_quizzs_count %></h4>
+</ol>
+
+<ol>
+  <h2>Most Answered Quizzs</h2>
+  <%= render :partial => 'quizz', :collection => @most_answered_quizzs %>
+  <h4>Your: <%= (@your_most_answered_quizz.first.question + " #{@your_most_answered_quizz.first.num_answers} answers") unless @your_most_answered_quizz.empty? %></h4>
+</ol>
+
+<br /><br />
+<p>Best,
+QuizzrBot
+</p><br /><br />
+
+<p>Change here your <a href="http://quizzr.net/account/notices">notifications settings</a> if you no longer want to receive this mail.</p>
+
+</body>

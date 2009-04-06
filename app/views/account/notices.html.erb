@@ -6,6 +6,8 @@
 		    <label for="notices_by_email">Notices by email</label>
 		    <%= f.select :notices_by_email, [['Yes, please', 'A' ], ['No, thanks', 'I' ]] %>
 		  </p>
+		  <fieldset>
+		    <legend align="right">EVENTS</legend>
 		  <p>
 		    <label for="notice_when_new_follower">New follower</label>
 			<%= f.check_box :notice_when_new_follower %>
@@ -18,6 +20,18 @@
 		    <label for="notice_when_played_quizz_solved">Played quizz solved</label>
 		    <%= f.check_box :notice_when_played_quizz_solved %>	
 		  </p>
+		  </fieldset>
+		  <fieldset>
+		    <legend align="right">NEWSLETTERS</legend>
+		    <p>
+  		    <label for="weekly_newsletter">Weekly Newsletter</label>
+  		    <%= f.check_box :weekly_newsletter %>	
+  		  </p>
+  		  <p>
+  		    <label for="monthly_newsletter">Monthly Newsletter</label>
+  		    <%= f.check_box :monthly_newsletter %>
+  		  </p>
+		  </fieldset>
 		  <p class="form-submit"><%= image_submit_tag('button-update.png')%></p>
 		<% end -%>
 </div>

@@ -20,7 +20,7 @@
 		  </p>
 		  <p>
 		    <label for="birthdate">Birth date</label>
-		    <%= f.date_select :birthdate, :end_year => 1927, :start_year => Time.now.year, :order => [ :month, :day, :year], :default => 25.years.from_now  %></p>
+		    <%= f.date_select :birthdate, :end_year => 1927, :start_year => Time.now.year, :order => [ :month, :day, :year], :default => 25.years.from_now, :include_blank => true %></p>
 		  </p>
 		  <p>
 		    <label for="country">Country</label>
