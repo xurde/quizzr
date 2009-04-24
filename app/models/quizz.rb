@@ -27,7 +27,7 @@ class Quizz < ActiveRecord::Base
   
   
   def validate_response(answer) #Validates answers
-    answer.downcase.to_ascii_unicode == self.correct_answer.downcase.to_ascii_unicode #Compares downcased and ascii strings
+    answer.downcase.normalize == self.correct_answer.downcase.normalize #Compares normalized strings
   end
 
   def win(user) #Validates answers
