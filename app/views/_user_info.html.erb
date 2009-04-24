@@ -10,13 +10,15 @@
 	<li><span class="stat">Won:</span><strong>(<%= @user[:ratio] || '-' %>%) <%= @user[:won].to_s %></strong></li>
   </ul>
   <br />
-  <h3><%= link_to @user[:followings].size.to_s + ' followings', url_for( :controller => 'users', :user => @user.login, :action => 'followings' ) %></h3>
+  <h4><%= link_to @user[:followings].size.to_s + ' followings', url_for( :controller => 'users', :user => @user.login, :action => 'followings' ) %></h4>
   <div id='following-list' class="avatar-list">
-    <%= render :partial => '/followed', :collection => @user[:followings] %>
+    <%= render :partial => '/followed', :collection => @user.followings.find(:all, :limit => AVATARS_FOR_PROFILE) %>
+	<h4><%= link_to 'view more', url_for( :controller => 'users', :user => @user.login, :action => 'followings' ) if @user[:followings].size > AVATARS_FOR_PROFILE %></h4>
   </div>
   <br />
-  <h3><%= link_to @user[:followers].size.to_s + ' followers', url_for(:controller => 'users', :user => @user.login, :action => 'followers' ) %></h3>
+  <h4><%= link_to @user[:followers].size.to_s + ' followers', url_for(:controller => 'users', :user => @user.login, :action => 'followers' ) %></h4>
   <div id='followers-list' class="avatar-list">
-    <%= render :partial => '/follower', :collection => @user[:followers] %>
+    <%= render :partial => '/follower', :collection => @user.followers.find(:all, :limit => AVATARS_FOR_PROFILE) %>
+	<h4><%= link_to 'view more', url_for( :controller => 'users', :user => @user.login, :action => 'followers' ) if @user[:followers].size > AVATARS_FOR_PROFILE %></h4>
   </div>
 </div>

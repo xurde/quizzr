@@ -66,6 +66,7 @@ Rails::Initializer.run do |config|
   
   QUIZZS_PER_PAGE = 10
   ANSWERS_PER_PAGE = 20
+  AVATARS_FOR_PROFILE = 60
   
   COUNTRIES = ["Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola",
           "Anguilla", "Antarctica", "Antigua And Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria",

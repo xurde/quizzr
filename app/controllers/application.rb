@@ -28,18 +28,6 @@ class ApplicationController < ActionController::Base
   def render_errorpage
     render :file => 'public/404.html', :status => 404 #Hacer página especial para user not found
   end
-  
-  
-  def self.mail_weekly_newsletter(user_login)
-    user = User.find_by_login(user_login)
-    if user
-      most_quizzer_users = User.find_by_sql("SELECT users.login, count(*) AS num_quizzs FROM users INNER JOIN quizzs ON users.id = quizzs.user_id WHERE quizzs.created_at >'2009-03-29' AND quizzs.created_at <'2009-04-06' GROUP BY users.id ORDER BY num_quizzs DESC LIMIT 10")
-      most_answered_quizzs = Quizz.find_by_sql("SELECT users.login, users.id, quizzs.*, count(*) AS num_answers FROM users INNER JOIN quizzs ON users.id = quizzs.user_id JOIN answers ON answers.quizz_id = quizzs.id WHERE quizzs.created_at >'2009-03-29' AND quizzs.created_at <'2009-04-06' GROUP BY users.id, quizzs.id ORDER BY num_answers DESC LIMIT 10")
-      Newsletter.deliver_weekly_newsletter(user, most_quizzer_users, most_answered_quizzs)
-    end
-  end
-  
-  
     
   private
   

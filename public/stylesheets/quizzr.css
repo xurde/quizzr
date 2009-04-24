@@ -280,6 +280,19 @@ legend{
 	background-color: #ff9900;
 }
 
+div.big-message{
+	text-align: center;
+	background-color: gray;
+	border: thin white solid;
+	padding: 10px 0;
+	margin: 50px 40px;
+}
+
+div.big-message h1{
+	color: white;
+}
+
+
 #main-col {
 	float: left;
 	width: 530px;
@@ -308,6 +321,10 @@ legend{
 #info_col br {
 	border: thin solid black;
 	height 2px;
+}
+
+#info_col h4 {
+	margin: 5px 0;
 }
 
 #user_stats {
