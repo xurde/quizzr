@@ -9,8 +9,8 @@
 	  <p id='quizz_submit'><%= image_submit_tag('button-quizz.png')%></p>
     <% end -%>
   </div>
-  <ul id="quizzs_tab">
-	<li>Show Quizzs:</li>
+  <ul id="quizzs_tab" class='tabulation'>
+	<li>Show Quizzs</li>
 	<li><%= link_to 'All', url_for( :filter => nil ), :class => (params[:filter].nil? ? 'active' : '') %></li>
 	<li><%= link_to 'Open', url_for( :filter => 'open' ), :class => (params[:filter] == 'open' ? 'active' : '') %></li>
 	<li><%= link_to 'Won', url_for( :filter => 'won' ), :class => (params[:filter] == 'won' ? 'active' : '') %></li>

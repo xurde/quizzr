@@ -1,5 +1,5 @@
 <ul id="tabs_user" class="tabulation">
-	View for <%= @user.login %>:
-	<li class="<%= params[:action] == 'show' ? 'active' : nil %>"><%= link_to 'Quizzs', url_for( :user => @user.login, :action => nil ) %></li>
-    <li class="<%= params[:action] == 'answers' ? 'active' : nil %>"><%= link_to 'Answers', url_for( :user => @user.login, :action => 'answers' ) %></li>
+	<li>View <%= @user.login %>'s</li>
+	<li><%= link_to 'Quizzs', url_for( :user => @user.login, :action => nil ), :class => (params[:action] == 'show' ? 'active' : '') %></li>
+    <li><%= link_to 'Answers', url_for( :user => @user.login, :action => 'answers' ), :class => (params[:action] == 'show_answers' ? 'active' : '') %></li>
 </ul>
