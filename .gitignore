@@ -1,5 +1,5 @@
 tmp
-quizzr.tmproj
+*.tmproj
 log
 db/*.sqlite3
 data.dump
