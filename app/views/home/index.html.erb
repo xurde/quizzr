@@ -11,10 +11,10 @@
   </div>
   <ul id="quizzs_tab">
 	<li>Show Quizzs:</li>
-	<li><%= link_to 'For you', url_for( :filter => nil ) %></li>
-	<li><%= link_to 'By You', url_for( :filter => 'your' ) %></li>
-	<li><%= link_to 'Won', url_for( :filter => 'won' ) %></li>
-	<li><%= link_to 'Failed', url_for( :filter => 'failed' ) %></li>
+	<li><%= link_to 'All', url_for( :filter => nil ), :class => (params[:filter].nil? ? 'active' : '') %></li>
+	<li><%= link_to 'Open', url_for( :filter => 'open' ), :class => (params[:filter] == 'open' ? 'active' : '') %></li>
+	<li><%= link_to 'Won', url_for( :filter => 'won' ), :class => (params[:filter] == 'won' ? 'active' : '') %></li>
+	<li><%= link_to 'Failed', url_for( :filter => 'failed' ), :class => (params[:filter] == 'failed' ? 'active' : '') %></li>
   </ul>
   <ul id="quizzs_list">
     <%= render :partial => 'quizz', :collection => @quizzs %>

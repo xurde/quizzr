@@ -383,7 +383,16 @@ legend{
 
 #quizzs_tab li {
 	display: inline;
-	margin: 0 15px;
+	margin: 0 10px;
+}
+
+#quizzs_tab li a{
+	padding: 5px 10px;
+}
+
+#quizzs_tab li a.active{
+	background-color: black;
+	border: thin solid gray;
 }
 
 .pagination {
