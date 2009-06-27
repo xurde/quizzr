@@ -24,7 +24,7 @@ ActionController::Routing::Routes.draw do |map|
   #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
   #     admin.resources :products
   #   end
-  
+
 
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.login  '/login', :controller => 'sessions', :action => 'new'
@@ -32,8 +32,8 @@ ActionController::Routing::Routes.draw do |map|
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate'
   map.password_recover '/password_recover', :controller => 'account', :action => 'password_recover'
   map.password_reset '/password_reset', :controller => 'account', :action => 'password_reset'
-  
-  
+
+
   map.resources :users
   map.resource :session
 
@@ -47,11 +47,15 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/account/:action', :controller => 'account'
   map.connect '/quizzs/:action', :controller => 'quizzs'
   map.connect '/answer/:id', :controller => 'answers', :action => 'create'
-  
+
   map.connect ':user', :controller => 'users', :action => 'show', :page => 1
   map.connect ':user/quizz/:id', :controller => 'quizzs', :action => 'show'
   map.connect ':user/answers', :controller => 'users', :action => 'show_answers', :page => 1
   map.connect ':user/:action', :controller => 'users'
+
+  map.namespace :api do |api|
+     api.statuses "/statuses/:action.:format", :controller => 'statuses' #, :controller => 'statuses' :member => {:friends_timeline => :get, :user_timeline => :get}
+   end
 
   #default rails routes
   map.connect ':controller/:action/:id'

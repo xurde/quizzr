@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statuses type="array">
+<% @quizzs.each do |quizz| -%>
+    <status>
+      <created_at><%= quizz.created_at %></created_at>
+      <id><%= quizz.id %></id>
+      <text><%= quizz.question %></text>
+      <source>web</source>
+      <truncated>false</truncated>
+      <in_reply_to_status_id />
+      <in_reply_to_user_id />
+      <favorited>false</favorited>
+      <user>
+        <id><%= quizz.user.id %></id>
+        <name><%= quizz.user.name %></name>
+        <screen_name><%= quizz.user.login %></screen_name>
+        <description>Greyhound lover, blogger, vegetable gardener, pescetarian, avid TV watcher, sometimes-author and wanna-be half marathon runner.</description>
+        <location>Highland Park, IL</location>
+        <profile_image_url>http://quizzr.net<%= quizz.user.avatar.public_filename(:thumb) %></profile_image_url>
+        <url>http://www.madmadlife.com/</url>
+        <protected>false</protected>
+        <followers_count>544</followers_count>
+      </user>
+    </status>
+<% end -%>
+</statuses>
