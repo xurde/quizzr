@@ -15,7 +15,7 @@ role :db,  "quizzr.net", :primary => true
 # the rest should be good
 set :repository,  "#{user}@#{domain}:git/#{application}.git"
 set :deploy_to, "/home/#{user}/quizzr.net"
-set :deploy_via, :remote_cache
+#set :deploy_via, :remote_cache
 set :scm, 'git'
 set :branch, 'master'
 set :scm_verbose, true
@@ -27,12 +27,12 @@ namespace :deploy do
 
   task :after_update_code, :roles => :app do
     run "ln -nfs /home/#{user}/#{domain}/shared/system/avatars #{release_path}/public/images/avatars"
-    run "chmod -R 664 #{release_path}/public"
+    #run "chmod -R 664 #{release_path}/public"
   end
 
   desc "Fix file permissions"
   task :fix_file_permissions, :roles => [ :app, :db, :web ] do
-          sudo "chmod -R g+rw #{current_path}/public/"
+    #sudo "chmod -R g+rw #{current_path}/public/"
   end
 
   desc "Restarting Webserver"
