@@ -18,19 +18,35 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 	background: transparent;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
+}
+
+.clearfix:after, 
+#header:after,
+#page:after,
+#maincol:after,
+#footer:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
 }
 
 /* remember to define focus styles! */
@@ -51,8 +67,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-
 
 
 /* Generic Elements Markup */
@@ -181,6 +195,7 @@ legend{
 	margin: auto;
 	width: 780px;
 	font-size: 1.4em;
+	height: 45px;
 }
 
 #top_menu {
@@ -295,10 +310,9 @@ div.big-message h1{
 
 #main-col {
 	float: left;
-	width: 530px;
-	min-height: 600px;
-	padding: 0 1em;
 	margin-top: 6px;
+	padding: 0 1em;
+	width: 530px;
 }
 
 .sidebar{
