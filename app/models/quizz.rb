@@ -23,7 +23,7 @@ class Quizz < ActiveRecord::Base
   end
   
   def is_responded?(user)
-    user.answers.find_by_quizz_id( :first, self.id , :order => 'created_at DESC' )
+    !self.response_by(user).nil?
   end
   
   def just_solved?
@@ -39,22 +39,19 @@ class Quizz < ActiveRecord::Base
   end
   
   def response_by(user)
-    user.answers.find_by_quizz_id( self.id ).text if !user.answers.find_by_quizz_id( self.id ).nil?
-  end
-  
-  def answered_by?(user)
-    !self.answers.find_by_user_id(user.id).nil?
-  end
-  
-  def answer_of(user)
-    answer = self.answers.find_by_user_id(user.id)
-    if !answer.nil?
-      answer
+    last_answer = self.answers.find(:first, :conditions => "user_id = #{user.id}" , :order => 'created_at DESC')
+    if last_answer && (last_answer.created_at >= self.updated_at)
+      last_answer
     else
       nil
     end
   end
   
+  def answered_by?(user)
+    !self.response_by(user).nil?
+  end
+  
+
   def validate_response(answer) #Validates answers
     answer.downcase.normalize == self.correct_answer.downcase.normalize #Compares normalized strings
   end

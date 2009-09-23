@@ -18,7 +18,7 @@ module ApplicationHelper
     if !@me.nil?
       if quizz.is_open?
         if quizz.answered_by?(@me)
-          content_tag(:h5, "You already answered #{content_tag(:strong, "'#{quizz.answer_of(@me).text}'" + "#{image_tag('icon-wrong.png') }" )} ", :class => 'answer') 
+          content_tag(:h5, "You already answered #{content_tag(:strong, "'#{quizz.response_by(@me).text}'" + "#{image_tag('icon-wrong.png') }" )} ", :class => 'answer') 
         else
           if quizz.user != @me
             render :partial => '/answer_form_for', :object => quizz
