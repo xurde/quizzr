@@ -1,0 +1,14 @@
+Hi <%= user_name_or_login(@user) %>, a quizz you played was solved by <%= user_name_or_login(@winner) %> ( <%= "http://quizzr.net/#{@winner.login}" %> )
+	
+	<%= @quizz.question %>
+	Correct answer: <%= @quizz.correct_answer %>
+	
+	See the quizz here:
+	<%= @quizz_url %>
+
+Best,
+QuizzrBot
+
+
+
+<%= render :partial => '/mail_footer' %>

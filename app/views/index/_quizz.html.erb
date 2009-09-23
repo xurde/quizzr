@@ -5,6 +5,6 @@
 	<h3><%= link_to_user(quizz.user) %></h3>
   	<p class="question"><%= quizz_parser(quizz.question) %></p>
   	<%= winner_for_quizz(quizz) %>
-  	<div class="answers-count">has <%= link_to_quizz_answers(quizz) %></div>
+  	<div class="answers-count"><%= link_to_quizz_clues(quizz) %> and <%= link_to_quizz_answers(quizz) %></div>
   </div>
 </li>

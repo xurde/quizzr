@@ -3,8 +3,12 @@ Hi <%= user_name_or_login(@user) %>, your quizz was solved by <%= user_name_or_l
 	<%= @quizz.question %>
 	Correct answer: <%= @quizz.correct_answer %>
 	
-	You can check the quizz here:
+	See the quizz here:
 	<%= @quizz_url %>
 
 Best,
 QuizzrBot
+
+
+
+<%= render :partial => '/mail_footer' %>

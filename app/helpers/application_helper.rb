@@ -12,65 +12,6 @@ module ApplicationHelper
     string.normalize.tr('a-zA-Z','*').tr('0-9', '#')
   end
   
-  def gender_for_user(gender)
-    case gender
-    when 'M'
-      ', Male'
-    when 'F'
-      ', Female'
-    end
-  end
-  
-  def link_to_user(user, personalize = true)
-    if (personalize && user == @me)
-      link_to 'You', '/' + user.login, :class => 'username'
-    else
-      link_to user.login, '/' + user.login, :class => 'username'
-    end
-  end
-  
-  
-  def avatar_for_user(user, size = nil, linked = true )
-    if !user.avatar.nil?
-      avatar_path = user.avatar.public_filename(size)
-    else
-      avatar_path = "default-avatar#{ !size.nil? ? '-' + size.to_s : '' }.png"
-    end
-      image = image_tag( avatar_path, :class => "avatar #{size}" )
-    if linked
-      link_to image, '/' + user.login
-    else
-      image
-    end
-  end  
-  
-  def link_to_follow_or_remove(user)
-    if (!@me.nil?) & (@me != @user)
-      if user.is_followed_by?(@me)
-        link_to( image_tag('button-small-follow.png'), url_for( :controller => 'users', :action => 'follow', :id => @user.id ), :method => :post )
-      else
-        link_to( image_tag('button-small-remove.png'), url_for( :controller => 'users', :action => 'remove', :id => @user.id ), :method => :delete )
-      end
-    end
-  end
-  
-  def url_for_quizz(quizz)
-    url_for(:controller => 'quizzs', :action => 'show', :user => quizz.user.login, :id => quizz.id)
-  end
-  
-  def link_to_quizz(quizz)
-    link_to quizz.question, url_for_quizz(quizz)
-  end
-  
-  def link_to_quizz_time(quizz)
-    link_to time_ago_in_words(quizz.created_at) + ' ago', url_for_quizz(quizz)
-  end
-  
-  def link_to_quizz_answers(quizz)
-    link_to quizz.answers.size.to_s + ' answers', url_for_quizz(quizz)
-  end
-  
-  
   # Rather Particular Cases Helpers
 
   def response_action_for_quizz(quizz)
@@ -79,23 +20,36 @@ module ApplicationHelper
         if quizz.answered_by?(@me)
           content_tag(:h5, "You already answered #{content_tag(:strong, "'#{quizz.answer_of(@me).text}'" + "#{image_tag('icon-wrong.png') }" )} ", :class => 'answer') 
         else
-          render :partial => '/answer_form_for', :object => quizz if quizz.user != @me
+          if quizz.user != @me
+            render :partial => '/answer_form_for', :object => quizz
+          else
+            render :partial => '/actions_for_own_quizz', :object => quizz
+          end
         end
       else
+        if quizz.winner
           content_tag(:h5, "#{avatar_for_user(quizz.winner, :micro)} #{link_to_user(quizz.winner)} won this quizz answering #{content_tag(:strong, "'#{quizz.correct_answer}'" + "#{( quizz.is_won_by?(@me) ? image_tag('icon-correct.png') : '' )}" ) }", :class => 'answer')
+        else
+          content_tag(:h5, "The answer was revealed: #{content_tag(:strong, "'#{quizz.correct_answer}'" , :class => 'answer') }" )
+        end
       end
     else
       content_tag( :p, "#{link_to 'login', login_url} or #{link_to 'register', signup_url} to answer this quizz.", :class => 'message' )
     end
   end
   
+  
   def answer_by_user_for_quizz(quizz, user)
-    content_tag(:h5, "<strong>#{user.login}</strong> answered #{content_tag(:strong, "'#{quizz.responded_for(user)}'" + "#{ quizz.is_won_by?(user) ? image_tag('icon-correct.png') : image_tag('icon-wrong.png') }" )} ", :class => 'answer') 
+    content_tag(:h5, "<strong>#{user.login}</strong> answered #{content_tag(:strong, "'#{quizz.response_by(user)}'" + "#{ quizz.is_won_by?(user) ? image_tag('icon-correct.png') : image_tag('icon-wrong.png') }" )} ", :class => 'answer') 
   end
   
   def winner_for_quizz(quizz)
     if !quizz.is_open?
+      if quizz.winner
         content_tag(:h5, "#{avatar_for_user(quizz.winner, :micro)} #{link_to_user(quizz.winner)} won this quizz answering #{content_tag(:strong, "'#{quizz.correct_answer}'" ) }", :class => 'answer')
+      else
+        content_tag(:h5, "The answer was revealed: #{content_tag(:strong, "'#{quizz.correct_answer}'" , :class => 'answer') }" )
+      end
     else
     end
   end

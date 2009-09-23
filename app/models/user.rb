@@ -44,6 +44,10 @@ class User < ActiveRecord::Base
   def pending?
     @activated
   end
+  
+  def notices_by_email?
+    self.notices_by_email == 'A'
+  end
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   def self.authenticate(login, password)

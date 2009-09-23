@@ -1,0 +1,8 @@
+<p class="message">
+	<%= link_to_function 'Add clue', "$('#clue_form_#{actions_for_own_quizz.id}').show();" %> | <%= link_to 'Reveal', url_for( :controller => 'quizzs', :action => 'reveal', :id => actions_for_own_quizz.id ), :confirm => 'Do you really want to reveal this quizz?' %>
+	<% form_tag url_for( :controller => 'quizzs', :action => 'add_clue', :id => actions_for_own_quizz.id ), :id => "clue_form_#{actions_for_own_quizz.id}", :class => "clues", :style => "display:none;" do -%>
+	<p><%= text_field_tag 'clue' %> <%= image_submit_tag 'button-add.png', :class => 'clue-submit' %></p>
+	<%= link_to_function 'Cancel', "$('#clue_form_#{actions_for_own_quizz.id}').hide();" %>
+	<% end -%>
+	
+</p>

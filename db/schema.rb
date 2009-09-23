@@ -9,44 +9,51 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 9) do
+ActiveRecord::Schema.define(:version => 11) do
 
   create_table "answers", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",    :limit => 11
-    t.integer  "quizz_id",   :limit => 11
+    t.integer  "user_id"
+    t.integer  "quizz_id"
     t.string   "text",       :limit => 50
     t.boolean  "ok"
   end
 
   create_table "avatars", :force => true do |t|
-    t.integer "user_id",      :limit => 11
-    t.integer "parent_id",    :limit => 11
+    t.integer "user_id"
+    t.integer "parent_id"
     t.string  "content_type"
     t.string  "filename"
     t.string  "thumbnail"
-    t.integer "size",         :limit => 11
-    t.integer "width",        :limit => 11
-    t.integer "height",       :limit => 11
+    t.integer "size"
+    t.integer "width"
+    t.integer "height"
+  end
+
+  create_table "clues", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "quizz_id"
+    t.string   "text",       :limit => 50
   end
 
   create_table "follows", :force => true do |t|
-    t.integer  "follower_id", :limit => 11
-    t.integer  "followed_id", :limit => 11
+    t.integer  "follower_id"
+    t.integer  "followed_id"
     t.datetime "created_at"
   end
 
   create_table "quizzs", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",                 :limit => 11
-    t.integer  "winner_id",               :limit => 11
+    t.integer  "user_id"
+    t.integer  "winner_id"
     t.datetime "closed_at"
     t.string   "question",                :limit => 140
     t.string   "correct_answer",          :limit => 50
     t.boolean  "show_pattern",                           :default => false
-    t.integer  "reponses_per_user_limit", :limit => 11,  :default => 1
+    t.integer  "reponses_per_user_limit",                :default => 1
   end
 
   create_table "users", :force => true do |t|
@@ -60,6 +67,7 @@ ActiveRecord::Schema.define(:version => 9) do
     t.datetime "remember_token_expires_at"
     t.string   "activation_code",                 :limit => 40
     t.datetime "activated_at"
+    t.integer  "minutes_for_quizzs"
     t.string   "twitter_username",                :limit => 20
     t.string   "twitter_password",                :limit => 20
     t.string   "name",                            :limit => 30
@@ -68,7 +76,7 @@ ActiveRecord::Schema.define(:version => 9) do
     t.datetime "birthdate"
     t.string   "country",                         :limit => 40
     t.string   "city",                            :limit => 40
-    t.integer  "timezone",                        :limit => 11
+    t.integer  "timezone"
     t.string   "notices_by_email",                :limit => 1,   :default => "A"
     t.boolean  "notice_when_new_follower",                       :default => true
     t.boolean  "notice_when_favorited_quizz",                    :default => true
@@ -77,6 +85,7 @@ ActiveRecord::Schema.define(:version => 9) do
     t.boolean  "daily_newsletter",                               :default => false
     t.boolean  "weekly_newsletter",                              :default => true
     t.boolean  "monthly_newsletter",                             :default => true
+    t.boolean  "notice_when_new_clues",                          :default => true
   end
 
 end

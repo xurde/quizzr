@@ -20,18 +20,37 @@ class QuizzsController < ApplicationController
   
   
   def show
-    @user = User.find_by_login( params[:user] )
-    #logger.info 'USER :::: ' + @user.id.to_s if !@user.nil?
-    @quizz = @user.quizzs.find( params[:id] )
-    #logger.info 'QUIZZ :::: ' + @quizz.id.to_s if !@quizz.nil?
+    @user = User.find_by_login(params[:user])
+    @quizz = @user.quizzs.find(params[:id])
     if !@quizz.nil?
       @answers = @quizz.answers.paginate( :all, :per_page => ANSWERS_PER_PAGE, :page => params[:page], :order => "created_at ASC" )
-      
-      #@can_answer = (@quizz.is_open?) & (@quizz.answers.find_by_user_id(@me).nil?) & (@quizz.user.id != @me.id) if !@me.nil?
       
       render :action => 'show'
     else
       render :error, :status => 404
+    end
+  end
+  
+
+  def add_clue
+    quizz = Quizz.find_by_id(params[:id])
+    if quizz && quizz.user_id = @me.id
+      if quizz.add_clue!(params[:clue])
+        flash[:notice] = 'Clue added correctly'
+      else
+        flash[:error] = 'Clue invalid'
+      end
+      redirect_to url_for_quizz(quizz)
+    else
+      render :status => 400, :text => 'Bad Request'
+    end
+  end
+  
+  
+  def reveal
+    quizz = Quizz.find_by_id(params[:id])
+    if quizz && quizz.user_id = @me.id
+      flash[:notice] = "The quizz has been revealed" if quizz.reveal!
     end
   end
   

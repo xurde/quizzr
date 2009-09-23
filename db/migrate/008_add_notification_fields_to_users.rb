@@ -6,7 +6,7 @@ class AddNotificationFieldsToUsers < ActiveRecord::Migration
     add_column :users, :notice_when_new_follower, :boolean, :default => true
     add_column :users, :notice_when_favorited_quizz, :boolean, :default => true
     add_column :users, :notice_when_your_quizz_solved, :boolean, :default => true
-    add_column :users, :notice_when_played_quizz_solved, :boolean, :default => false
+    add_column :users, :notice_when_played_quizz_solved, :boolean, :default => true
   end
 
   def self.down

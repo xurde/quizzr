@@ -29,6 +29,10 @@ class ApplicationController < ActionController::Base
     render :file => 'public/404.html', :status => 404 #Hacer página especial para user not found
   end
 
+  def url_for_quizz(quizz)
+    url_for(:controller => 'quizzs', :action => 'show', :user => quizz.user.login, :id => quizz.id)
+  end
+
   private
 
     def fetch_user

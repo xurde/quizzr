@@ -170,7 +170,7 @@ legend{
 #page {
 	margin: auto;
 	width: 800px;
-	min-height: 800px;
+	min-height: 500px;
 	background: #444;
 	border-top: 5px solid #bbb;
 	border-bottom: 5px solid #bbb;
@@ -506,6 +506,17 @@ p.quizz-details {
 	text-align: right;
 }
 
+ul.clues-list{
+	list-style-position: inside;
+	margin-bottom: 10px;
+}
+
+ul.clues-list li{
+	list-style-type: disc;
+	margin-left: 20px;
+	margin-bottom: 4px;
+}
+
 h5.answer{
 	margin-top: 10px;
 	margin-bottom: 0px;
@@ -555,7 +566,8 @@ p.question {
 /*Account Zone*/
 
 #account_menu {
-	margin-left: opx;
+	margin-left: 0px;
+	margin-top: 30px;
 }
 
 #account_menu li{
@@ -625,13 +637,20 @@ p.question {
 }
 
 #notices_edit label{
-	width: 10em;	
+	width: 13em;	
+}
+
+#notices_edit .form-submit input{
+	margin-left: 200px;
 }
 
 .answer-submit{
 	vertical-align: bottom;
 }
 
+.clue-submit{
+	vertical-align: bottom;
+}
 
 
 /******* Index Public Page ********/

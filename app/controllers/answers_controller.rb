@@ -7,7 +7,7 @@ class AnswersController < ApplicationController
         answer.ok = quizz.validate_response(params[:answer])
         if answer.save
           if answer.ok
-            quizz.win(@me)
+            quizz.win!(@me)
             flash[:notice] = "That was right"
           else
             flash[:error] = "That's not right"

@@ -46,6 +46,9 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/home', :controller => 'home'
   map.connect '/account/:action', :controller => 'account'
   map.connect '/quizzs/:action', :controller => 'quizzs'
+  map.connect '/quizzs/add_clue/:id', :controller => 'quizzs', :action => 'add_clue'
+  map.connect '/quizzs/reveal/:id', :controller => 'quizzs', :action => 'reveal'
+  
   map.connect '/answer/:id', :controller => 'answers', :action => 'create'
 
   map.connect ':user', :controller => 'users', :action => 'show', :page => 1
