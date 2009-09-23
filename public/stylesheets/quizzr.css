@@ -41,7 +41,9 @@ q:before, q:after {
 #header:after,
 #page:after,
 #maincol:after,
-#footer:after {
+#footer:after,
+#content:after,
+.avatar-list:after {
 content: ".";
 display: block;
 height: 0;
@@ -184,7 +186,7 @@ legend{
 #page {
 	margin: auto;
 	width: 800px;
-	min-height: 500px;
+	min-height: 600px;
 	background: #444;
 	border-top: 5px solid #bbb;
 	border-bottom: 5px solid #bbb;
@@ -445,6 +447,7 @@ div.big-message h1{
 
 .avatar-list img {
 	margin: 1px;
+	float: left;
 }
 
 .avatar {
