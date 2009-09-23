@@ -3,7 +3,7 @@ class Answer < ActiveRecord::Base
   belongs_to :user
   belongs_to :quizz
   
-  validates_uniqueness_of :quizz_id, :scope => [ :user_id ], :message => "You already answered this quizz"
+  #validates_uniqueness_of :quizz_id, :scope => [ :user_id ], :message => "You already answered this quizz"
     
   def is_ok?
     self.ok

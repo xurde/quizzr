@@ -22,8 +22,9 @@ class QuizzMailer < ActionMailer::Base
     end
     
     def new_clue_notification_for_players(clue, user)
-      setup_email(quizz, user)
+      setup_email(clue, user)
       @subject    += 'The quizz you played has a new clue'
+      @body[:clue] = clue
       @body[:quizz_url]  = "http://quizzr.net/#{clue.quizz.user.login}/quizz/#{clue.quizz.id.to_s}"
     end
 
