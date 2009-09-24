@@ -1,4 +1,4 @@
-Hi <%= user_name_or_login(@user) %>, a quizz you played was revealed by <%= user_name_or_login(@quizz.user) %> ( <%= "http://quizzr.net/#{@quizz.user.login}" %> )
+Hi <%= user_name_or_login(@user) %>, the quizz you played was revealed by <%= user_name_or_login(@quizz.user) %> ( <%= "http://quizzr.net/#{@quizz.user.login}" %> )
 	
 	<%= @quizz.question %>
 	Correct answer: <%= @quizz.correct_answer %>

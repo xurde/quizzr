@@ -9,19 +9,19 @@ class QuizzMailer < ActionMailer::Base
     end
     
     
-    def quizz_solve_notification_for_players(quizz, user)
+    def quizz_solve_notification_to_players(quizz, user)
       setup_email(quizz, user, quizz.winner)
       @subject    += 'The quizz you played has been solved'
       @body[:quizz_url]  = "http://quizzr.net/#{quizz.user.login}/quizz/#{quizz.id.to_s}"
     end
 
-    def quizz_reveal_notification_for_players(quizz, user)
+    def quizz_reveal_notification_to_players(quizz, user)
       setup_email(quizz, user)
       @subject    += 'The quizz you played has been revealed'
       @body[:quizz_url]  = "http://quizzr.net/#{quizz.user.login}/quizz/#{quizz.id.to_s}"
     end
     
-    def new_clue_notification_for_players(clue, user)
+    def new_clue_notification_to_players(clue, user)
       setup_email(clue, user)
       @subject    += 'The quizz you played has a new clue'
       @body[:clue] = clue

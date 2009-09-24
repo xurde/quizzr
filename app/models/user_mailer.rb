@@ -1,7 +1,7 @@
 class UserMailer < ActionMailer::Base
   def signup_notification(user)
     setup_email(user)
-    @subject    += 'Please activate your new account'
+    @subject    += 'You have created your Quizzr account'
     @body[:url]  = "http://quizzr.net/activate/#{user.activation_code}"
   end
   

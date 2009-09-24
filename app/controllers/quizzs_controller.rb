@@ -50,7 +50,8 @@ class QuizzsController < ApplicationController
   def reveal
     quizz = Quizz.find_by_id(params[:id])
     if quizz && quizz.user_id = @me.id
-      flash[:notice] = "The quizz has been revealed" if quizz.reveal!
+      flash[:notice] = "This quizz has been revealed" if quizz.reveal!
+      redirect_to url_for_quizz(quizz)
     end
   end
   

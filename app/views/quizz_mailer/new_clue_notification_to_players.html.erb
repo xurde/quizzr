@@ -1,0 +1,14 @@
+Hi <%= user_name_or_login(@user) %>, the quizz you played has a new clue. 
+	
+	<%= @clue.quizz.question %>
+	New clue: <%= @clue.text %>
+	
+	See the quizz here:
+	<%= @quizz_url %>
+
+Best,
+QuizzrBot
+
+
+
+<%= render :partial => '/mail_footer' %>
